@@ -1,0 +1,20 @@
+NeuroTrace-DAG Junyi results
+nx.is_directed_acyclic_graph(G) = True
+nodes=835 edges=978 longest_path=65
+embedding pair-AUC=0.904 linked=0.546 random=0.167
+Memory (held-out attempt rows, bootstrap 95% CI):
+  mean                 AUC=0.500 [0.500,0.500] PR-AUC=0.473 RMSE=0.499 MAE=0.499
+  success_rate         AUC=0.857 [0.853,0.861] PR-AUC=0.831 RMSE=0.399 MAE=0.265
+  log_attempts         AUC=0.495 [0.489,0.501] PR-AUC=0.465 RMSE=2.402 MAE=2.102
+  logistic_regression  AUC=0.861 [0.857,0.865] PR-AUC=0.844 RMSE=0.389 MAE=0.303
+  ridge                AUC=0.861 [0.858,0.865] PR-AUC=0.846 RMSE=0.389 MAE=0.304
+  hlr                  AUC=0.787 [0.783,0.792] PR-AUC=0.772 RMSE=0.440 MAE=0.409
+Next-concept ranking (500 test sequences, 1500 queries):
+  full           R@5=0.883 R@10=0.897 nDCG@10=0.844 violate=0.861
+  no_memory      R@5=0.641 R@10=0.772 nDCG@10=0.452 violate=0.861
+  no_graph       R@5=0.881 R@10=0.893 nDCG@10=0.841 violate=0.861
+  no_semantics   R@5=0.880 R@10=0.892 nDCG@10=0.846 violate=0.861
+  popularity     R@5=0.028 R@10=0.060 nDCG@10=0.026 violate=0.861
+  semantic       R@5=0.808 R@10=0.832 nDCG@10=0.779 violate=0.861
+  graph          R@5=0.015 R@10=0.017 nDCG@10=0.012 violate=0.861
+memory_changes_top1_frac=0.813

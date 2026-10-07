@@ -1,0 +1,173 @@
+{
+  "schema": "dual_cluster_gru_markov_v1",
+  "seed": 20261004,
+  "protocol": "fixed best_epoch; train on freeze train; score freeze val; no test touch",
+  "datasets": {
+    "junyi_timed": {
+      "by_method": {
+        "text": {
+          "map_path": "outputs_junyi/phases/cluster_maps/junyi_timed_text_item_to_cluster.json",
+          "n_items_clustered": 115,
+          "best_epoch_fixed": 3,
+          "config": {
+            "lr": 0.0005,
+            "emb": 256,
+            "dropout": 0.1,
+            "max_epochs": 10,
+            "early_stopping_patience": 2
+          },
+          "ari_vs_other_method": 0.03846579565804325,
+          "nonrepeat": {
+            "n_sequences": 326,
+            "mean_gru": 0.5399284253578731,
+            "mean_markov": 0.4935582822085889,
+            "mean_delta_gru_minus_markov": 0.04637014314928426,
+            "ci": [
+              0.005357873210633942,
+              0.08935710633946826
+            ],
+            "ci_excludes_zero": true,
+            "gru_beats_markov": true,
+            "markov_beats_gru": false,
+            "n_boot": 400,
+            "unit": "sequence",
+            "verdict": "inconclusive",
+            "t": 0.01
+          },
+          "val_query_nonrepeat": 611,
+          "test_learners_used_in_fit_or_selection": false,
+          "scored_split": "freeze_val_only",
+          "n_test_held_out": 900
+        },
+        "cooccurrence": {
+          "map_path": "outputs_junyi/phases/cluster_maps/junyi_timed_cooc_item_to_cluster.json",
+          "n_items_clustered": 116,
+          "best_epoch_fixed": 3,
+          "config": {
+            "lr": 0.0005,
+            "emb": 256,
+            "dropout": 0.1,
+            "max_epochs": 10,
+            "early_stopping_patience": 2
+          },
+          "ari_vs_other_method": 0.03846579565804325,
+          "nonrepeat": {
+            "n_sequences": 323,
+            "mean_gru": 0.46336429308565535,
+            "mean_markov": 0.38560371517027864,
+            "mean_delta_gru_minus_markov": 0.07776057791537667,
+            "ci": [
+              0.036835655314757486,
+              0.11620872033023734
+            ],
+            "ci_excludes_zero": true,
+            "gru_beats_markov": true,
+            "markov_beats_gru": false,
+            "n_boot": 400,
+            "unit": "sequence",
+            "verdict": "supported_A",
+            "t": 0.01
+          },
+          "val_query_nonrepeat": 600,
+          "test_learners_used_in_fit_or_selection": false,
+          "scored_split": "freeze_val_only",
+          "n_test_held_out": 900
+        }
+      },
+      "cluster_unit_agreement": {
+        "text_verdict": "inconclusive",
+        "cooccurrence_verdict": "supported_A",
+        "same_supported_verdict": false,
+        "registered_cluster_verdict": "inconclusive",
+        "rule": "cluster-unit supported_* only if text and co-occurrence give the same supported_* verdict; otherwise inconclusive",
+        "ari": 0.03846579565804325
+      }
+    },
+    "assistments": {
+      "by_method": {
+        "text": {
+          "map_path": "outputs_junyi/phases/cluster_maps/assistments_text_item_to_cluster.json",
+          "n_items_clustered": 106,
+          "best_epoch_fixed": 4,
+          "config": {
+            "lr": 0.001,
+            "emb": 256,
+            "dropout": 0.3,
+            "max_epochs": 10,
+            "early_stopping_patience": 2
+          },
+          "ari_vs_other_method": 0.07299971095242978,
+          "nonrepeat": {
+            "n_sequences": 283,
+            "mean_gru": 0.8055359246171967,
+            "mean_markov": 0.5856301531213193,
+            "mean_delta_gru_minus_markov": 0.2199057714958775,
+            "ci": [
+              0.17931242638398115,
+              0.2649101884570082
+            ],
+            "ci_excludes_zero": true,
+            "gru_beats_markov": true,
+            "markov_beats_gru": false,
+            "n_boot": 400,
+            "unit": "sequence",
+            "verdict": "supported_A",
+            "t": 0.01
+          },
+          "val_query_nonrepeat": 547,
+          "test_learners_used_in_fit_or_selection": false,
+          "scored_split": "freeze_val_only",
+          "n_test_held_out": 439
+        },
+        "cooccurrence": {
+          "map_path": "outputs_junyi/phases/cluster_maps/assistments_cooc_item_to_cluster.json",
+          "n_items_clustered": 103,
+          "best_epoch_fixed": 4,
+          "config": {
+            "lr": 0.001,
+            "emb": 256,
+            "dropout": 0.3,
+            "max_epochs": 10,
+            "early_stopping_patience": 2
+          },
+          "ari_vs_other_method": 0.07299971095242978,
+          "nonrepeat": {
+            "n_sequences": 279,
+            "mean_gru": 0.8160692951015531,
+            "mean_markov": 0.5703703703703703,
+            "mean_delta_gru_minus_markov": 0.24569892473118285,
+            "ci": [
+              0.1902105734767025,
+              0.2942159498207885
+            ],
+            "ci_excludes_zero": true,
+            "gru_beats_markov": true,
+            "markov_beats_gru": false,
+            "n_boot": 400,
+            "unit": "sequence",
+            "verdict": "supported_A",
+            "t": 0.01
+          },
+          "val_query_nonrepeat": 502,
+          "test_learners_used_in_fit_or_selection": false,
+          "scored_split": "freeze_val_only",
+          "n_test_held_out": 439
+        }
+      },
+      "cluster_unit_agreement": {
+        "text_verdict": "supported_A",
+        "cooccurrence_verdict": "supported_A",
+        "same_supported_verdict": true,
+        "registered_cluster_verdict": "supported_A",
+        "rule": "cluster-unit supported_* only if text and co-occurrence give the same supported_* verdict; otherwise inconclusive",
+        "ari": 0.07299971095242978
+      }
+    }
+  },
+  "xes3g5m": {
+    "cluster_methods": 1,
+    "amendment": "XES has no text clustering locally. Under the amended one-method rule, the co-occurrence map is the registered cluster unit; two-method agreement is N/A; ARI vs text is N/A. XES cluster-unit GRU\u2212Markov remains in the confirmatory family of 6 under this amendment (see docs/PREREGISTRATION.md).",
+    "ari": null
+  },
+  "elapsed_sec": 3587.1
+}

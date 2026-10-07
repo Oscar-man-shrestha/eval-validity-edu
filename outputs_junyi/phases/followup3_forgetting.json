@@ -1,0 +1,132 @@
+{
+  "protocol": {
+    "fit_and_test_rows": "gap >= 1 calendar day only",
+    "split": "learner-level 80/20",
+    "seed": 0,
+    "gap_feature": "log1p(gap_days)",
+    "models": [
+      "logistic(success_rate)",
+      "logistic(success_rate, log1p_gap)",
+      "logistic(success_rate, gap_bin_dummies)"
+    ]
+  },
+  "n_train_learners": 35997,
+  "n_test_learners": 8999,
+  "n_train_rows": 509863,
+  "n_test_rows": 125637,
+  "auc": {
+    "success_only": 0.6606079519204642,
+    "success_plus_log1p_gap": 0.6608838516838581,
+    "success_plus_gap_bins": 0.6615751658081012
+  },
+  "paired_deltas": {
+    "log1p_gap_minus_success": {
+      "mean": 0.0002758997633939275,
+      "ci": [
+        -0.0010604327518647706,
+        0.0015754188667389726
+      ],
+      "n_learners": 8999,
+      "n_rows": 125637,
+      "n_boot": 1000,
+      "n_boot_kept": 1000,
+      "ci_excludes_zero": false,
+      "statistic": "pooled_auc_delta_bootstrap_over_learners"
+    },
+    "gap_bins_minus_success": {
+      "mean": 0.0009672138876369862,
+      "ci": [
+        -0.0002529688406861186,
+        0.0022650241403627315
+      ],
+      "n_learners": 8999,
+      "n_rows": 125637,
+      "n_boot": 1000,
+      "n_boot_kept": 1000,
+      "ci_excludes_zero": false,
+      "statistic": "pooled_auc_delta_bootstrap_over_learners"
+    },
+    "gap_bins_minus_log1p_gap": {
+      "mean": 0.0006913141242430587,
+      "ci": [
+        -0.00030069855641212114,
+        0.0016658601886386205
+      ],
+      "n_learners": 8999,
+      "n_rows": 125637,
+      "n_boot": 1000,
+      "n_boot_kept": 1000,
+      "ci_excludes_zero": false,
+      "statistic": "pooled_auc_delta_bootstrap_over_learners"
+    }
+  },
+  "accuracy_by_gap_bin_within_success_strata": [
+    {
+      "success_stratum": 0,
+      "gap_bin": "1_3_days",
+      "n": 8566,
+      "accuracy": 0.6391547980387579,
+      "mean_success_rate": 0.3083059819906897
+    },
+    {
+      "success_stratum": 0,
+      "gap_bin": "4_14_days",
+      "n": 9166,
+      "accuracy": 0.637246345188741,
+      "mean_success_rate": 0.30818934586909724
+    },
+    {
+      "success_stratum": 0,
+      "gap_bin": "15p_days",
+      "n": 7527,
+      "accuracy": 0.6597582037996546,
+      "mean_success_rate": 0.2918652108310348
+    },
+    {
+      "success_stratum": 1,
+      "gap_bin": "1_3_days",
+      "n": 6293,
+      "accuracy": 0.8039091053551565,
+      "mean_success_rate": 0.7387079938052376
+    },
+    {
+      "success_stratum": 1,
+      "gap_bin": "4_14_days",
+      "n": 10052,
+      "accuracy": 0.8189415041782729,
+      "mean_success_rate": 0.7473533388094555
+    },
+    {
+      "success_stratum": 1,
+      "gap_bin": "15p_days",
+      "n": 9310,
+      "accuracy": 0.788829215896885,
+      "mean_success_rate": 0.7512027735382677
+    },
+    {
+      "success_stratum": 2,
+      "gap_bin": "1_3_days",
+      "n": 14171,
+      "accuracy": 0.8863876931762049,
+      "mean_success_rate": 0.9817618365807381
+    },
+    {
+      "success_stratum": 2,
+      "gap_bin": "4_14_days",
+      "n": 28710,
+      "accuracy": 0.8857192615813305,
+      "mean_success_rate": 0.9819130037197853
+    },
+    {
+      "success_stratum": 2,
+      "gap_bin": "15p_days",
+      "n": 31842,
+      "accuracy": 0.8785252182651844,
+      "mean_success_rate": 0.9834354838619682
+    }
+  ],
+  "n_success_strata": 3,
+  "status": "unresolved",
+  "status_rule": "log_gap_helps if paired CI of (AUC_log - AUC_success) entirely above 0; log_gap_hurts_vs_success if entirely below 0; else unresolved",
+  "supersedes": "followup2_forgetting.json (must not cite old result as null)"
+}

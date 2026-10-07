@@ -1,0 +1,61 @@
+{
+  "schema": "prereg_v1_locked_hashes_v1",
+  "note": "Test fails if any listed file bytes change. Docs covered by git tag.",
+  "files": [
+    {
+      "path": "outputs_junyi/phases/probe_freeze.json",
+      "sha256": "28a8248a1664f0e3dcf2a833be3e20f8e2b94bd457d1f4073f3e45095e4ffaff",
+      "nbytes": 556920
+    },
+    {
+      "path": "scripts/run_freeze_partition_replication.py",
+      "sha256": "09b419a5aaaac1326965ef03826e04eaef3c05ecb4cb45070ab50167f6c394fe",
+      "nbytes": 40358
+    },
+    {
+      "path": "outputs_junyi/phases/cluster_maps/junyi_timed_text_item_to_cluster.json",
+      "sha256": "be9981bf6d7679bce273a4689937ef20d60d1257fc0897d1d7fd7179daf6c316",
+      "nbytes": 9064
+    },
+    {
+      "path": "outputs_junyi/phases/cluster_maps/junyi_timed_cooc_item_to_cluster.json",
+      "sha256": "5dfc3e134cd5d64db4c7a5224a026be162a5db78054455c4fe617ccffa44b69e",
+      "nbytes": 9129
+    },
+    {
+      "path": "outputs_junyi/phases/cluster_maps/junyi_timed_item_to_cluster.json",
+      "sha256": "be9981bf6d7679bce273a4689937ef20d60d1257fc0897d1d7fd7179daf6c316",
+      "nbytes": 9064
+    },
+    {
+      "path": "outputs_junyi/phases/cluster_maps/assistments_text_item_to_cluster.json",
+      "sha256": "7676e8dbe9a90c309c3e2578526c81f85688ef1088dd6a8c7327b74596225327",
+      "nbytes": 1547
+    },
+    {
+      "path": "outputs_junyi/phases/cluster_maps/assistments_cooc_item_to_cluster.json",
+      "sha256": "e82d2ba2217a792b4fe4ed3ce45b5c2fe5634d258c27934c9f02dccc69e6a159",
+      "nbytes": 1546
+    },
+    {
+      "path": "outputs_junyi/phases/cluster_maps/assistments_item_to_cluster.json",
+      "sha256": "7676e8dbe9a90c309c3e2578526c81f85688ef1088dd6a8c7327b74596225327",
+      "nbytes": 1547
+    },
+    {
+      "path": "outputs_junyi/phases/cluster_maps/xes3g5m_cooc_item_to_cluster.json",
+      "sha256": "097696754951b49fceaa4369ee45f4cd7adf6dae75ec6c8cc93ade21fa5f018d",
+      "nbytes": 88605
+    },
+    {
+      "path": "outputs_junyi/phases/cluster_maps/xes3g5m_item_to_cluster.json",
+      "sha256": "097696754951b49fceaa4369ee45f4cd7adf6dae75ec6c8cc93ade21fa5f018d",
+      "nbytes": 88605
+    },
+    {
+      "path": "outputs_junyi/phases/dual_clustering.json",
+      "sha256": "6c98f9e301ea0566165b492bdc179d9b2444f62504cc2de548778b48a2517923",
+      "nbytes": 6329
+    }
+  ]
+}

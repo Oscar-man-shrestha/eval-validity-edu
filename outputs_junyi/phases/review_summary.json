@@ -1,0 +1,480 @@
+{
+  "phase": "review_fixes_rigorous",
+  "seed": 0,
+  "eval_sample": {
+    "sequences": 800,
+    "cuts": 5,
+    "bootstrap": 1000
+  },
+  "claims": {
+    "1_continue_dominates": {
+      "continue_frac": 0.80275,
+      "computed_from": "review_ranking.three_way_mix"
+    },
+    "2_ragr_vs_recency": {
+      "ragr_r5": {
+        "mean": 0.89125,
+        "ci": [
+          0.87999375,
+          0.90200625
+        ],
+        "n_sequences": 800,
+        "n_queries": 4000,
+        "statistic": "mean_of_per_sequence_means",
+        "n_boot": 1000
+      },
+      "recent5_r5": {
+        "mean": 0.8845000000000001,
+        "ci": [
+          0.8724937500000001,
+          0.8965062500000001
+        ],
+        "n_sequences": 800,
+        "n_queries": 4000,
+        "statistic": "mean_of_per_sequence_means",
+        "n_boot": 1000
+      },
+      "force_review_r5": {
+        "mean": 0.8859999999999999,
+        "ci": [
+          0.8745,
+          0.8972500000000001
+        ],
+        "n_sequences": 800,
+        "n_queries": 4000,
+        "statistic": "mean_of_per_sequence_means",
+        "n_boot": 1000
+      },
+      "last_item_r5": {
+        "mean": 0.8027500000000001,
+        "ci": [
+          0.7872499999999999,
+          0.81875
+        ],
+        "n_sequences": 800,
+        "n_queries": 4000,
+        "statistic": "mean_of_per_sequence_means",
+        "n_boot": 1000
+      },
+      "ordering_sentence_r5": "ragr=0.891 > force_review=0.886 > recent5=0.885 > low_success=0.835 > freq=0.827 > last_item=0.803 > force_advance=0.302 > sim_weighted=0.038",
+      "paired": {
+        "ragr_minus_recent5_r5": {
+          "mean": 0.006749999999999999,
+          "ci": [
+            0.0044937499999999995,
+            0.009499999999999998
+          ],
+          "n_sequences": 800,
+          "ci_excludes_zero": true,
+          "statistic": "mean_of_per_sequence_paired_deltas",
+          "n_boot": 1000
+        },
+        "ragr_minus_last_item_r5": {
+          "mean": 0.0885,
+          "ci": [
+            0.0775,
+            0.09900625
+          ],
+          "n_sequences": 800,
+          "ci_excludes_zero": true,
+          "statistic": "mean_of_per_sequence_paired_deltas",
+          "n_boot": 1000
+        },
+        "ragr_minus_force_review_r5": {
+          "mean": 0.0052499999999999995,
+          "ci": [
+            0.002749999999999999,
+            0.007749999999999999
+          ],
+          "n_sequences": 800,
+          "ci_excludes_zero": true,
+          "statistic": "mean_of_per_sequence_paired_deltas",
+          "n_boot": 1000
+        },
+        "ragr_minus_force_review_r1": {
+          "mean": -0.001,
+          "ci": [
+            -0.002,
+            -0.00024999999999999995
+          ],
+          "n_sequences": 800,
+          "ci_excludes_zero": true,
+          "statistic": "mean_of_per_sequence_paired_deltas",
+          "n_boot": 1000
+        },
+        "ragr_minus_force_review_mrr": {
+          "mean": 0.003715190475993748,
+          "ci": [
+            0.0027327177038402686,
+            0.004876393576323949
+          ],
+          "n_sequences": 800,
+          "ci_excludes_zero": true,
+          "statistic": "mean_of_per_sequence_paired_deltas",
+          "n_boot": 1000
+        }
+      }
+    },
+    "3_dag_helps_correctness": {
+      "status": "detectable_but_negligible",
+      "practical_threshold_delta_auc": 0.005,
+      "primary": {
+        "status": "detectable_but_negligible",
+        "practical_threshold_delta_auc": 0.005,
+        "rule": "supported if mean \u0394AUC >= 0.005 and CI entirely above 0; detectable_but_negligible if CI above 0 but mean < threshold; else unresolved",
+        "primary_variant": "min_all_parents_observed / logistic",
+        "primary_delta_auc": {
+          "mean": 0.0004973880244434348,
+          "ci": [
+            0.00018658746797592108,
+            0.000824311656060378
+          ],
+          "n_sequences": 2420,
+          "n_rows": 70870,
+          "n_boot": 1000,
+          "n_boot_kept": 1000,
+          "ci_above_zero": true,
+          "statistic": "pooled_auc_delta_bootstrapped_over_sequences"
+        }
+      }
+    },
+    "4_confounding": {
+      "status": "inconclusive_pending_test",
+      "note": "raw +10pp unlocked-vs-violate gap is not a controlled readiness effect; controlled \u0394AUC status=detectable_but_negligible"
+    },
+    "5_learner_ids": {
+      "status": "not_testable",
+      "reason": "ktbd-junyi train.json/test.json lines have no learner id field"
+    },
+    "6_timed_ktbd": {
+      "ktbd_share": 0.8123021872382447,
+      "timed_raw_share": 0.6544756791466514,
+      "timed_filtered_share": 0.6351783694682582,
+      "remaining_gap": {
+        "ktbd_minus_timed_filtered": 0.17712381776998642,
+        "explanation": "Length/exercise filters do not close the gap. EduData ktbd sequences are not raw per-user streams: they apply session/problem-log construction that raises consecutive repeats (sticky within-session practice). Timed npz is chronological user streams (capped extract). Do not treat the two shares as the same estimand; cite ktbd for ranking eval and timed only for \u0394t/forgetting.",
+        "can_use_both_as_same_share": false
+      },
+      "day_variable_ok": true,
+      "can_cite_forgetting_null": true
+    },
+    "7_assistments_second_dataset": {
+      "skill_share_next_eq_last": 0.6794038886948423,
+      "junyi_share": 0.8123021872382447,
+      "repetition_junyi_specific": {
+        "deprecated": true,
+        "replaced_by": "repetition is high on mastery-based logs (Junyi, ASSISTments)",
+        "see": "followup2_repetition.json"
+      },
+      "expert_dag": "not_testable",
+      "mined_readiness_status": "unresolved"
+    },
+    "repetition": {
+      "finding": "repetition is high on mastery-based logs (Junyi, ASSISTments)",
+      "high_repetition_boolean": {
+        "value": true,
+        "rule": "True iff min(Junyi ktbd exercise share, ASSISTments skill share) >= 0.60",
+        "label": "repetition is high on mastery-based logs (Junyi, ASSISTments)"
+      },
+      "table_ref": "followup2_repetition.json / followup2_cross_dataset.json"
+    },
+    "forgetting": {
+      "status": "unresolved",
+      "protocol": {
+        "fit_and_test_rows": "gap >= 1 calendar day only",
+        "split": "learner-level 80/20",
+        "seed": 0,
+        "gap_feature": "log1p(gap_days)",
+        "models": [
+          "logistic(success_rate)",
+          "logistic(success_rate, log1p_gap)",
+          "logistic(success_rate, gap_bin_dummies)"
+        ]
+      },
+      "paired_deltas": {
+        "log1p_gap_minus_success": {
+          "mean": 0.0002758997633939275,
+          "ci": [
+            -0.0010604327518647706,
+            0.0015754188667389726
+          ],
+          "n_learners": 8999,
+          "n_rows": 125637,
+          "n_boot": 1000,
+          "n_boot_kept": 1000,
+          "ci_excludes_zero": false,
+          "statistic": "pooled_auc_delta_bootstrap_over_learners"
+        },
+        "gap_bins_minus_success": {
+          "mean": 0.0009672138876369862,
+          "ci": [
+            -0.0002529688406861186,
+            0.0022650241403627315
+          ],
+          "n_learners": 8999,
+          "n_rows": 125637,
+          "n_boot": 1000,
+          "n_boot_kept": 1000,
+          "ci_excludes_zero": false,
+          "statistic": "pooled_auc_delta_bootstrap_over_learners"
+        },
+        "gap_bins_minus_log1p_gap": {
+          "mean": 0.0006913141242430587,
+          "ci": [
+            -0.00030069855641212114,
+            0.0016658601886386205
+          ],
+          "n_learners": 8999,
+          "n_rows": 125637,
+          "n_boot": 1000,
+          "n_boot_kept": 1000,
+          "ci_excludes_zero": false,
+          "statistic": "pooled_auc_delta_bootstrap_over_learners"
+        }
+      },
+      "auc": {
+        "success_only": 0.6606079519204642,
+        "success_plus_log1p_gap": 0.6608838516838581,
+        "success_plus_gap_bins": 0.6615751658081012
+      },
+      "source": "followup3_forgetting.json"
+    },
+    "ranking_reconcile": {
+      "canonical_ragr_r5": 0.89125,
+      "legacy_polluted_ragr_r5": 0.875,
+      "reason": "run_claude_fixes.py reused one RNG for readiness sequence-shuffle then ranking sample; that advances the RNG, so the 800 test indices differ from a fresh SEED draw.",
+      "effect_labels": {
+        "ragr_minus_recent5": "negligible",
+        "ragr_minus_force_review": "negligible",
+        "rule": "|\u0394R@5| < 0.01 \u2192 negligible even if CI excludes 0"
+      },
+      "practical_threshold_r5": 0.01
+    },
+    "duplicate_chance": {
+      "real_overlap": 471,
+      "chance_overlap": 573,
+      "real_minus_chance": -102,
+      "real_frac": 0.07984404136294287,
+      "chance_frac": 0.09930675909878683
+    },
+    "xes3g5m": {
+      "available": true,
+      "question_share": {
+        "share": 0.008450086332151382,
+        "n": 3975344,
+        "hits": 33592,
+        "n_sequences": 18066
+      },
+      "kc_share": {
+        "share": 0.21542412403504102,
+        "n": 4520529,
+        "hits": 973831,
+        "n_sequences": 18066
+      }
+    },
+    "concept_repetition": {
+      "rows": [
+        {
+          "dataset_unit": "Junyi topic",
+          "share": 0.9299559049523363,
+          "n": 2809159
+        },
+        {
+          "dataset_unit": "ASSISTments skill",
+          "share": 0.6794038886948423,
+          "n": 214725
+        },
+        {
+          "dataset_unit": "XES3G5M KC (method A: question\u2192primary KC)",
+          "share": 0.26196852398182396,
+          "n": 3975344
+        },
+        {
+          "dataset_unit": "XES3G5M KC (method B: drop multi-KC extras)",
+          "share": 0.26196852398182396,
+          "n": 3975344
+        },
+        {
+          "dataset_unit": "XES3G5M KC (method B parquet is_repeat=0)",
+          "share": 0.2629252530455704,
+          "n": 4410668
+        }
+      ]
+    },
+    "exact_dup_chance": {
+      "real_overlap": 23,
+      "chance_overlap": 23,
+      "real_minus_chance": 0
+    },
+    "rank_reversal": {
+      "junyi_timed": {
+        "all_order": [
+          "gru4rec",
+          "ragr",
+          "recency",
+          "sasrec",
+          "popularity"
+        ],
+        "reversals": [
+          {
+            "slice": "revisit",
+            "all_order": [
+              "gru4rec",
+              "ragr",
+              "recency",
+              "sasrec",
+              "popularity"
+            ],
+            "slice_order": [
+              "recency",
+              "ragr",
+              "gru4rec",
+              "sasrec",
+              "popularity"
+            ]
+          },
+          {
+            "slice": "advance",
+            "all_order": [
+              "gru4rec",
+              "ragr",
+              "recency",
+              "sasrec",
+              "popularity"
+            ],
+            "slice_order": [
+              "gru4rec",
+              "sasrec",
+              "popularity",
+              "ragr",
+              "recency"
+            ]
+          }
+        ]
+      },
+      "assistments": {
+        "all_order": [
+          "gru4rec",
+          "ragr",
+          "recency",
+          "sasrec",
+          "popularity"
+        ],
+        "reversals": [
+          {
+            "slice": "revisit",
+            "all_order": [
+              "gru4rec",
+              "ragr",
+              "recency",
+              "sasrec",
+              "popularity"
+            ],
+            "slice_order": [
+              "ragr",
+              "recency",
+              "gru4rec",
+              "sasrec",
+              "popularity"
+            ]
+          },
+          {
+            "slice": "advance",
+            "all_order": [
+              "gru4rec",
+              "ragr",
+              "recency",
+              "sasrec",
+              "popularity"
+            ],
+            "slice_order": [
+              "gru4rec",
+              "sasrec",
+              "popularity",
+              "ragr",
+              "recency"
+            ]
+          }
+        ]
+      },
+      "xes3g5m": {
+        "all_order": [
+          "gru4rec",
+          "sasrec",
+          "ragr",
+          "recency",
+          "popularity"
+        ],
+        "reversals": [
+          {
+            "slice": "advance",
+            "all_order": [
+              "gru4rec",
+              "sasrec",
+              "ragr",
+              "recency",
+              "popularity"
+            ],
+            "slice_order": [
+              "gru4rec",
+              "sasrec",
+              "popularity",
+              "ragr",
+              "recency"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "followup": {
+    "claim4": {
+      "status": "detectable_but_negligible",
+      "practical_threshold_delta_auc": 0.005,
+      "rule": "supported if mean \u0394AUC >= 0.005 and CI entirely above 0; detectable_but_negligible if CI above 0 but mean < threshold; else unresolved",
+      "primary_variant": "min_all_parents_observed / logistic",
+      "primary_delta_auc": {
+        "mean": 0.0004973880244434348,
+        "ci": [
+          0.00018658746797592108,
+          0.000824311656060378
+        ],
+        "n_sequences": 2420,
+        "n_rows": 70870,
+        "n_boot": 1000,
+        "n_boot_kept": 1000,
+        "ci_above_zero": true,
+        "statistic": "pooled_auc_delta_bootstrapped_over_sequences"
+      }
+    },
+    "gap_bins_same_day_n": 379439,
+    "duplicate_lengths": {
+      "min": 12,
+      "max": 29,
+      "mean": 15.357142857142858,
+      "median": 15.0,
+      "counter": {
+        "15": 8,
+        "16": 4,
+        "14": 2,
+        "24": 1,
+        "12": 8,
+        "17": 1,
+        "26": 1,
+        "13": 2,
+        "29": 1
+      }
+    },
+    "ranking_no_dups_ragr_r5": {
+      "mean": 0.9,
+      "ci": [
+        0.8902437500000001,
+        0.91000625
+      ],
+      "n_sequences": 800,
+      "n_queries": 4000,
+      "statistic": "mean_of_per_sequence_means",
+      "n_boot": 1000
+    }
+  }
+}

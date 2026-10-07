@@ -1,0 +1,90 @@
+{
+  "phase": "inertia_diagnostics",
+  "thesis": "Inertia Illusion: monolithic next-item metrics on Junyi are dominated by session inertia",
+  "failure_conditioned_next_action": {
+    "wrong": {
+      "n": 290967,
+      "p_review": 0.9498121780133142,
+      "p_last": 0.8655655108654934,
+      "p_advance": 0.050187821986685775,
+      "p_violate_among_all": 0.043633814143871984
+    },
+    "correct": {
+      "n": 297312,
+      "p_review": 0.9029739801958885,
+      "p_last": 0.785013722957701,
+      "p_advance": 0.0970260198041115,
+      "p_violate_among_all": 0.07582943170810462
+    }
+  },
+  "pedagogical_cost_of_violations": {
+    "advance_unlocked": {
+      "n": 5566,
+      "accuracy": 0.7689543657923105
+    },
+    "advance_hard_gate_violation": {
+      "n": 25447,
+      "accuracy": 0.6679765787715645
+    },
+    "accuracy_gap_unlocked_minus_violate": 0.100977787020746
+  },
+  "gate_threshold_regret_curve": [
+    {
+      "tau_review_if_p_ge": 0.2,
+      "r5_all": 0.886,
+      "r5_advance": 0.0,
+      "n_advance": 439,
+      "n_all": 4000
+    },
+    {
+      "tau_review_if_p_ge": 0.3,
+      "r5_all": 0.886,
+      "r5_advance": 0.0,
+      "n_advance": 439,
+      "n_all": 4000
+    },
+    {
+      "tau_review_if_p_ge": 0.4,
+      "r5_all": 0.886,
+      "r5_advance": 0.0,
+      "n_advance": 439,
+      "n_all": 4000
+    },
+    {
+      "tau_review_if_p_ge": 0.5,
+      "r5_all": 0.886,
+      "r5_advance": 0.0,
+      "n_advance": 439,
+      "n_all": 4000
+    },
+    {
+      "tau_review_if_p_ge": 0.6,
+      "r5_all": 0.886,
+      "r5_advance": 0.0,
+      "n_advance": 439,
+      "n_all": 4000
+    },
+    {
+      "tau_review_if_p_ge": 0.7,
+      "r5_all": 0.88225,
+      "r5_advance": 0.004555808656036446,
+      "n_advance": 439,
+      "n_all": 4000
+    },
+    {
+      "tau_review_if_p_ge": 0.8,
+      "r5_all": 0.8675,
+      "r5_advance": 0.02050113895216401,
+      "n_advance": 439,
+      "n_all": 4000
+    },
+    {
+      "tau_review_if_p_ge": 0.9,
+      "r5_all": 0.761,
+      "r5_advance": 0.04100227790432802,
+      "n_advance": 439,
+      "n_all": 4000
+    }
+  ],
+  "n_test_queries_for_curve": 4000
+}

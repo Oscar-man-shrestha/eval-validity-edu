@@ -1,0 +1,306 @@
+{
+  "cross_dataset": {
+    "columns": [
+      "dataset_unit",
+      "share_next_equals_last",
+      "n",
+      "continue_frac",
+      "revisit_frac",
+      "advance_frac"
+    ],
+    "rows": [
+      {
+        "dataset_unit": "Junyi ktbd / exercise",
+        "share_next_equals_last": 0.8123021872382447,
+        "n": 2809159,
+        "continue_frac": 0.80275,
+        "revisit_frac": 0.0875,
+        "advance_frac": 0.10975,
+        "three_way_note": "from 800\u00d75 eval cuts (not full ktbd)"
+      },
+      {
+        "dataset_unit": "Junyi ktbd / topic",
+        "share_next_equals_last": 0.9299559049523363,
+        "n": 2809159
+      },
+      {
+        "dataset_unit": "Junyi timed raw / exercise",
+        "share_next_equals_last": 0.6544756791466514,
+        "n": 7795923
+      },
+      {
+        "dataset_unit": "Junyi timed raw / topic",
+        "share_next_equals_last": 0.8596929446327266,
+        "n": 7795923
+      },
+      {
+        "dataset_unit": "ASSISTments / skill",
+        "share_next_equals_last": 0.6732400778653,
+        "n": 342643,
+        "continue_frac": 0.6785589529819985,
+        "revisit_frac": 0.19023776810041684,
+        "advance_frac": 0.1312032789175846
+      },
+      {
+        "dataset_unit": "XES3G5M / question",
+        "share_next_equals_last": 0.008450086332151382,
+        "n": 3975344,
+        "continue_frac": 0.008507600991760374,
+        "revisit_frac": 0.03563450123970047,
+        "advance_frac": 0.9558578977685391
+      },
+      {
+        "dataset_unit": "XES3G5M / KC",
+        "share_next_equals_last": 0.21542412403504102,
+        "n": 4520529,
+        "continue_frac": 0.21497280274835384,
+        "revisit_frac": 0.36865048778876436,
+        "advance_frac": 0.4163767094628818
+      }
+    ]
+  },
+  "claims": {
+    "1_continue_dominates": {
+      "continue_frac": 0.80275,
+      "computed_from": "review_ranking.three_way_mix"
+    },
+    "2_ragr_vs_recency": {
+      "ragr_r5": {
+        "mean": 0.89125,
+        "ci": [
+          0.87999375,
+          0.90200625
+        ],
+        "n_sequences": 800,
+        "n_queries": 4000,
+        "statistic": "mean_of_per_sequence_means",
+        "n_boot": 1000
+      },
+      "recent5_r5": {
+        "mean": 0.8845000000000001,
+        "ci": [
+          0.8724937500000001,
+          0.8965062500000001
+        ],
+        "n_sequences": 800,
+        "n_queries": 4000,
+        "statistic": "mean_of_per_sequence_means",
+        "n_boot": 1000
+      },
+      "force_review_r5": {
+        "mean": 0.8859999999999999,
+        "ci": [
+          0.8745,
+          0.8972500000000001
+        ],
+        "n_sequences": 800,
+        "n_queries": 4000,
+        "statistic": "mean_of_per_sequence_means",
+        "n_boot": 1000
+      },
+      "last_item_r5": {
+        "mean": 0.8027500000000001,
+        "ci": [
+          0.7872499999999999,
+          0.81875
+        ],
+        "n_sequences": 800,
+        "n_queries": 4000,
+        "statistic": "mean_of_per_sequence_means",
+        "n_boot": 1000
+      },
+      "ordering_sentence_r5": "ragr=0.891 > force_review=0.886 > recent5=0.885 > low_success=0.835 > freq=0.827 > last_item=0.803 > force_advance=0.302 > sim_weighted=0.038",
+      "paired": {
+        "ragr_minus_recent5_r5": {
+          "mean": 0.006749999999999999,
+          "ci": [
+            0.0044937499999999995,
+            0.009499999999999998
+          ],
+          "n_sequences": 800,
+          "ci_excludes_zero": true,
+          "statistic": "mean_of_per_sequence_paired_deltas",
+          "n_boot": 1000
+        },
+        "ragr_minus_last_item_r5": {
+          "mean": 0.0885,
+          "ci": [
+            0.0775,
+            0.09900625
+          ],
+          "n_sequences": 800,
+          "ci_excludes_zero": true,
+          "statistic": "mean_of_per_sequence_paired_deltas",
+          "n_boot": 1000
+        },
+        "ragr_minus_force_review_r5": {
+          "mean": 0.0052499999999999995,
+          "ci": [
+            0.002749999999999999,
+            0.007749999999999999
+          ],
+          "n_sequences": 800,
+          "ci_excludes_zero": true,
+          "statistic": "mean_of_per_sequence_paired_deltas",
+          "n_boot": 1000
+        },
+        "ragr_minus_force_review_r1": {
+          "mean": -0.001,
+          "ci": [
+            -0.002,
+            -0.00024999999999999995
+          ],
+          "n_sequences": 800,
+          "ci_excludes_zero": true,
+          "statistic": "mean_of_per_sequence_paired_deltas",
+          "n_boot": 1000
+        },
+        "ragr_minus_force_review_mrr": {
+          "mean": 0.003715190475993748,
+          "ci": [
+            0.0027327177038402686,
+            0.004876393576323949
+          ],
+          "n_sequences": 800,
+          "ci_excludes_zero": true,
+          "statistic": "mean_of_per_sequence_paired_deltas",
+          "n_boot": 1000
+        }
+      }
+    },
+    "3_dag_helps_correctness": {
+      "status": "detectable_but_negligible",
+      "practical_threshold_delta_auc": 0.005,
+      "primary": {
+        "status": "detectable_but_negligible",
+        "practical_threshold_delta_auc": 0.005,
+        "rule": "supported if mean \u0394AUC >= 0.005 and CI entirely above 0; detectable_but_negligible if CI above 0 but mean < threshold; else unresolved",
+        "primary_variant": "min_all_parents_observed / logistic",
+        "primary_delta_auc": {
+          "mean": 0.0004973880244434348,
+          "ci": [
+            0.00018658746797592108,
+            0.000824311656060378
+          ],
+          "n_sequences": 2420,
+          "n_rows": 70870,
+          "n_boot": 1000,
+          "n_boot_kept": 1000,
+          "ci_above_zero": true,
+          "statistic": "pooled_auc_delta_bootstrapped_over_sequences"
+        }
+      }
+    },
+    "4_confounding": {
+      "status": "inconclusive_pending_test",
+      "note": "raw +10pp unlocked-vs-violate gap is not a controlled readiness effect; controlled \u0394AUC status=detectable_but_negligible"
+    },
+    "5_learner_ids": {
+      "status": "not_testable",
+      "reason": "ktbd-junyi train.json/test.json lines have no learner id field"
+    },
+    "6_timed_ktbd": {
+      "ktbd_share": 0.8123021872382447,
+      "timed_raw_share": 0.6544756791466514,
+      "timed_filtered_share": 0.6351783694682582,
+      "remaining_gap": {
+        "ktbd_minus_timed_filtered": 0.17712381776998642,
+        "explanation": "Length/exercise filters do not close the gap. EduData ktbd sequences are not raw per-user streams: they apply session/problem-log construction that raises consecutive repeats (sticky within-session practice). Timed npz is chronological user streams (capped extract). Do not treat the two shares as the same estimand; cite ktbd for ranking eval and timed only for \u0394t/forgetting.",
+        "can_use_both_as_same_share": false
+      },
+      "day_variable_ok": true,
+      "can_cite_forgetting_null": true
+    },
+    "7_assistments_second_dataset": {
+      "skill_share_next_eq_last": 0.6794038886948423,
+      "junyi_share": 0.8123021872382447,
+      "repetition_junyi_specific": {
+        "deprecated": true,
+        "replaced_by": "repetition is high on mastery-based logs (Junyi, ASSISTments)",
+        "see": "followup2_repetition.json"
+      },
+      "expert_dag": "not_testable",
+      "mined_readiness_status": "unresolved"
+    },
+    "repetition": {
+      "finding": "repetition is high on mastery-based logs (Junyi, ASSISTments)",
+      "high_repetition_boolean": {
+        "value": true,
+        "rule": "True iff min(Junyi ktbd exercise share, ASSISTments skill share) >= 0.60",
+        "label": "repetition is high on mastery-based logs (Junyi, ASSISTments)"
+      },
+      "table_ref": "followup2_repetition.json / followup2_cross_dataset.json"
+    },
+    "forgetting": {
+      "status": "no_evidence_day_beats_success_powered_negative_or_null",
+      "rule": "Use 'limited_power' wording only if n_rows(gap>=1) < 20000 OR CI includes 0. If n>=20000 and CI excludes 0: 'day_delta_t_beats_success' when mean>0, else 'no_evidence_day_beats_success_powered_negative_or_null'.",
+      "gap_bins_n": {
+        "same_day": {
+          "n": 5569314
+        },
+        "1_3_days": {
+          "n": 149796
+        },
+        "4_14_days": {
+          "n": 245395
+        },
+        "15p_days": {
+          "n": 240309
+        },
+        "n_users_scanned": 204077,
+        "unit": "integer_calendar_day"
+      },
+      "restricted": {
+        "n_rows": 635500,
+        "n_train_learners": 35997,
+        "n_test_learners": 8999,
+        "auc_day": 0.6554863770107512,
+        "auc_success": 0.6606079519204642,
+        "paired_day_minus_success": {
+          "mean_delta_auc": -0.005121574909712989,
+          "ci": [
+            -0.006724996134072761,
+            -0.0035124728678664566
+          ],
+          "n_boot": 1000,
+          "n_boot_kept": 1000,
+          "statistic": "pooled_auc_day_minus_success_bootstrap_over_learners",
+          "ci_excludes_zero": true
+        }
+      }
+    },
+    "ranking_reconcile": {
+      "canonical_ragr_r5": 0.89125,
+      "legacy_polluted_ragr_r5": 0.875,
+      "reason": "run_claude_fixes.py reused one RNG for readiness sequence-shuffle then ranking sample; that advances the RNG, so the 800 test indices differ from a fresh SEED draw.",
+      "effect_labels": {
+        "ragr_minus_recent5": "negligible",
+        "ragr_minus_force_review": "negligible",
+        "rule": "|\u0394R@5| < 0.01 \u2192 negligible even if CI excludes 0"
+      },
+      "practical_threshold_r5": 0.01
+    },
+    "duplicate_chance": {
+      "real_overlap": 471,
+      "chance_overlap": 573,
+      "real_minus_chance": -102,
+      "real_frac": 0.07984404136294287,
+      "chance_frac": 0.09930675909878683
+    },
+    "xes3g5m": {
+      "available": true,
+      "question_share": {
+        "share": 0.008450086332151382,
+        "n": 3975344,
+        "hits": 33592,
+        "n_sequences": 18066
+      },
+      "kc_share": {
+        "share": 0.21542412403504102,
+        "n": 4520529,
+        "hits": 973831,
+        "n_sequences": 18066
+      }
+    }
+  }
+}

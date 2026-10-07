@@ -1,0 +1,209 @@
+{
+  "phase": "claude_review_fixes",
+  "verified_external_critique": {
+    "ragr_loses_to_last_item_on_review_pool": true,
+    "mask_last_slightly_above_ragr_nonlast": true,
+    "advance_below_sim_and_dag_baselines": true,
+    "repeatnet_should_be_cited": true,
+    "three_way_continue_dominates_review": true
+  },
+  "three_way_mix": {
+    "continue": {
+      "count": 167476,
+      "frac": 0.8176540949591115
+    },
+    "revisit": {
+      "count": 21071,
+      "frac": 0.10287318442572928
+    },
+    "advance": {
+      "count": 16278,
+      "frac": 0.07947272061515928
+    },
+    "n": 204825
+  },
+  "ranking": {
+    "ragr_all": {
+      "mean": 0.8973333333333335,
+      "ci": [
+        0.8780000000000001,
+        0.9146666666666666
+      ],
+      "n_sequences": 300,
+      "n_queries": 1500,
+      "note": "point=mean of per-sequence means; CI bootstraps that same statistic"
+    },
+    "base_last_all": {
+      "mean": 0.7906666666666666,
+      "ci": [
+        0.764,
+        0.8166833333333332
+      ],
+      "n_sequences": 300,
+      "n_queries": 1500,
+      "note": "point=mean of per-sequence means; CI bootstraps that same statistic"
+    },
+    "base_recent5": {
+      "mean": 0.8873333333333333,
+      "ci": [
+        0.8699833333333331,
+        0.9040333333333332
+      ],
+      "n_sequences": 300,
+      "n_queries": 1500,
+      "note": "point=mean of per-sequence means; CI bootstraps that same statistic"
+    },
+    "ragr_advance": {
+      "mean": 0.08108108108108109,
+      "ci": [
+        0.03153153153153153,
+        0.13063063063063063
+      ],
+      "n_sequences": 111,
+      "n_queries": 160,
+      "note": "point=mean of per-sequence means; CI bootstraps that same statistic"
+    },
+    "base_sim_advance": {
+      "mean": 0.1569069069069069,
+      "ci": [
+        0.09532657657657656,
+        0.2132695195195195
+      ],
+      "n_sequences": 111,
+      "n_queries": 160,
+      "note": "point=mean of per-sequence means; CI bootstraps that same statistic"
+    },
+    "ragr_revisit": {
+      "mean": 0.9846014492753623,
+      "ci": [
+        0.968274456521739,
+        0.9972826086956522
+      ],
+      "n_sequences": 92,
+      "n_queries": 154,
+      "note": "point=mean of per-sequence means; CI bootstraps that same statistic"
+    },
+    "force_review_revisit": {
+      "mean": 0.973731884057971,
+      "ci": [
+        0.9465353260869565,
+        0.9963768115942028
+      ],
+      "n_sequences": 92,
+      "n_queries": 154,
+      "note": "point=mean of per-sequence means; CI bootstraps that same statistic"
+    },
+    "base_recent5_revisit": {
+      "mean": 0.9356884057971014,
+      "ci": [
+        0.8922101449275364,
+        0.9746376811594202
+      ],
+      "n_sequences": 92,
+      "n_queries": 154,
+      "note": "point=mean of per-sequence means; CI bootstraps that same statistic"
+    },
+    "ragr_continue": {
+      "mean": 1.0,
+      "ci": [
+        1.0,
+        1.0
+      ],
+      "n_sequences": 295,
+      "n_queries": 1186,
+      "note": "point=mean of per-sequence means; CI bootstraps that same statistic"
+    },
+    "pool_size_seen_items": {
+      "mean": 5.166666666666667,
+      "median": 3.0,
+      "p10": 1.0,
+      "p90": 13.0,
+      "n": 1500,
+      "note": "Recall@5 on review is easier when median pool is small"
+    },
+    "three_way_train_mix": {
+      "continue": {
+        "count": 167476,
+        "frac": 0.8176540949591115
+      },
+      "revisit": {
+        "count": 21071,
+        "frac": 0.10287318442572928
+      },
+      "advance": {
+        "count": 16278,
+        "frac": 0.07947272061515928
+      },
+      "n": 204825
+    },
+    "gate_learned": {
+      "auc": 0.7443493470149255,
+      "pr_auc": 0.9559396236055782,
+      "base_rate": 0.8933333333333333
+    },
+    "gate_last_outcome_baseline": {
+      "auc": 0.5882462686567165,
+      "pr_auc": 0.910745496547301,
+      "base_rate": 0.8933333333333333,
+      "rule": "P(review)=0.95 if last wrong else 0.78"
+    },
+    "gate_vs_last_outcome": {
+      "auc_learned": 0.7443493470149255,
+      "auc_last_outcome": 0.5882462686567165,
+      "delta": 0.15610307835820902
+    }
+  },
+  "readiness_correctness": {
+    "n_train": 48000,
+    "n_test": 12000,
+    "auc_base_controls": 0.8424199096606553,
+    "auc_with_parent_mastery": 0.8425031732461505,
+    "delta_auc": 8.326358549526347e-05,
+    "delta_auc_ci": [
+      -7.0880822257535215e-06,
+      0.00017163790928091668
+    ],
+    "controls": "log_attempts, success_rate, log_step_dt, item_global_acc, user_so_far_acc",
+    "claim": "parent-mastery readiness belongs on correctness, not next-item ranking"
+  },
+  "forgetting_gap_bins": {
+    "same_day": {
+      "n": 0
+    },
+    "1_3_days": {
+      "n": 1269,
+      "mean_correct": 0.8085106382978723,
+      "auc_success_rate": 0.6775483519039942,
+      "auc_neg_log_gap": 0.5251847038721632
+    },
+    "4_14_days": {
+      "n": 2988,
+      "mean_correct": 0.8323293172690763,
+      "auc_success_rate": 0.6403525879483494,
+      "auc_neg_log_gap": 0.48837106647180106
+    },
+    "15p_days": {
+      "n": 2451,
+      "mean_correct": 0.8343533251733987,
+      "auc_success_rate": 0.6529556650246305,
+      "auc_neg_log_gap": 0.5218254302817156
+    }
+  },
+  "learner_check": {
+    "timed_npz_present": true,
+    "ktbd_has_user_field": false,
+    "timed_unique_users": 204077,
+    "note": "ktbd-junyi train/test.json lines are anonymous sequences without learner ids. Learner-disjoint eval uses timed_interactions.npz user_id splits only."
+  },
+  "data_card": {
+    "nodes": 835,
+    "edges": 978,
+    "train_sequences": 27434,
+    "test_sequences": 6290,
+    "train_interactions": 2342784,
+    "test_interactions": 500099,
+    "filter": "length 12\u2013200 after EduData ktbd processing",
+    "exercise_count_note": "835 vertices in vertex_id2idx (EduData ktbd-junyi). Older literature sometimes cites ~722 Junyi exercises from a different extract/filter; we follow the ktbd id space used by RCD/KnowLP tooling.",
+    "accuracy_attempt_sample": 0.5080706079426034
+  }
+}

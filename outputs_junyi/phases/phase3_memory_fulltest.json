@@ -1,0 +1,294 @@
+{
+  "phase": 3,
+  "task": "correctness_on_revisit_attempts_only",
+  "task_definition": "A memory row is emitted only when a concept is attempted again in the same sequence. The label is whether that revisit attempt is correct (0/1). The first attempt on a concept does not create a row.",
+  "headline_0_877_used_80k_file_order_slice": true,
+  "headline_0_877_superseded": true,
+  "split": "by_sequence_id_within_train_json",
+  "leakage_check": "pass",
+  "train_protocol": {
+    "source": "train.json",
+    "memory_row_cap": 200000,
+    "n_rows_collected": 200000,
+    "n_fit_rows": 163818,
+    "fit_on": "sequence-id split of capped train memory rows (same as run_valid_eval)"
+  },
+  "test_protocol": {
+    "source": "test.json",
+    "rows": "ALL memory (revisit) rows; no 80k cap",
+    "n_rows": 449453,
+    "n_sequences_with_at_least_one_revisit": 6288,
+    "n_test_json_sequences": 6290,
+    "correct_rate": 0.4457284743899807,
+    "bootstrap": "sequence-level: resample sequences with replacement; pool their rows",
+    "n_boot": 400,
+    "registered_sample": null
+  },
+  "evaluate_on_test_json": {
+    "mean": {
+      "auc_point": 0.5,
+      "pr_auc_point": 0.4457284743899807,
+      "auc_sequence_bootstrap": {
+        "boot_mean": 0.5,
+        "ci": [
+          0.5,
+          0.5
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "pr_auc_sequence_bootstrap": {
+        "boot_mean": 0.44580645358757254,
+        "ci": [
+          0.4379327848150957,
+          0.45291066651153095
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "auc": 0.5,
+      "auc_ci": [
+        0.5,
+        0.5
+      ],
+      "pr_auc": 0.4457284743899807,
+      "pr_auc_ci": [
+        0.4379327848150957,
+        0.45291066651153095
+      ]
+    },
+    "logistic_step_dt": {
+      "auc_point": 0.8636560531074262,
+      "pr_auc_point": 0.8256696675749655,
+      "auc_sequence_bootstrap": {
+        "boot_mean": 0.8636114189983745,
+        "ci": [
+          0.8605351117458301,
+          0.8671033094430001
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "pr_auc_sequence_bootstrap": {
+        "boot_mean": 0.8257149601950424,
+        "ci": [
+          0.8203095979829501,
+          0.8308290421177602
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "auc": 0.8636560531074262,
+      "auc_ci": [
+        0.8605351117458301,
+        0.8671033094430001
+      ],
+      "pr_auc": 0.8256696675749655,
+      "pr_auc_ci": [
+        0.8203095979829501,
+        0.8308290421177602
+      ]
+    },
+    "logistic_day_dt": {
+      "auc_point": 0.8636560531074262,
+      "pr_auc_point": 0.8256696675749655,
+      "auc_sequence_bootstrap": {
+        "boot_mean": 0.8636114189983745,
+        "ci": [
+          0.8605351117458301,
+          0.8671033094430001
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "pr_auc_sequence_bootstrap": {
+        "boot_mean": 0.8257149601950424,
+        "ci": [
+          0.8203095979829501,
+          0.8308290421177602
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "auc": 0.8636560531074262,
+      "auc_ci": [
+        0.8605351117458301,
+        0.8671033094430001
+      ],
+      "pr_auc": 0.8256696675749655,
+      "pr_auc_ci": [
+        0.8203095979829501,
+        0.8308290421177602
+      ]
+    },
+    "logistic_both": {
+      "auc_point": 0.8636560535482461,
+      "pr_auc_point": 0.8256695646294643,
+      "auc_sequence_bootstrap": {
+        "boot_mean": 0.8636114168957458,
+        "ci": [
+          0.8605353314701537,
+          0.8671033936555353
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "pr_auc_sequence_bootstrap": {
+        "boot_mean": 0.8257148589483798,
+        "ci": [
+          0.8203096743713056,
+          0.8308291866872427
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "auc": 0.8636560535482461,
+      "auc_ci": [
+        0.8605353314701537,
+        0.8671033936555353
+      ],
+      "pr_auc": 0.8256695646294643,
+      "pr_auc_ci": [
+        0.8203096743713056,
+        0.8308291866872427
+      ]
+    },
+    "success_rate": {
+      "auc_point": 0.8583443055473905,
+      "pr_auc_point": 0.814824434342293,
+      "auc_sequence_bootstrap": {
+        "boot_mean": 0.8583011407477749,
+        "ci": [
+          0.8551824270346438,
+          0.8617172083402348
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "pr_auc_sequence_bootstrap": {
+        "boot_mean": 0.8148759319900885,
+        "ci": [
+          0.8097087908407034,
+          0.8197003726962434
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "auc": 0.8583443055473905,
+      "auc_ci": [
+        0.8551824270346438,
+        0.8617172083402348
+      ],
+      "pr_auc": 0.814824434342293,
+      "pr_auc_ci": [
+        0.8097087908407034,
+        0.8197003726962434
+      ]
+    },
+    "hlr_step": {
+      "auc_point": 0.788861032985443,
+      "pr_auc_point": 0.7624894587467217,
+      "auc_sequence_bootstrap": {
+        "boot_mean": 0.7887586101018741,
+        "ci": [
+          0.7838891504777905,
+          0.7936310052616983
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "pr_auc_sequence_bootstrap": {
+        "boot_mean": 0.7626318628556849,
+        "ci": [
+          0.7563026931270983,
+          0.7686963982229285
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "auc": 0.788861032985443,
+      "auc_ci": [
+        0.7838891504777905,
+        0.7936310052616983
+      ],
+      "pr_auc": 0.7624894587467217,
+      "pr_auc_ci": [
+        0.7563026931270983,
+        0.7686963982229285
+      ]
+    },
+    "paired_logistic_step_minus_success": {
+      "mean_delta_auc": 0.005310037873545182,
+      "ci": [
+        0.004625538135187604,
+        0.005879936208839394
+      ],
+      "bootstrap": "sequence"
+    },
+    "n_train": 163818,
+    "n_test": 449453,
+    "winner": "logistic_both",
+    "confusion_matrix_winner": {
+      "threshold": 0.5,
+      "TN": 209733,
+      "FP": 39386,
+      "FN": 56994,
+      "TP": 143340,
+      "n": 449453,
+      "predicted_positive_rate": 0.4065519642765762,
+      "accuracy": 0.7855615603856243
+    },
+    "confusion_matrix_logistic_step_dt": {
+      "threshold": 0.5,
+      "TN": 209734,
+      "FP": 39385,
+      "FN": 56994,
+      "TP": 143340,
+      "n": 449453,
+      "predicted_positive_rate": 0.4065497393498319,
+      "accuracy": 0.7855637853123686
+    }
+  },
+  "superseded_first_80k_file_order": {
+    "n_rows": 80000,
+    "selection": "first_80000_test_json_memory_rows_in_file_order",
+    "correct_rate": 0.3275625,
+    "logistic_step_dt_auc_point": 0.8768705176014742,
+    "logistic_step_dt_pr_auc_point": 0.7823635606929324,
+    "confusion_matrix_counts": {
+      "threshold": 0.5,
+      "TN": 49189,
+      "FP": 4606,
+      "FN": 10317,
+      "TP": 15888,
+      "n": 80000,
+      "predicted_positive_rate": 0.256175,
+      "accuracy": 0.8134625
+    },
+    "note": "This is the slice that produced the published headline ~0.877 (row-level bootstrap mean in phase3_memory.json). Superseded."
+  }
+}

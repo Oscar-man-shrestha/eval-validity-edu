@@ -1,0 +1,76 @@
+{
+  "timed_learner_split": {
+    "mean": {
+      "auc": 0.5,
+      "auc_ci": [
+        0.5,
+        0.5
+      ],
+      "pr_auc": 0.8546625
+    },
+    "logistic_step_dt": {
+      "auc": 0.6909566412230896,
+      "auc_ci": [
+        0.6848752946273733,
+        0.6968937219165189
+      ],
+      "pr_auc": 0.906367572590534
+    },
+    "logistic_day_dt": {
+      "auc": 0.6943145577724468,
+      "auc_ci": [
+        0.688697333590245,
+        0.6994635914919733
+      ],
+      "pr_auc": 0.9119663130932727
+    },
+    "logistic_both": {
+      "auc": 0.6933192110218749,
+      "auc_ci": [
+        0.6879002825611091,
+        0.6989104952740166
+      ],
+      "pr_auc": 0.9084381325042491
+    },
+    "success_rate": {
+      "auc": 0.6971405207561843,
+      "auc_ci": [
+        0.6914665931123471,
+        0.7031733761135637
+      ],
+      "pr_auc": 0.9109184767205254
+    },
+    "hlr_step": {
+      "auc": 0.6914958040633535,
+      "auc_ci": [
+        0.6859008411000339,
+        0.6969754809263471
+      ],
+      "pr_auc": 0.9204705978898039
+    },
+    "paired_logistic_day_minus_success": {
+      "mean_delta_auc": -0.002926333449883386,
+      "ci": [
+        -0.004701844108090492,
+        -0.0011640323298165902
+      ],
+      "forgetting_helps": false
+    },
+    "n_train": 200000,
+    "n_test": 80000,
+    "winner": "success_rate"
+  },
+  "n_train_users": 6400,
+  "n_test_users": 1600,
+  "day_variable_ok": true,
+  "can_cite_forgetting_null": true,
+  "paired_day_minus_success": {
+    "mean_delta_auc": -0.002926333449883386,
+    "ci": [
+      -0.004701844108090492,
+      -0.0011640323298165902
+    ],
+    "forgetting_helps": false
+  },
+  "note": "Fractional event \u0394t retained for memory model; gap bins use calendar days. Do not cite forgetting null unless day_variable_ok."
+}

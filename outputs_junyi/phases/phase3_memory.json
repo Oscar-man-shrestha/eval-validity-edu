@@ -1,0 +1,458 @@
+{
+  "phase": 3,
+  "split": "by_sequence_id_within_train_json",
+  "leakage_check": "pass",
+  "within_train_seq_holdout": {
+    "mean": {
+      "auc": 0.5,
+      "auc_ci": [
+        0.5,
+        0.5
+      ],
+      "pr_auc": 0.48336189265380575
+    },
+    "logistic_step_dt": {
+      "auc": 0.8674705832030224,
+      "auc_ci": [
+        0.8641497989346842,
+        0.8713032880798844
+      ],
+      "pr_auc": 0.8448980929807001
+    },
+    "logistic_day_dt": {
+      "auc": 0.8674197986068646,
+      "auc_ci": [
+        0.8639840509564775,
+        0.8708997959437856
+      ],
+      "pr_auc": 0.8448980929807001
+    },
+    "logistic_both": {
+      "auc": 0.8672465482897862,
+      "auc_ci": [
+        0.8637670369331042,
+        0.8706512657181884
+      ],
+      "pr_auc": 0.8448988339796659
+    },
+    "success_rate": {
+      "auc": 0.8631423812965875,
+      "auc_ci": [
+        0.85975435876481,
+        0.866918873853216
+      ],
+      "pr_auc": 0.8367853725528548
+    },
+    "hlr_step": {
+      "auc": 0.8036043693514849,
+      "auc_ci": [
+        0.7989011082143308,
+        0.8078659208416139
+      ],
+      "pr_auc": 0.791970953667505
+    },
+    "paired_logistic_day_minus_success": {
+      "mean_delta_auc": 0.004236158369831355,
+      "ci": [
+        0.0031497710564810074,
+        0.005179694586297736
+      ],
+      "forgetting_helps": false
+    },
+    "n_train": 163818,
+    "n_test": 36182,
+    "winner": "logistic_step_dt"
+  },
+  "evaluate_on_test_json": {
+    "mean": {
+      "auc_point": 0.5,
+      "pr_auc_point": 0.4457284743899807,
+      "auc_sequence_bootstrap": {
+        "boot_mean": 0.5,
+        "ci": [
+          0.5,
+          0.5
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "pr_auc_sequence_bootstrap": {
+        "boot_mean": 0.44580645358757254,
+        "ci": [
+          0.4379327848150957,
+          0.45291066651153095
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "auc": 0.5,
+      "auc_ci": [
+        0.5,
+        0.5
+      ],
+      "pr_auc": 0.4457284743899807,
+      "pr_auc_ci": [
+        0.4379327848150957,
+        0.45291066651153095
+      ]
+    },
+    "logistic_step_dt": {
+      "auc_point": 0.8636560531074262,
+      "pr_auc_point": 0.8256696675749655,
+      "auc_sequence_bootstrap": {
+        "boot_mean": 0.8636114189983745,
+        "ci": [
+          0.8605351117458301,
+          0.8671033094430001
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "pr_auc_sequence_bootstrap": {
+        "boot_mean": 0.8257149601950424,
+        "ci": [
+          0.8203095979829501,
+          0.8308290421177602
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "auc": 0.8636560531074262,
+      "auc_ci": [
+        0.8605351117458301,
+        0.8671033094430001
+      ],
+      "pr_auc": 0.8256696675749655,
+      "pr_auc_ci": [
+        0.8203095979829501,
+        0.8308290421177602
+      ]
+    },
+    "logistic_day_dt": {
+      "auc_point": 0.8636560531074262,
+      "pr_auc_point": 0.8256696675749655,
+      "auc_sequence_bootstrap": {
+        "boot_mean": 0.8636114189983745,
+        "ci": [
+          0.8605351117458301,
+          0.8671033094430001
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "pr_auc_sequence_bootstrap": {
+        "boot_mean": 0.8257149601950424,
+        "ci": [
+          0.8203095979829501,
+          0.8308290421177602
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "auc": 0.8636560531074262,
+      "auc_ci": [
+        0.8605351117458301,
+        0.8671033094430001
+      ],
+      "pr_auc": 0.8256696675749655,
+      "pr_auc_ci": [
+        0.8203095979829501,
+        0.8308290421177602
+      ]
+    },
+    "logistic_both": {
+      "auc_point": 0.8636560535482461,
+      "pr_auc_point": 0.8256695646294643,
+      "auc_sequence_bootstrap": {
+        "boot_mean": 0.8636114168957458,
+        "ci": [
+          0.8605353314701537,
+          0.8671033936555353
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "pr_auc_sequence_bootstrap": {
+        "boot_mean": 0.8257148589483798,
+        "ci": [
+          0.8203096743713056,
+          0.8308291866872427
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "auc": 0.8636560535482461,
+      "auc_ci": [
+        0.8605353314701537,
+        0.8671033936555353
+      ],
+      "pr_auc": 0.8256695646294643,
+      "pr_auc_ci": [
+        0.8203096743713056,
+        0.8308291866872427
+      ]
+    },
+    "success_rate": {
+      "auc_point": 0.8583443055473905,
+      "pr_auc_point": 0.814824434342293,
+      "auc_sequence_bootstrap": {
+        "boot_mean": 0.8583011407477749,
+        "ci": [
+          0.8551824270346438,
+          0.8617172083402348
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "pr_auc_sequence_bootstrap": {
+        "boot_mean": 0.8148759319900885,
+        "ci": [
+          0.8097087908407034,
+          0.8197003726962434
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "auc": 0.8583443055473905,
+      "auc_ci": [
+        0.8551824270346438,
+        0.8617172083402348
+      ],
+      "pr_auc": 0.814824434342293,
+      "pr_auc_ci": [
+        0.8097087908407034,
+        0.8197003726962434
+      ]
+    },
+    "hlr_step": {
+      "auc_point": 0.788861032985443,
+      "pr_auc_point": 0.7624894587467217,
+      "auc_sequence_bootstrap": {
+        "boot_mean": 0.7887586101018741,
+        "ci": [
+          0.7838891504777905,
+          0.7936310052616983
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "pr_auc_sequence_bootstrap": {
+        "boot_mean": 0.7626318628556849,
+        "ci": [
+          0.7563026931270983,
+          0.7686963982229285
+        ],
+        "n_boot_kept": 400,
+        "n_boot_requested": 400,
+        "unit": "sequence",
+        "statistic": "mean_of_resampled_full_sequences"
+      },
+      "auc": 0.788861032985443,
+      "auc_ci": [
+        0.7838891504777905,
+        0.7936310052616983
+      ],
+      "pr_auc": 0.7624894587467217,
+      "pr_auc_ci": [
+        0.7563026931270983,
+        0.7686963982229285
+      ]
+    },
+    "paired_logistic_step_minus_success": {
+      "mean_delta_auc": 0.005310037873545182,
+      "ci": [
+        0.004625538135187604,
+        0.005879936208839394
+      ],
+      "bootstrap": "sequence"
+    },
+    "n_train": 163818,
+    "n_test": 449453,
+    "winner": "logistic_both",
+    "confusion_matrix_winner": {
+      "threshold": 0.5,
+      "TN": 209733,
+      "FP": 39386,
+      "FN": 56994,
+      "TP": 143340,
+      "n": 449453,
+      "predicted_positive_rate": 0.4065519642765762,
+      "accuracy": 0.7855615603856243
+    },
+    "confusion_matrix_logistic_step_dt": {
+      "threshold": 0.5,
+      "TN": 209734,
+      "FP": 39385,
+      "FN": 56994,
+      "TP": 143340,
+      "n": 449453,
+      "predicted_positive_rate": 0.4065497393498319,
+      "accuracy": 0.7855637853123686
+    }
+  },
+  "note": "Headline memory numbers must come from evaluate_on_test_json or learner-timed split.",
+  "timed_learner_split": {
+    "mean": {
+      "auc": 0.5,
+      "auc_ci": [
+        0.5,
+        0.5
+      ],
+      "pr_auc": 0.8546625
+    },
+    "logistic_step_dt": {
+      "auc": 0.6909566412230896,
+      "auc_ci": [
+        0.6848752946273733,
+        0.6968937219165189
+      ],
+      "pr_auc": 0.906367572590534
+    },
+    "logistic_day_dt": {
+      "auc": 0.6943145577724468,
+      "auc_ci": [
+        0.688697333590245,
+        0.6994635914919733
+      ],
+      "pr_auc": 0.9119663130932727
+    },
+    "logistic_both": {
+      "auc": 0.6933192110218749,
+      "auc_ci": [
+        0.6879002825611091,
+        0.6989104952740166
+      ],
+      "pr_auc": 0.9084381325042491
+    },
+    "success_rate": {
+      "auc": 0.6971405207561843,
+      "auc_ci": [
+        0.6914665931123471,
+        0.7031733761135637
+      ],
+      "pr_auc": 0.9109184767205254
+    },
+    "hlr_step": {
+      "auc": 0.6914958040633535,
+      "auc_ci": [
+        0.6859008411000339,
+        0.6969754809263471
+      ],
+      "pr_auc": 0.9204705978898039
+    },
+    "paired_logistic_day_minus_success": {
+      "mean_delta_auc": -0.002926333449883386,
+      "ci": [
+        -0.004701844108090492,
+        -0.0011640323298165902
+      ],
+      "forgetting_helps": false
+    },
+    "n_train": 200000,
+    "n_test": 80000,
+    "winner": "success_rate"
+  },
+  "timed_n_train_users": 6400,
+  "timed_n_test_users": 1600,
+  "timed_rerun_note": "Rerun after timed diagnosis; day unit=microseconds, gap bins fixed separately.",
+  "timed_day_variable_ok": true,
+  "evaluate_on_test_json_first_80k_file_order_superseded": {
+    "mean": {
+      "auc": 0.5,
+      "auc_ci": [
+        0.5,
+        0.5
+      ],
+      "pr_auc": 0.3275625
+    },
+    "logistic_step_dt": {
+      "auc": 0.876890752127549,
+      "auc_ci": [
+        0.8741502948699901,
+        0.8792826133807636
+      ],
+      "pr_auc": 0.7823635606929324
+    },
+    "logistic_day_dt": {
+      "auc": 0.8768603755554657,
+      "auc_ci": [
+        0.8742671788881171,
+        0.8794155735982614
+      ],
+      "pr_auc": 0.7823635606929324
+    },
+    "logistic_both": {
+      "auc": 0.8767818841711965,
+      "auc_ci": [
+        0.8739183796389859,
+        0.879415425864293
+      ],
+      "pr_auc": 0.7823623763933069
+    },
+    "success_rate": {
+      "auc": 0.8629349905312454,
+      "auc_ci": [
+        0.8602260751159063,
+        0.8655333869746762
+      ],
+      "pr_auc": 0.7593216404563632
+    },
+    "hlr_step": {
+      "auc": 0.7667136945662217,
+      "auc_ci": [
+        0.7632675825192793,
+        0.7703116771767237
+      ],
+      "pr_auc": 0.6767565358396441
+    },
+    "paired_logistic_day_minus_success": {
+      "mean_delta_auc": 0.013906082872175665,
+      "ci": [
+        0.012451412992735708,
+        0.015391598438779144
+      ],
+      "forgetting_helps": true
+    },
+    "n_train": 163818,
+    "n_test": 80000,
+    "winner": "logistic_step_dt"
+  },
+  "test_eval_protocol": {
+    "source": "test.json",
+    "rows": "ALL memory (revisit) rows; no 80k cap",
+    "n_rows": 449453,
+    "n_sequences_with_at_least_one_revisit": 6288,
+    "n_test_json_sequences": 6290,
+    "correct_rate": 0.4457284743899807,
+    "bootstrap": "sequence-level: resample sequences with replacement; pool their rows",
+    "n_boot": 400,
+    "registered_sample": null
+  },
+  "task": "correctness_on_revisit_attempts_only",
+  "task_definition": "A memory row is emitted only when a concept is attempted again in the same sequence. The label is whether that revisit attempt is correct (0/1). The first attempt on a concept does not create a row.",
+  "headline_0_877_used_80k_file_order_slice": true,
+  "headline_0_877_superseded": true,
+  "fulltest_path": "outputs_junyi/phases/phase3_memory_fulltest.json"
+}

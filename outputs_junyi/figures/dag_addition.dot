@@ -1,0 +1,57 @@
+digraph G {
+  rankdir=TB;
+  bgcolor="white";
+  pad="0.4";
+  nodesep="0.5";
+  ranksep="0.7";
+  splines=true;
+  overlap=false;
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10,
+        color="#0f766e", fillcolor="#d0f0eb", fontcolor="#0a1628",
+        margin="0.14,0.10"];
+  edge [color="#475569", arrowsize=0.8, penwidth=1.35];
+  n521 [label="arithmetic word\nproblems 1"];
+  n152 [label="recognize num less\nthan 10000"];
+  n31 [label="estimation three-\ndigit add sub"];
+  n289 [label="decimals on the\nnumber line 2 new", fillcolor="#fef3c7", color="#92400e"];
+  n421 [label="multiplication 0.5"];
+  n678 [label="addition 2", fillcolor="#0d9488", fontcolor="white", color="#115e59", penwidth=2.4, fontsize=11];
+  n296 [label="count numbers", fillcolor="#e0f2fe", color="#1e4d7b"];
+  n435 [label="number line", fillcolor="#e0f2fe", color="#1e4d7b"];
+  n439 [label="multiplication 1", fillcolor="#fef3c7", color="#92400e"];
+  n58 [label="subtraction within\n20", fillcolor="#e0f2fe", color="#1e4d7b"];
+  n704 [label="time word problem\n1", fillcolor="#fef3c7", color="#92400e"];
+  n580 [label="adding decimals", fillcolor="#fef3c7", color="#92400e"];
+  n475 [label="decimals on the\nnumber line 1"];
+  n93 [label="addition 4"];
+  n349 [label="meaning of equal\nsign", fillcolor="#e0f2fe", color="#1e4d7b"];
+  n225 [label="addition 1", fillcolor="#e0f2fe", color="#1e4d7b"];
+  n483 [label="count number to\n100"];
+  n491 [label="adding and\nsubtracting within\n20"];
+  n376 [label="number line 4", fillcolor="#e0f2fe", color="#1e4d7b"];
+  n380 [label="count number to 50", fillcolor="#e0f2fe", color="#1e4d7b"];
+  n521 -> n704;
+  n152 -> n580;
+  n31 -> n93;
+  n421 -> n439;
+  n678 -> n31;
+  n678 -> n93;
+  n678 -> n421;
+  n678 -> n475;
+  n678 -> n521;
+  n296 -> n483;
+  n435 -> n678;
+  n58 -> n491;
+  n475 -> n289;
+  n93 -> n152;
+  n93 -> n580;
+  n349 -> n483;
+  n225 -> n678;
+  n483 -> n678;
+  n491 -> n678;
+  n376 -> n678;
+  n380 -> n483;
+  labelloc="t";
+  label="Junyi expert DAG — early arithmetic neighbourhood\narrow = learn source before target  ·  teal = focus  ·  blue = roots  ·  amber = leaves";
+  fontsize=12; fontname="Helvetica-Bold"; fontcolor="#0a1628";
+}

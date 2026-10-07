@@ -1,0 +1,145 @@
+{
+  "eval": {
+    "n_sequences": 6290,
+    "cuts": 5,
+    "n_boot": 1000,
+    "seed": 0,
+    "full_test": true,
+    "status": "EXPLORATORY_pre_prereg"
+  },
+  "thresholds": {
+    "r5": 0.01,
+    "auc": 0.005
+  },
+  "paired": {
+    "ragr_minus_recent5_r5_all": {
+      "mean": 0.008648648648648647,
+      "ci": [
+        0.007503179650238472,
+        0.009729729729729727
+      ],
+      "n_sequences": 6290,
+      "ci_excludes_zero": true,
+      "statistic": "mean_of_per_sequence_paired_deltas",
+      "n_boot": 1000
+    },
+    "ragr_minus_ragr_no_dag_r5_all": {
+      "mean": 0.00019077901430842608,
+      "ci": [
+        -0.0005405405405405402,
+        0.0009538950715421304
+      ],
+      "n_sequences": 6290,
+      "ci_excludes_zero": false,
+      "statistic": "mean_of_per_sequence_paired_deltas",
+      "n_boot": 1000
+    },
+    "ragr_minus_markov_r5_all": {
+      "mean": 0.03303656597774245,
+      "ci": [
+        0.02963434022257552,
+        0.03675834658187599
+      ],
+      "n_sequences": 6290,
+      "ci_excludes_zero": true,
+      "statistic": "mean_of_per_sequence_paired_deltas",
+      "n_boot": 1000
+    },
+    "ragr_minus_recent5_r5_advance": {
+      "mean": 0.08088619159488385,
+      "ci": [
+        0.07151934873401201,
+        0.0908721613155834
+      ],
+      "n_sequences": 2554,
+      "ci_excludes_zero": true,
+      "statistic": "mean_of_per_sequence_paired_deltas",
+      "n_boot": 1000,
+      "note": "Recent-5 on advance is near-zero by construction (label not in history); prefer RAGR\u2212Markov and RAGR\u2212RAGR-no-DAG for advance validity claims."
+    },
+    "ragr_minus_ragr_no_dag_r5_advance": {
+      "mean": 0.001435656486557035,
+      "ci": [
+        -0.005775254502740799,
+        0.009364395719133386
+      ],
+      "n_sequences": 2554,
+      "ci_excludes_zero": false,
+      "statistic": "mean_of_per_sequence_paired_deltas",
+      "n_boot": 1000
+    },
+    "ragr_minus_markov_r5_advance": {
+      "mean": -0.1602845210127904,
+      "ci": [
+        -0.17506542025580787,
+        -0.145679163403811
+      ],
+      "n_sequences": 2554,
+      "ci_excludes_zero": true,
+      "statistic": "mean_of_per_sequence_paired_deltas",
+      "n_boot": 1000
+    }
+  },
+  "verdicts": {
+    "ragr_minus_recent5_r5_all": {
+      "delta_mean": 0.008648648648648647,
+      "ci": [
+        0.007503179650238472,
+        0.009729729729729727
+      ],
+      "call": "tie",
+      "A": "ragr",
+      "B": "recent5"
+    },
+    "ragr_minus_ragr_no_dag_r5_all": {
+      "delta_mean": 0.00019077901430842608,
+      "ci": [
+        -0.0005405405405405402,
+        0.0009538950715421304
+      ],
+      "call": "tie",
+      "A": "ragr",
+      "B": "ragr_no_dag"
+    },
+    "ragr_minus_markov_r5_all": {
+      "delta_mean": 0.03303656597774245,
+      "ci": [
+        0.02963434022257552,
+        0.03675834658187599
+      ],
+      "call": "A",
+      "A": "ragr",
+      "B": "markov"
+    },
+    "ragr_minus_recent5_r5_advance": {
+      "delta_mean": 0.08088619159488385,
+      "ci": [
+        0.07151934873401201,
+        0.0908721613155834
+      ],
+      "call": "A",
+      "A": "ragr",
+      "B": "recent5"
+    },
+    "ragr_minus_ragr_no_dag_r5_advance": {
+      "delta_mean": 0.001435656486557035,
+      "ci": [
+        -0.005775254502740799,
+        0.009364395719133386
+      ],
+      "call": "tie",
+      "A": "ragr",
+      "B": "ragr_no_dag"
+    },
+    "ragr_minus_markov_r5_advance": {
+      "delta_mean": -0.1602845210127904,
+      "ci": [
+        -0.17506542025580787,
+        -0.145679163403811
+      ],
+      "call": "B",
+      "A": "ragr",
+      "B": "markov"
+    }
+  }
+}

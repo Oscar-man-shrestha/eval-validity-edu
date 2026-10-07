@@ -1,0 +1,184 @@
+{
+  "schema": "dual_clustering_v1",
+  "target_n_clusters_freeze": 120,
+  "clustering_seed": 20261021,
+  "actual_used_cluster_counts_freeze_primary": {
+    "junyi_timed": 115,
+    "assistments": 106,
+    "xes3g5m": 120,
+    "note": "These are n unique cluster ids remaining after mapping sequences and dense-remapping empty clusters away. Freeze JSON reported 115 / 106 / 120."
+  },
+  "xes_question_text": {
+    "available_locally": false,
+    "path": "data/xes3g5m/XES3G5M/question_level",
+    "n_csv_inspected": 2,
+    "columns_by_file": {
+      "test_quelevel.csv": [
+        "fold",
+        "uid",
+        "questions",
+        "concepts",
+        "responses",
+        "timestamps"
+      ],
+      "train_valid_sequences_quelevel.csv": [
+        "fold",
+        "uid",
+        "questions",
+        "concepts",
+        "responses",
+        "timestamps",
+        "selectmasks"
+      ]
+    },
+    "textish_columns_found": [],
+    "reason": "XES3G5M question_level CSVs expose question ids / KC tags only. No question stem text for MiniLM. Text clustering is N/A."
+  },
+  "datasets": {
+    "junyi_timed": {
+      "n_items_native": 835,
+      "n_sequences": 6000,
+      "text_available": true,
+      "text": {
+        "method": "text_minilm_kmeans",
+        "target_n_clusters": 120,
+        "n_clusters_nonempty_in_labels": 120,
+        "n_clusters_used_after_dense_remap": 115,
+        "map_path": "outputs_junyi/phases/cluster_maps/junyi_timed_text_item_to_cluster.json"
+      },
+      "cooccurrence": {
+        "method": "train_only_cooccurrence_random_projection_kmeans",
+        "target_n_clusters": 120,
+        "n_clusters": 120,
+        "inertia": 454.3697204589844,
+        "uses_eval_sequences": false,
+        "uses_only_train_split": true,
+        "n_clusters_nonempty_in_labels": 120,
+        "n_clusters_used_after_dense_remap": 116,
+        "map_path": "outputs_junyi/phases/cluster_maps/junyi_timed_cooc_item_to_cluster.json"
+      },
+      "method_agreement": {
+        "n_compared": 835,
+        "ari": 0.03846579565804325,
+        "nmi": 0.597861492274276
+      },
+      "freeze_primary_method": "text_minilm_kmeans",
+      "freeze_used_n_clusters": 115
+    },
+    "assistments": {
+      "n_items_native": 150,
+      "n_sequences": 2920,
+      "text_available": true,
+      "text": {
+        "method": "text_skill_name_minilm_kmeans",
+        "n_atomic_named": 111,
+        "n_composite_items": 150,
+        "target_n_clusters": 120,
+        "n_clusters_nonempty_in_labels": 107,
+        "n_clusters_used_after_dense_remap": 106,
+        "near_native": true,
+        "near_native_reason": "n_items=150; target k=120 is close to the catalog size, so cluster unit is near-native.",
+        "map_path": "outputs_junyi/phases/cluster_maps/assistments_text_item_to_cluster.json"
+      },
+      "cooccurrence": {
+        "method": "train_only_cooccurrence_random_projection_kmeans",
+        "target_n_clusters": 120,
+        "n_clusters": 120,
+        "inertia": 11.566368103027344,
+        "uses_eval_sequences": false,
+        "uses_only_train_split": true,
+        "n_clusters_nonempty_in_labels": 105,
+        "n_clusters_used_after_dense_remap": 103,
+        "map_path": "outputs_junyi/phases/cluster_maps/assistments_cooc_item_to_cluster.json"
+      },
+      "method_agreement": {
+        "n_compared": 150,
+        "ari": 0.07299971095242978,
+        "nmi": 0.9012756881264657
+      },
+      "freeze_primary_method": "text_skill_name_minilm_kmeans",
+      "freeze_used_n_clusters": 106
+    },
+    "xes3g5m": {
+      "n_items_native": 7439,
+      "n_sequences": 18066,
+      "text_available": false,
+      "text": {
+        "method": null,
+        "status": "N/A",
+        "reason": "XES3G5M question_level CSVs expose question ids / KC tags only. No question stem text for MiniLM. Text clustering is N/A."
+      },
+      "cooccurrence": {
+        "method": "train_only_cooccurrence_random_projection_kmeans",
+        "xes_has_question_text": false,
+        "n_clusters_nonempty_in_labels": 120,
+        "n_clusters_used_after_dense_remap": 120,
+        "map_path": "outputs_junyi/phases/cluster_maps/xes3g5m_cooc_item_to_cluster.json"
+      },
+      "method_agreement": {
+        "status": "N/A",
+        "reason": "no second (text) method; cannot test method agreement"
+      },
+      "freeze_primary_method": "train_only_cooccurrence_random_projection_kmeans",
+      "freeze_used_n_clusters": 120
+    }
+  },
+  "feasible_matched_count_table": {
+    "40": {
+      "junyi_timed": {
+        "feasible": true,
+        "mark": "ok",
+        "note": "k=40 << n_items=835"
+      },
+      "assistments": {
+        "feasible": true,
+        "mark": "ok",
+        "note": "k=40 << n_items=150"
+      },
+      "xes3g5m": {
+        "feasible": true,
+        "mark": "ok",
+        "note": "k=40 << n_items=7439"
+      }
+    },
+    "120": {
+      "junyi_timed": {
+        "feasible": true,
+        "mark": "ok",
+        "note": "k=120 << n_items=835"
+      },
+      "assistments": {
+        "feasible": true,
+        "mark": "ok_near_native",
+        "note": "k=120 is usable but near-native: only 150 composite tokens (used clusters at k=120 were 106)."
+      },
+      "xes3g5m": {
+        "feasible": true,
+        "mark": "ok",
+        "note": "k=120 << n_items=7439"
+      }
+    },
+    "800": {
+      "junyi_timed": {
+        "feasible": true,
+        "mark": "ok_near_catalog",
+        "note": "k=800 of n_items=835 is feasible but close to the native catalog"
+      },
+      "assistments": {
+        "feasible": false,
+        "mark": "N/A",
+        "note": "k=800 >= n_items=150"
+      },
+      "xes3g5m": {
+        "feasible": true,
+        "mark": "ok",
+        "note": "k=800 << n_items=7439"
+      }
+    }
+  },
+  "feasible_matched_count_summary": "~40: all three datasets. ~120: all three, but ASSISTments is near-native (150 items / 106 used). ~800: Junyi and XES only; Junyi k=800 is close to its 835-item catalog; ASSISTments = N/A.",
+  "contrast_counts_only_if_both_methods_agree": {
+    "rule": "A clustering-method contrast (text vs train-only co-occurrence) counts only if both methods are defined on that dataset and they agree on the confirmatory claim (same sign / same ranking conclusion). XES has no text method \u2192 method-agreement contrasts are N/A.",
+    "not_yet_in_preregistration": true
+  }
+}

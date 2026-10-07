@@ -1,0 +1,8 @@
+{
+  "phase": 5,
+  "mode_review_rate_train": 0.9216666666666666,
+  "mode_train_acc": 0.9218333333333333,
+  "review_head_n": 15563,
+  "advance_head_n": 1880,
+  "idea": "P(review) gates a memory/ZPD head; 1-P(review) gates a DAG/similarity head"
+}

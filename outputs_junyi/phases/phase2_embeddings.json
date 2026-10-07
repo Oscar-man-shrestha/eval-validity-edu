@@ -1,0 +1,14 @@
+{
+  "phase": 2,
+  "model": "all-MiniLM-L6-v2",
+  "pair_auc_vs_random": 0.9043941142768723,
+  "pair_auc_vs_same_topic": 0.4642241793903505,
+  "n_same_topic_controls": 978,
+  "linked_mean_cosine": 0.5456448387286049,
+  "random_mean_cosine": 0.1667883743056818,
+  "same_topic_mean_cosine": 0.5774038943265906,
+  "lexical_jaccard_auc_vs_random": 0.7462717619949732,
+  "lexical_linked_mean": 0.20088787036639796,
+  "lexical_random_mean": 0.01712037110810117,
+  "claim": "embeddings beat random and lexical Jaccard; same-topic control reported"
+}

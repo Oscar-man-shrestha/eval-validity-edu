@@ -1,0 +1,10 @@
+Prerequisite DAG
+nodes: 287
+edges: 725
+nx.is_directed_acyclic_graph(G) = True
+longest path in edges: 26
+layout rows: 58  columns: 6
+weak components: 8 sizes=[272, 3, 2, 2, 2, 2, 2, 2]
+PDF pages show bands of these rows. An arrow points from the earlier concept to the later one.
+pdf: prerequisite_dag.pdf
+png: prerequisite_dag.png

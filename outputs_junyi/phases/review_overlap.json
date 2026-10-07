@@ -1,0 +1,101 @@
+{
+  "learner_ids": {
+    "status": "not_testable",
+    "reason": "ktbd-junyi train.json/test.json lines have no learner id field"
+  },
+  "exact_duplicate_sequences": {
+    "n_overlap_hashes": 23,
+    "n_test_rows_in_overlap": 28,
+    "n_train_rows_in_overlap": 36,
+    "lengths_of_test_duplicate_rows": [
+      15,
+      16,
+      14,
+      16,
+      15,
+      15,
+      15,
+      24,
+      12,
+      12,
+      16,
+      12,
+      12,
+      15,
+      17,
+      12,
+      16,
+      14,
+      26,
+      12,
+      12,
+      15,
+      13,
+      15,
+      29,
+      13,
+      12,
+      15
+    ],
+    "length_summary": {
+      "min": 12,
+      "max": 29,
+      "mean": 15.357142857142858,
+      "median": 15.0,
+      "counter": {
+        "15": 8,
+        "16": 4,
+        "14": 2,
+        "24": 1,
+        "12": 8,
+        "17": 1,
+        "26": 1,
+        "13": 2,
+        "29": 1
+      }
+    }
+  },
+  "prefix12_overlap_train_test": {
+    "n_overlap_prefixes": 471,
+    "frac_test_prefixes_in_train": 0.07984404136294287
+  },
+  "train_train_prefix12_baseline": {
+    "n_train_sequences": 27434,
+    "n_unique_prefixes": 23674,
+    "n_prefixes_with_gt1_seq": 1125,
+    "n_sequences_in_colliding_prefixes": 4885,
+    "frac_sequences_in_colliding_prefixes": 0.17806371655609826,
+    "frac_prefixes_that_collide": 0.047520486609782885,
+    "note": "empirical train-train first-12 collision baseline (not cross-split)"
+  },
+  "test_dup_indices": [
+    577,
+    1457,
+    1507,
+    1532,
+    1589,
+    1622,
+    1729,
+    2417,
+    2666,
+    2892,
+    3590,
+    3909,
+    3922,
+    4502,
+    4511,
+    4579,
+    4940,
+    5158,
+    5159,
+    5253,
+    5265,
+    5392,
+    5630,
+    5655,
+    5775,
+    5786,
+    5963,
+    6144
+  ]
+}

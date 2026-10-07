@@ -1,0 +1,833 @@
+{
+  "seed": 0,
+  "eval_cuts": 5,
+  "full_test": true,
+  "datasets": {
+    "junyi_timed": {
+      "rankings_by_slice_r5": {
+        "all": [
+          {
+            "method": "markov_order1",
+            "r5": 0.7997037037037037,
+            "n_sequences": 900
+          },
+          {
+            "method": "gru4rec_style",
+            "r5": 0.7969259259259259,
+            "n_sequences": 900
+          },
+          {
+            "method": "gru_probe",
+            "r5": 0.7903518518518517,
+            "n_sequences": 900
+          },
+          {
+            "method": "attn_probe",
+            "r5": 0.7072592592592593,
+            "n_sequences": 900
+          },
+          {
+            "method": "recency",
+            "r5": 0.7055370370370371,
+            "n_sequences": 900
+          },
+          {
+            "method": "popularity",
+            "r5": 0.19061111111111112,
+            "n_sequences": 900
+          }
+        ],
+        "revisit": [
+          {
+            "method": "recency",
+            "r5": 0.7446524064171123,
+            "n_sequences": 374
+          },
+          {
+            "method": "gru4rec_style",
+            "r5": 0.5987076648841354,
+            "n_sequences": 374
+          },
+          {
+            "method": "gru_probe",
+            "r5": 0.5819964349376114,
+            "n_sequences": 374
+          },
+          {
+            "method": "markov_order1",
+            "r5": 0.5799910873440286,
+            "n_sequences": 374
+          },
+          {
+            "method": "attn_probe",
+            "r5": 0.4135472370766488,
+            "n_sequences": 374
+          },
+          {
+            "method": "popularity",
+            "r5": 0.25824420677361853,
+            "n_sequences": 374
+          }
+        ],
+        "advance": [
+          {
+            "method": "markov_order1",
+            "r5": 0.41712164750957853,
+            "n_sequences": 696
+          },
+          {
+            "method": "gru4rec_style",
+            "r5": 0.4073754789272031,
+            "n_sequences": 696
+          },
+          {
+            "method": "gru_probe",
+            "r5": 0.39664750957854406,
+            "n_sequences": 696
+          },
+          {
+            "method": "attn_probe",
+            "r5": 0.25850095785440613,
+            "n_sequences": 696
+          },
+          {
+            "method": "popularity",
+            "r5": 0.1568486590038314,
+            "n_sequences": 696
+          },
+          {
+            "method": "recency",
+            "r5": null,
+            "r5_display": "N/A",
+            "n_sequences": 696,
+            "note": "recency undefined / not applicable on advance (next never in history)"
+          }
+        ],
+        "nonrepeat": [
+          {
+            "method": "gru4rec_style",
+            "r5": 0.4569319640564827,
+            "n_sequences": 779
+          },
+          {
+            "method": "markov_order1",
+            "r5": 0.4556910569105691,
+            "n_sequences": 779
+          },
+          {
+            "method": "gru_probe",
+            "r5": 0.44206247325631154,
+            "n_sequences": 779
+          },
+          {
+            "method": "attn_probe",
+            "r5": 0.3029738981600342,
+            "n_sequences": 779
+          },
+          {
+            "method": "recency",
+            "r5": 0.2071673085151904,
+            "n_sequences": 779
+          },
+          {
+            "method": "popularity",
+            "r5": 0.18378262729995723,
+            "n_sequences": 779
+          }
+        ],
+        "advance_ordering_excluding_recency": [
+          "markov_order1",
+          "gru4rec_style",
+          "gru_probe",
+          "attn_probe",
+          "popularity"
+        ]
+      },
+      "rank_reversals": [],
+      "methods": [
+        "popularity",
+        "recency",
+        "markov_order1",
+        "gru_probe",
+        "gru4rec_style",
+        "attn_probe"
+      ],
+      "recbole_used": false,
+      "gru4rec_style_note": "Local GRUProbe emb=128 hidden=128 epochs=5 \u2014 published-style robustness check; RecBole not installed in this environment (see DEVIATIONS).",
+      "split": {
+        "unit": "exercise",
+        "n_train": 5100,
+        "n_test": 900,
+        "n_eval_sequences": 900
+      },
+      "kendall_tau_by_slice": {
+        "revisit": {
+          "kendall_tau_vs_all": 0.2,
+          "all_order": [
+            "markov_order1",
+            "gru4rec_style",
+            "gru_probe",
+            "attn_probe",
+            "recency",
+            "popularity"
+          ],
+          "slice_order": [
+            "recency",
+            "gru4rec_style",
+            "gru_probe",
+            "markov_order1",
+            "attn_probe",
+            "popularity"
+          ]
+        },
+        "advance": {
+          "kendall_tau_vs_all": 1.0,
+          "all_order": [
+            "markov_order1",
+            "gru4rec_style",
+            "gru_probe",
+            "attn_probe",
+            "popularity"
+          ],
+          "slice_order": [
+            "markov_order1",
+            "gru4rec_style",
+            "gru_probe",
+            "attn_probe",
+            "popularity"
+          ]
+        },
+        "nonrepeat": {
+          "kendall_tau_vs_all": 0.8666666666666667,
+          "all_order": [
+            "markov_order1",
+            "gru4rec_style",
+            "gru_probe",
+            "attn_probe",
+            "recency",
+            "popularity"
+          ],
+          "slice_order": [
+            "gru4rec_style",
+            "markov_order1",
+            "gru_probe",
+            "attn_probe",
+            "recency",
+            "popularity"
+          ]
+        }
+      },
+      "h_rev_diagnostics": {
+        "advance": {
+          "all_required_excl_recency": [
+            "markov_order1",
+            "gru_probe",
+            "popularity"
+          ],
+          "advance_required_excl_recency": [
+            "markov_order1",
+            "gru_probe",
+            "popularity"
+          ],
+          "ordering_changed": false,
+          "kendall_tau": 1.0
+        },
+        "flip_probability_note": "Per-sequence bootstrap flip probabilities require stored per-seq R@5; not available from the original paper_rank_reversal_full aggregates. Confirmatory replication will store per-seq scores and report P(order flip).",
+        "flip_probability_by_pair": null,
+        "reversals_flagged_under_h_rev_rule": []
+      },
+      "rank_reversals_legacy_point_estimate": [
+        {
+          "slice": "revisit",
+          "all_order": [
+            "markov_order1",
+            "gru4rec_style",
+            "gru_probe",
+            "attn_probe",
+            "recency",
+            "popularity"
+          ],
+          "slice_order": [
+            "recency",
+            "gru4rec_style",
+            "gru_probe",
+            "markov_order1",
+            "attn_probe",
+            "popularity"
+          ]
+        },
+        {
+          "slice": "nonrepeat",
+          "all_order": [
+            "markov_order1",
+            "gru4rec_style",
+            "gru_probe",
+            "attn_probe",
+            "recency",
+            "popularity"
+          ],
+          "slice_order": [
+            "gru4rec_style",
+            "markov_order1",
+            "gru_probe",
+            "attn_probe",
+            "recency",
+            "popularity"
+          ]
+        }
+      ],
+      "status": "EXPLORATORY"
+    },
+    "assistments": {
+      "rankings_by_slice_r5": {
+        "all": [
+          {
+            "method": "gru4rec_style",
+            "r5": 0.9334092634776007,
+            "n_sequences": 439
+          },
+          {
+            "method": "gru_probe",
+            "r5": 0.9176157934700077,
+            "n_sequences": 439
+          },
+          {
+            "method": "markov_order1",
+            "r5": 0.886712224753227,
+            "n_sequences": 439
+          },
+          {
+            "method": "attn_probe",
+            "r5": 0.8825740318906605,
+            "n_sequences": 439
+          },
+          {
+            "method": "recency",
+            "r5": 0.8568337129840546,
+            "n_sequences": 439
+          },
+          {
+            "method": "popularity",
+            "r5": 0.4283599088838269,
+            "n_sequences": 439
+          }
+        ],
+        "revisit": [
+          {
+            "method": "recency",
+            "r5": 0.8858447488584474,
+            "n_sequences": 219
+          },
+          {
+            "method": "gru4rec_style",
+            "r5": 0.8637747336377474,
+            "n_sequences": 219
+          },
+          {
+            "method": "gru_probe",
+            "r5": 0.8451293759512937,
+            "n_sequences": 219
+          },
+          {
+            "method": "attn_probe",
+            "r5": 0.7484779299847794,
+            "n_sequences": 219
+          },
+          {
+            "method": "markov_order1",
+            "r5": 0.6689497716894978,
+            "n_sequences": 219
+          },
+          {
+            "method": "popularity",
+            "r5": 0.3603500761035007,
+            "n_sequences": 219
+          }
+        ],
+        "advance": [
+          {
+            "method": "gru4rec_style",
+            "r5": 0.6536850921273031,
+            "n_sequences": 199
+          },
+          {
+            "method": "gru_probe",
+            "r5": 0.5519262981574539,
+            "n_sequences": 199
+          },
+          {
+            "method": "markov_order1",
+            "r5": 0.5100502512562815,
+            "n_sequences": 199
+          },
+          {
+            "method": "attn_probe",
+            "r5": 0.43048576214405354,
+            "n_sequences": 199
+          },
+          {
+            "method": "popularity",
+            "r5": 0.2135678391959799,
+            "n_sequences": 199
+          },
+          {
+            "method": "recency",
+            "r5": null,
+            "r5_display": "N/A",
+            "n_sequences": 199,
+            "note": "recency undefined / not applicable on advance (next never in history)"
+          }
+        ],
+        "nonrepeat": [
+          {
+            "method": "gru4rec_style",
+            "r5": 0.7809822361546499,
+            "n_sequences": 319
+          },
+          {
+            "method": "gru_probe",
+            "r5": 0.7245559038662487,
+            "n_sequences": 319
+          },
+          {
+            "method": "attn_probe",
+            "r5": 0.614576802507837,
+            "n_sequences": 319
+          },
+          {
+            "method": "markov_order1",
+            "r5": 0.6077847439916405,
+            "n_sequences": 319
+          },
+          {
+            "method": "recency",
+            "r5": 0.4748171368861024,
+            "n_sequences": 319
+          },
+          {
+            "method": "popularity",
+            "r5": 0.30370950888192266,
+            "n_sequences": 319
+          }
+        ],
+        "advance_ordering_excluding_recency": [
+          "gru4rec_style",
+          "gru_probe",
+          "markov_order1",
+          "attn_probe",
+          "popularity"
+        ]
+      },
+      "rank_reversals": [],
+      "methods": [
+        "popularity",
+        "recency",
+        "markov_order1",
+        "gru_probe",
+        "gru4rec_style",
+        "attn_probe"
+      ],
+      "recbole_used": false,
+      "gru4rec_style_note": "Local GRUProbe emb=128 hidden=128 epochs=5 \u2014 published-style robustness check; RecBole not installed in this environment (see DEVIATIONS).",
+      "split": {
+        "unit": "composite_skill_token",
+        "n_train": 2481,
+        "n_test": 439,
+        "n_eval_sequences": 439
+      },
+      "kendall_tau_by_slice": {
+        "revisit": {
+          "kendall_tau_vs_all": 0.3333333333333333,
+          "all_order": [
+            "gru4rec_style",
+            "gru_probe",
+            "markov_order1",
+            "attn_probe",
+            "recency",
+            "popularity"
+          ],
+          "slice_order": [
+            "recency",
+            "gru4rec_style",
+            "gru_probe",
+            "attn_probe",
+            "markov_order1",
+            "popularity"
+          ]
+        },
+        "advance": {
+          "kendall_tau_vs_all": 1.0,
+          "all_order": [
+            "gru4rec_style",
+            "gru_probe",
+            "markov_order1",
+            "attn_probe",
+            "popularity"
+          ],
+          "slice_order": [
+            "gru4rec_style",
+            "gru_probe",
+            "markov_order1",
+            "attn_probe",
+            "popularity"
+          ]
+        },
+        "nonrepeat": {
+          "kendall_tau_vs_all": 0.8666666666666667,
+          "all_order": [
+            "gru4rec_style",
+            "gru_probe",
+            "markov_order1",
+            "attn_probe",
+            "recency",
+            "popularity"
+          ],
+          "slice_order": [
+            "gru4rec_style",
+            "gru_probe",
+            "attn_probe",
+            "markov_order1",
+            "recency",
+            "popularity"
+          ]
+        }
+      },
+      "h_rev_diagnostics": {
+        "advance": {
+          "all_required_excl_recency": [
+            "gru_probe",
+            "markov_order1",
+            "popularity"
+          ],
+          "advance_required_excl_recency": [
+            "gru_probe",
+            "markov_order1",
+            "popularity"
+          ],
+          "ordering_changed": false,
+          "kendall_tau": 1.0
+        },
+        "flip_probability_note": "Per-sequence bootstrap flip probabilities require stored per-seq R@5; not available from the original paper_rank_reversal_full aggregates. Confirmatory replication will store per-seq scores and report P(order flip).",
+        "flip_probability_by_pair": null,
+        "reversals_flagged_under_h_rev_rule": []
+      },
+      "rank_reversals_legacy_point_estimate": [
+        {
+          "slice": "revisit",
+          "all_order": [
+            "gru4rec_style",
+            "gru_probe",
+            "markov_order1",
+            "attn_probe",
+            "recency",
+            "popularity"
+          ],
+          "slice_order": [
+            "recency",
+            "gru4rec_style",
+            "gru_probe",
+            "attn_probe",
+            "markov_order1",
+            "popularity"
+          ]
+        }
+      ],
+      "status": "EXPLORATORY"
+    },
+    "xes3g5m": {
+      "rankings_by_slice_r5": {
+        "all": [
+          {
+            "method": "markov_order1",
+            "r5": 0.73345628919218,
+            "n_sequences": 2711
+          },
+          {
+            "method": "gru4rec_style",
+            "r5": 0.6933234968646256,
+            "n_sequences": 2711
+          },
+          {
+            "method": "gru_probe",
+            "r5": 0.6194762080413131,
+            "n_sequences": 2711
+          },
+          {
+            "method": "attn_probe",
+            "r5": 0.5981556621172999,
+            "n_sequences": 2711
+          },
+          {
+            "method": "recency",
+            "r5": 0.030394688306897826,
+            "n_sequences": 2711
+          },
+          {
+            "method": "popularity",
+            "r5": 0.014754703061600885,
+            "n_sequences": 2711
+          }
+        ],
+        "revisit": [
+          {
+            "method": "markov_order1",
+            "r5": 0.86125,
+            "n_sequences": 400
+          },
+          {
+            "method": "gru_probe",
+            "r5": 0.7916666666666665,
+            "n_sequences": 400
+          },
+          {
+            "method": "gru4rec_style",
+            "r5": 0.79,
+            "n_sequences": 400
+          },
+          {
+            "method": "attn_probe",
+            "r5": 0.7820833333333332,
+            "n_sequences": 400
+          },
+          {
+            "method": "recency",
+            "r5": 0.65125,
+            "n_sequences": 400
+          },
+          {
+            "method": "popularity",
+            "r5": 0.13083333333333333,
+            "n_sequences": 400
+          }
+        ],
+        "advance": [
+          {
+            "method": "markov_order1",
+            "r5": 0.7274130087298659,
+            "n_sequences": 2711
+          },
+          {
+            "method": "gru4rec_style",
+            "r5": 0.6889339727037993,
+            "n_sequences": 2711
+          },
+          {
+            "method": "gru_probe",
+            "r5": 0.6117607278986844,
+            "n_sequences": 2711
+          },
+          {
+            "method": "attn_probe",
+            "r5": 0.5888294602237797,
+            "n_sequences": 2711
+          },
+          {
+            "method": "popularity",
+            "r5": 0.010518873724332965,
+            "n_sequences": 2711
+          },
+          {
+            "method": "recency",
+            "r5": null,
+            "r5_display": "N/A",
+            "n_sequences": 2711,
+            "note": "recency undefined / not applicable on advance (next never in history)"
+          }
+        ],
+        "nonrepeat": [
+          {
+            "method": "markov_order1",
+            "r5": 0.7337759744251813,
+            "n_sequences": 2711
+          },
+          {
+            "method": "gru4rec_style",
+            "r5": 0.693698512234108,
+            "n_sequences": 2711
+          },
+          {
+            "method": "gru_probe",
+            "r5": 0.6193471043895242,
+            "n_sequences": 2711
+          },
+          {
+            "method": "attn_probe",
+            "r5": 0.5978544202631255,
+            "n_sequences": 2711
+          },
+          {
+            "method": "recency",
+            "r5": 0.02339849993852207,
+            "n_sequences": 2711
+          },
+          {
+            "method": "popularity",
+            "r5": 0.014367392106233863,
+            "n_sequences": 2711
+          }
+        ],
+        "advance_ordering_excluding_recency": [
+          "markov_order1",
+          "gru4rec_style",
+          "gru_probe",
+          "attn_probe",
+          "popularity"
+        ]
+      },
+      "rank_reversals": [],
+      "methods": [
+        "popularity",
+        "recency",
+        "markov_order1",
+        "gru_probe",
+        "gru4rec_style",
+        "attn_probe"
+      ],
+      "recbole_used": false,
+      "gru4rec_style_note": "Local GRUProbe emb=128 hidden=128 epochs=5 \u2014 published-style robustness check; RecBole not installed in this environment (see DEVIATIONS).",
+      "split": {
+        "unit": "question",
+        "n_train": 15355,
+        "n_test": 2711,
+        "n_eval_sequences": 2711,
+        "native_role": "descriptive_curriculum_order"
+      },
+      "kendall_tau_by_slice": {
+        "revisit": {
+          "kendall_tau_vs_all": 0.8666666666666667,
+          "all_order": [
+            "markov_order1",
+            "gru4rec_style",
+            "gru_probe",
+            "attn_probe",
+            "recency",
+            "popularity"
+          ],
+          "slice_order": [
+            "markov_order1",
+            "gru_probe",
+            "gru4rec_style",
+            "attn_probe",
+            "recency",
+            "popularity"
+          ]
+        },
+        "advance": {
+          "kendall_tau_vs_all": 1.0,
+          "all_order": [
+            "markov_order1",
+            "gru4rec_style",
+            "gru_probe",
+            "attn_probe",
+            "popularity"
+          ],
+          "slice_order": [
+            "markov_order1",
+            "gru4rec_style",
+            "gru_probe",
+            "attn_probe",
+            "popularity"
+          ]
+        },
+        "nonrepeat": {
+          "kendall_tau_vs_all": 1.0,
+          "all_order": [
+            "markov_order1",
+            "gru4rec_style",
+            "gru_probe",
+            "attn_probe",
+            "recency",
+            "popularity"
+          ],
+          "slice_order": [
+            "markov_order1",
+            "gru4rec_style",
+            "gru_probe",
+            "attn_probe",
+            "recency",
+            "popularity"
+          ]
+        }
+      },
+      "h_rev_diagnostics": {
+        "advance": {
+          "all_required_excl_recency": [
+            "markov_order1",
+            "gru_probe",
+            "popularity"
+          ],
+          "advance_required_excl_recency": [
+            "markov_order1",
+            "gru_probe",
+            "popularity"
+          ],
+          "ordering_changed": false,
+          "kendall_tau": 1.0
+        },
+        "flip_probability_note": "Per-sequence bootstrap flip probabilities require stored per-seq R@5; not available from the original paper_rank_reversal_full aggregates. Confirmatory replication will store per-seq scores and report P(order flip).",
+        "flip_probability_by_pair": null,
+        "reversals_flagged_under_h_rev_rule": []
+      },
+      "rank_reversals_legacy_point_estimate": [
+        {
+          "slice": "revisit",
+          "all_order": [
+            "markov_order1",
+            "gru4rec_style",
+            "gru_probe",
+            "attn_probe",
+            "recency",
+            "popularity"
+          ],
+          "slice_order": [
+            "markov_order1",
+            "gru_probe",
+            "gru4rec_style",
+            "attn_probe",
+            "recency",
+            "popularity"
+          ]
+        }
+      ],
+      "status": "EXPLORATORY"
+    }
+  },
+  "status": "EXPLORATORY",
+  "exploratory_disclosure": {
+    "status": "EXPLORATORY",
+    "prereg_v1_existed_before_run": false,
+    "evidence": {
+      "git_tags_prereg": [],
+      "preregistration_md": "draft only; explicitly not tagged",
+      "freeze_seed": 20261004,
+      "paper_eval_seed_used": 0,
+      "n_test_sizes_match_freeze": {
+        "junyi_timed": true,
+        "assistments": true,
+        "xes3g5m": true
+      },
+      "test_uid_hashes_match_freeze": false,
+      "reason_hashes_differ": "run_paper_eval.py called learner_split(..., seed=junyi_pipeline.SEED=0); freeze used seed=20261004. Same 70/15/15 sizes (900/439/2711) but different learners."
+    },
+    "replication_plan": {
+      "register_seed": "new seed chosen only after OSF/Zenodo + git tag prereg-v1",
+      "steps": [
+        "Tag prereg-v1 and register protocol",
+        "learner_split with the registered seed (do not reuse 0 or 20261004 for confirmatory test)",
+        "Freeze train/val; hash test uids; touch test once for confirmatory H-rev",
+        "Recompute rank-reversal + paired CIs on that fresh test only"
+      ]
+    },
+    "h_rev_reversal_rule": {
+      "required_models": [
+        "popularity",
+        "recency",
+        "markov_order1",
+        "gru_probe"
+      ],
+      "recency_on_advance": "N/A (exclude from advance orderings; not 0.000)",
+      "flag_reversal_only_if": "ordering of required models on slice differs from all-query ordering AND Kendall tau < 1 with bootstrap flip probability support (see diagnostics)"
+    }
+  },
+  "seed_note": "EXPLORATORY: evaluated with seed=0; freeze partition seed=20261004; sizes match freeze n_test but uid hashes do not."
+}

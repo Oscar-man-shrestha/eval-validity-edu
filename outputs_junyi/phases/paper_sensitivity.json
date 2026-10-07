@@ -1,0 +1,69 @@
+{
+  "sequence_length_cap": {
+    "100": {
+      "n_train_seq": 27434,
+      "n_test_seq": 6290,
+      "topic_next_eq_last": {
+        "share": 0.9245059357104445,
+        "n": 2075236,
+        "hits": 1918568
+      }
+    },
+    "200": {
+      "n_train_seq": 27434,
+      "n_test_seq": 6290,
+      "topic_next_eq_last": {
+        "share": 0.9299559049523363,
+        "n": 2809159,
+        "hits": 2612394
+      }
+    },
+    "400": {
+      "n_train_seq": 27434,
+      "n_test_seq": 6290,
+      "topic_next_eq_last": {
+        "share": 0.9299559049523363,
+        "n": 2809159,
+        "hits": 2612394
+      }
+    }
+  },
+  "cut_positions": {
+    "note": "Full cut-position ranking recomputed in paper_ranking_full with EVAL_POS=5; sensitivity table stores transition shares under different cut grids on a 800-seq subsample.",
+    "grids": {
+      "3": {
+        "continue": 0.79125,
+        "revisit": 0.08416666666666667,
+        "advance": 0.12458333333333334,
+        "n_queries": 2400
+      },
+      "5": {
+        "continue": 0.8009141696292534,
+        "revisit": 0.08836973082783138,
+        "advance": 0.11071609954291518,
+        "n_queries": 3938
+      },
+      "10": {
+        "continue": 0.7944912421446717,
+        "revisit": 0.10014707848642866,
+        "advance": 0.10536167936889959,
+        "n_queries": 7479
+      }
+    }
+  },
+  "timed_6k_selection": {
+    "n_eligible_users": 72457,
+    "first_6k_file_order": {
+      "share": 0.6344418702767518,
+      "n": 405309,
+      "hits": 257145
+    },
+    "random_6k": {
+      "share": 0.634999511145874,
+      "n": 409120,
+      "hits": 259791
+    },
+    "delta_first_minus_random": -0.0005576408691222445,
+    "rule": "first-6k = file order (freeze); random-6k = uniform among eligible users"
+  }
+}

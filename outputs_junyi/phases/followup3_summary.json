@@ -1,0 +1,257 @@
+{
+  "forgetting_status": "unresolved",
+  "concept_repetition": {
+    "level": "concept",
+    "note": "exercise/question-level rows removed from cross-dataset comparison",
+    "rows": [
+      {
+        "dataset_unit": "Junyi topic",
+        "share_next_equals_last": {
+          "share": 0.9299559049523363,
+          "n": 2809159,
+          "hits": 2612394
+        },
+        "three_way_mix": {
+          "continue": {
+            "count": 2612394,
+            "frac": 0.9299559049523363
+          },
+          "revisit": {
+            "count": 113264,
+            "frac": 0.04031954047456908
+          },
+          "advance": {
+            "count": 83501,
+            "frac": 0.029724554573094652
+          },
+          "n": 2809159
+        },
+        "n_sequences": 33724
+      },
+      {
+        "dataset_unit": "ASSISTments skill",
+        "share_next_equals_last": {
+          "share": 0.6794038886948423,
+          "n": 214725,
+          "hits": 145885
+        },
+        "three_way_mix": {
+          "continue": {
+            "count": 145885,
+            "frac": 0.6794038886948423
+          },
+          "revisit": {
+            "count": 39542,
+            "frac": 0.18415182209803238
+          },
+          "advance": {
+            "count": 29298,
+            "frac": 0.1364442892071254
+          },
+          "n": 214725
+        },
+        "n_sequences": 2920
+      },
+      {
+        "dataset_unit": "XES3G5M KC (method A: question\u2192primary KC)",
+        "share_next_equals_last": {
+          "share": 0.26196852398182396,
+          "n": 3975344,
+          "hits": 1041415
+        },
+        "three_way_mix": {
+          "continue": {
+            "count": 1041415,
+            "frac": 0.26196852398182396
+          },
+          "revisit": {
+            "count": 1246210,
+            "frac": 0.31348482043314996
+          },
+          "advance": {
+            "count": 1687719,
+            "frac": 0.4245466555850261
+          },
+          "n": 3975344
+        },
+        "n_sequences": 18066,
+        "method_ref": "followup3_xes_kc_repetition.method_a_question_then_primary_kc"
+      },
+      {
+        "dataset_unit": "XES3G5M KC (method B: drop multi-KC extras)",
+        "method": "one KC token per question (equivalent to dropping is_repeat extras when expanding)",
+        "share_next_equals_last": {
+          "share": 0.26196852398182396,
+          "n": 3975344,
+          "hits": 1041415
+        },
+        "three_way_mix": {
+          "continue": {
+            "count": 1041415,
+            "frac": 0.26196852398182396
+          },
+          "revisit": {
+            "count": 1246210,
+            "frac": 0.31348482043314996
+          },
+          "advance": {
+            "count": 1687719,
+            "frac": 0.4245466555850261
+          },
+          "n": 3975344
+        },
+        "n_sequences": 18066
+      },
+      {
+        "dataset_unit": "XES3G5M KC (method B parquet is_repeat=0)",
+        "share_next_equals_last": {
+          "share": 0.2629252530455704,
+          "n": 4410668,
+          "hits": 1159676
+        },
+        "three_way_mix": {
+          "continue": {
+            "count": 1159676,
+            "frac": 0.2629252530455704
+          },
+          "revisit": {
+            "count": 1333037,
+            "frac": 0.3022301837272722
+          },
+          "advance": {
+            "count": 1917955,
+            "frac": 0.4348445632271574
+          },
+          "n": 4410668
+        },
+        "n_sequences": 32922,
+        "method": "drop_is_repeat_eq_1_rows_from_kc_expanded_windows"
+      }
+    ]
+  },
+  "exact_dup_chance": {
+    "real_overlap": 23,
+    "chance_overlap": 23,
+    "real_minus_chance": 0
+  },
+  "rank_reversal_flags": {
+    "junyi_timed": {
+      "all_order": [
+        "gru4rec",
+        "ragr",
+        "recency",
+        "sasrec",
+        "popularity"
+      ],
+      "reversals": [
+        {
+          "slice": "revisit",
+          "all_order": [
+            "gru4rec",
+            "ragr",
+            "recency",
+            "sasrec",
+            "popularity"
+          ],
+          "slice_order": [
+            "recency",
+            "ragr",
+            "gru4rec",
+            "sasrec",
+            "popularity"
+          ]
+        },
+        {
+          "slice": "advance",
+          "all_order": [
+            "gru4rec",
+            "ragr",
+            "recency",
+            "sasrec",
+            "popularity"
+          ],
+          "slice_order": [
+            "gru4rec",
+            "sasrec",
+            "popularity",
+            "ragr",
+            "recency"
+          ]
+        }
+      ]
+    },
+    "assistments": {
+      "all_order": [
+        "gru4rec",
+        "ragr",
+        "recency",
+        "sasrec",
+        "popularity"
+      ],
+      "reversals": [
+        {
+          "slice": "revisit",
+          "all_order": [
+            "gru4rec",
+            "ragr",
+            "recency",
+            "sasrec",
+            "popularity"
+          ],
+          "slice_order": [
+            "ragr",
+            "recency",
+            "gru4rec",
+            "sasrec",
+            "popularity"
+          ]
+        },
+        {
+          "slice": "advance",
+          "all_order": [
+            "gru4rec",
+            "ragr",
+            "recency",
+            "sasrec",
+            "popularity"
+          ],
+          "slice_order": [
+            "gru4rec",
+            "sasrec",
+            "popularity",
+            "ragr",
+            "recency"
+          ]
+        }
+      ]
+    },
+    "xes3g5m": {
+      "all_order": [
+        "gru4rec",
+        "sasrec",
+        "ragr",
+        "recency",
+        "popularity"
+      ],
+      "reversals": [
+        {
+          "slice": "advance",
+          "all_order": [
+            "gru4rec",
+            "sasrec",
+            "ragr",
+            "recency",
+            "popularity"
+          ],
+          "slice_order": [
+            "gru4rec",
+            "sasrec",
+            "popularity",
+            "ragr",
+            "recency"
+          ]
+        }
+      ]
+    }
+  }
+}

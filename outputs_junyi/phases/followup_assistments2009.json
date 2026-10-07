@@ -1,0 +1,84 @@
+{
+  "dataset": "ASSISTments2009-2010 skill-builder corrected (EduData USTC mirror)",
+  "source_csv": "/Users/oscar/Desktop/neurotrace-dag/data/assistments2009/2009_skill_builder_data_corrected/skill_builder_data_corrected.csv",
+  "collapse": {
+    "n_raw_rows": 401756,
+    "n_collapsed_attempts": 346860,
+    "n_attempts_with_multiple_skills": 47037,
+    "rule": "groupby order_id; skills=sorted unique skill_id joined by _"
+  },
+  "split": {
+    "unit": "learner",
+    "n_learners": 2920,
+    "n_train_learners": 2336,
+    "n_test_learners": 584,
+    "overlap_learners": 0,
+    "sequence_filter": "len 12\u2013200"
+  },
+  "repetition": {
+    "share_next_equals_last_skill_all": {
+      "share": 0.6794038886948423,
+      "n": 214725,
+      "hits": 145885
+    },
+    "share_next_equals_last_skill_test": {
+      "share": 0.6785589529819985,
+      "n": 42941,
+      "hits": 29138
+    },
+    "share_next_equals_last_problem_all": {
+      "share": 8.382815228780999e-05,
+      "n": 214725,
+      "hits": 18
+    },
+    "junyi_ktbd_share_next_equals_last": 0.8123021872382447,
+    "abs_delta_vs_junyi_skill_all": 0.1328982985434024,
+    "repetition_junyi_specific": true,
+    "note": "repetition_junyi_specific=True if |share_skill - junyi| > 0.10; False means similar sticky-continue mass"
+  },
+  "three_way_mix_test_skills": {
+    "continue": {
+      "count": 29138,
+      "frac": 0.6785589529819985
+    },
+    "revisit": {
+      "count": 8169,
+      "frac": 0.19023776810041684
+    },
+    "advance": {
+      "count": 5634,
+      "frac": 0.1312032789175846
+    },
+    "n": 42941
+  },
+  "expert_dag": {
+    "status": "not_testable",
+    "reason": "ASSISTments 2009 skill-builder has no expert prerequisite DAG"
+  },
+  "mined_graph_readiness_probe": {
+    "n_mined_edges": 1865,
+    "n_items": 150,
+    "result": {
+      "n_train_rows": 96312,
+      "n_test_rows": 24321,
+      "auc_base": 0.7202337487715196,
+      "auc_with_ready": 0.7200226046243574,
+      "delta_auc": {
+        "mean": -0.00021114414716216778,
+        "ci": [
+          -0.0006360043030905149,
+          0.00020485168779170993
+        ],
+        "n_sequences": 442,
+        "n_rows": 24321,
+        "n_boot": 1000,
+        "n_boot_kept": 1000,
+        "ci_above_zero": false,
+        "statistic": "pooled_auc_delta_bootstrapped_over_sequences"
+      },
+      "status": "unresolved",
+      "practical_threshold_delta_auc": 0.005,
+      "graph_type": "mined_single_parent_order_edge_not_expert_dag"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "real_train_test_exact": {
+    "n_overlap_hashes": 23,
+    "n_test_sequences": 6290,
+    "n_test_unique_hashes": 6282
+  },
+  "chance_baseline_pseudo_test": {
+    "n_pseudo_test": 6290,
+    "n_remaining_train": 21081,
+    "n_overlap_hashes": 23,
+    "seed": 0,
+    "rule": "sample 6290 train sequences; exact-hash collide against remaining train"
+  },
+  "comparison": {
+    "real_overlap": 23,
+    "chance_overlap": 23,
+    "real_minus_chance": 0
+  }
+}

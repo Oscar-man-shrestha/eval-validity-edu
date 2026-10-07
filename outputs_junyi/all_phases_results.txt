@@ -1,0 +1,38 @@
+NeuroTrace-DAG — VALIDATED results (sequence/learner splits, sequence bootstrap)
+Phase 2  pair-AUC vs random=0.904  vs same-topic=0.464  lexical-AUC=0.746
+Phase 3  test.json logistic_step=0.877 CI=[0.874, 0.879]  success=0.863  hlr=0.767
+Phase 3 timed(learner)  day_dt=0.694  success=0.698  delta_day_minus_success=-0.0029 CI=[-0.0047, -0.0009]  forgetting_helps=False
+Phase 4  review=0.898  violate=0.082  DAG=True
+Phase 6  RAGR R@5=0.891 CI=[0.879, 0.905]  n_seq=800 n_q=4000
+         force_review R@5=0.886 CI=[0.874, 0.896]  delta=+0.005 CI=[0.003, 0.008]
+         advance R@5=0.065 CI=[0.036, 0.073]
+         share next==last=0.803  share_nontrivial_review=0.088  share_advance≈0.11
+         nonlast RAGR R@5=0.436 CI=[0.408, 0.487]  force_review_nonlast=0.393
+         mask_last on nonlast R@5=0.444 CI=[0.424, 0.504]
+Gate  AUC≈0.76  PR-AUC≈0.95  base≈0.89
+Last-item baseline (review) R@5≈0.893
+DAG ablation: no_dag CI overlaps full → graph not load-bearing for advance
+Inertia after_wrong  p_last=0.866 p_review=0.950 p_advance=0.050
+Inertia after_correct p_last=0.785 p_review=0.903 p_advance=0.097
+Inertia DAG pedagogy  unlocked_acc=0.769 violate_acc=0.668 gap=0.100977787020746
+Inertia gate_curve  best_all@τ=0.2 R@5=0.886; best_advance@τ=0.9 R@5=0.041
+Followup claim4=detectable_but_negligible threshold=0.005 delta=0.0004973880244434348
+Followup timed day_ok=True gap0=0.991
+Followup shares ktbd=0.812 timed_raw=0.654 timed_filt=0.635
+Followup forgetting cite=True paired={'mean_delta_auc': -0.002926333449883386, 'ci': [-0.004701844108090492, -0.0011640323298165902], 'forgetting_helps': False}
+Followup dups lengths={'min': 12, 'max': 29, 'mean': 15.357142857142858, 'median': 15.0, 'counter': {15: 8, 16: 4, 14: 2, 24: 1, 12: 8, 17: 1, 26: 1, 13: 2, 29: 1}}
+Followup R@5 order: ragr=0.891 > force_review=0.886 > recent5=0.885 > low_success=0.835 > freq=0.827 > last_item=0.803 > force_advance=0.302 > sim_weighted=0.038
+Followup no_dups R@5 ragr=0.900
+Assist skill next==last=0.679 (junyi=0.8123021872382447) junyi_specific=True
+Assist mix continue=0.679 revisit=0.190 advance=0.131
+Assist expert_dag=not_testable mined_readiness=unresolved delta=-0.00021114414716216778
+F2 repetition ktbd_ex=0.812 ktbd_topic=0.930 timed_ex=0.654 assist_skill=0.673
+F2 finding: repetition is high on mastery-based logs (Junyi, ASSISTments)
+F2 forgetting claim=no_evidence_of_forgetting_effect_limited_power gap>=1 n=635500
+F2 ranking canonical R@5=0.891 vs legacy_polluted=0.875 overlap=113/800 Δragr-recent5=0.006749999999999999 label=negligible
+F2 dup chance real=471 pseudo=573
+F2 XES q=0.008450086332151382 kc=0.21542412403504102
+F3 forgetting status=unresolved auc_succ=0.6606079519204642 auc_log=0.6608838516838581 delta={'mean': 0.0002758997633939275, 'ci': [-0.0010604327518647706, 0.0015754188667389726], 'n_learners': 8999, 'n_rows': 125637, 'n_boot': 1000, 'n_boot_kept': 1000, 'ci_excludes_zero': False, 'statistic': 'pooled_auc_delta_bootstrap_over_learners'}
+F3 concept shares=[0.9299559049523363, 0.6794038886948423, 0.26196852398182396]
+F3 exact dup real=23 chance=23
+F3 rank reversals={'junyi_timed': True, 'assistments': True, 'xes3g5m': True}

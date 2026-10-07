@@ -1,0 +1,400 @@
+{
+  "schema": "gru_markov_paired_ci_v1",
+  "replication_seed": 20261004,
+  "n_boot": 400,
+  "slice": "validation sequences; same max_seqs cap as freeze",
+  "datasets": {
+    "junyi_timed": {
+      "n_items_native": 835,
+      "native": {
+        "val_query_counts": {
+          "all": 1939,
+          "nonrepeat": 767,
+          "n_sequences": 400,
+          "min_slice_queries": 500,
+          "nonrepeat_na_below_min": false
+        },
+        "all": {
+          "n_sequences": 400,
+          "mean_gru": 0.7610833333333333,
+          "mean_markov": 0.7717500000000002,
+          "mean_delta_gru_minus_markov": -0.010666666666666668,
+          "ci": [
+            -0.020604166666666666,
+            0.0016812499999999853
+          ],
+          "ci_excludes_zero": false,
+          "gru_beats_markov": false,
+          "markov_beats_gru": false,
+          "n_boot": 400,
+          "unit": "sequence"
+        },
+        "nonrepeat": {
+          "n_sequences": 355,
+          "mean_gru": 0.4145070422535211,
+          "mean_markov": 0.407699530516432,
+          "mean_delta_gru_minus_markov": 0.006807511737089203,
+          "ci": [
+            -0.022724178403755867,
+            0.03896009389671357
+          ],
+          "ci_excludes_zero": false,
+          "gru_beats_markov": false,
+          "markov_beats_gru": false,
+          "n_boot": 400,
+          "unit": "sequence"
+        },
+        "gru_train": {
+          "best_epoch": 2,
+          "best_val_ce_loss": 2.276923163986206,
+          "max_epochs": 10,
+          "early_stopping_patience": 2,
+          "n_items": 835,
+          "dropout_in_config_but_unused_by_GRUProbe": 0.1
+        }
+      },
+      "cluster": {
+        "val_query_counts": {
+          "all": 1939,
+          "nonrepeat": 630,
+          "n_sequences": 400,
+          "min_slice_queries": 500,
+          "nonrepeat_na_below_min": false
+        },
+        "all": {
+          "n_sequences": 400,
+          "mean_gru": 0.8410416666666667,
+          "mean_markov": 0.8358333333333334,
+          "mean_delta_gru_minus_markov": 0.005208333333333331,
+          "ci": [
+            -0.006294791666666665,
+            0.015510416666666655
+          ],
+          "ci_excludes_zero": false,
+          "gru_beats_markov": false,
+          "markov_beats_gru": false,
+          "n_boot": 400,
+          "unit": "sequence"
+        },
+        "nonrepeat": {
+          "n_sequences": 332,
+          "mean_gru": 0.5142570281124498,
+          "mean_markov": 0.48022088353413656,
+          "mean_delta_gru_minus_markov": 0.03403614457831325,
+          "ci": [
+            0.002089608433734941,
+            0.06567269076305218
+          ],
+          "ci_excludes_zero": true,
+          "gru_beats_markov": true,
+          "markov_beats_gru": false,
+          "n_boot": 400,
+          "unit": "sequence"
+        },
+        "gru_train": {
+          "best_epoch": 3,
+          "best_val_ce_loss": 1.475394100189209,
+          "max_epochs": 10,
+          "n_clusters_used": 115
+        },
+        "n_clusters_used": 115
+      }
+    },
+    "assistments": {
+      "n_items_native": 150,
+      "native": {
+        "val_query_counts": {
+          "all": 2151,
+          "nonrepeat": 628,
+          "n_sequences": 438,
+          "min_slice_queries": 500,
+          "nonrepeat_na_below_min": false
+        },
+        "all": {
+          "n_sequences": 438,
+          "mean_gru": 0.9246955859969558,
+          "mean_markov": 0.8828767123287671,
+          "mean_delta_gru_minus_markov": 0.041818873668188726,
+          "ci": [
+            0.0300589802130898,
+            0.05259132420091323
+          ],
+          "ci_excludes_zero": true,
+          "gru_beats_markov": true,
+          "markov_beats_gru": false,
+          "n_boot": 400,
+          "unit": "sequence"
+        },
+        "nonrepeat": {
+          "n_sequences": 314,
+          "mean_gru": 0.7251592356687898,
+          "mean_markov": 0.5684182590233545,
+          "mean_delta_gru_minus_markov": 0.15674097664543524,
+          "ci": [
+            0.11708731422505309,
+            0.19599389596602967
+          ],
+          "ci_excludes_zero": true,
+          "gru_beats_markov": true,
+          "markov_beats_gru": false,
+          "n_boot": 400,
+          "unit": "sequence"
+        },
+        "gru_train": {
+          "best_epoch": 7,
+          "best_val_ce_loss": 1.1300087924003601,
+          "max_epochs": 10,
+          "early_stopping_patience": 2,
+          "n_items": 150,
+          "dropout_in_config_but_unused_by_GRUProbe": 0.3
+        }
+      },
+      "cluster": {
+        "val_query_counts": {
+          "all": 2151,
+          "nonrepeat": 599,
+          "n_sequences": 438,
+          "min_slice_queries": 500,
+          "nonrepeat_na_below_min": false
+        },
+        "all": {
+          "n_sequences": 438,
+          "mean_gru": 0.9335235920852359,
+          "mean_markov": 0.8905251141552512,
+          "mean_delta_gru_minus_markov": 0.04299847792998478,
+          "ci": [
+            0.03272355403348553,
+            0.054608066971080664
+          ],
+          "ci_excludes_zero": true,
+          "gru_beats_markov": true,
+          "markov_beats_gru": false,
+          "n_boot": 400,
+          "unit": "sequence"
+        },
+        "nonrepeat": {
+          "n_sequences": 307,
+          "mean_gru": 0.7643322475570032,
+          "mean_markov": 0.5944625407166124,
+          "mean_delta_gru_minus_markov": 0.16986970684039088,
+          "ci": [
+            0.1264657980456026,
+            0.2173330618892508
+          ],
+          "ci_excludes_zero": true,
+          "gru_beats_markov": true,
+          "markov_beats_gru": false,
+          "n_boot": 400,
+          "unit": "sequence"
+        },
+        "gru_train": {
+          "best_epoch": 4,
+          "best_val_ce_loss": 1.0680298414230347,
+          "max_epochs": 10,
+          "n_clusters_used": 106
+        },
+        "n_clusters_used": 106
+      }
+    },
+    "xes3g5m": {
+      "n_items_native": 7439,
+      "native": {
+        "val_query_counts": {
+          "all": 2000,
+          "nonrepeat": 1994,
+          "n_sequences": 400,
+          "min_slice_queries": 500,
+          "nonrepeat_na_below_min": false
+        },
+        "all": {
+          "n_sequences": 400,
+          "mean_gru": 0.57,
+          "mean_markov": 0.7175,
+          "mean_delta_gru_minus_markov": -0.14750000000000002,
+          "ci": [
+            -0.16952499999999998,
+            -0.125
+          ],
+          "ci_excludes_zero": true,
+          "gru_beats_markov": false,
+          "markov_beats_gru": true,
+          "n_boot": 400,
+          "unit": "sequence"
+        },
+        "nonrepeat": {
+          "n_sequences": 400,
+          "mean_gru": 0.569875,
+          "mean_markov": 0.7178749999999999,
+          "mean_delta_gru_minus_markov": -0.14800000000000002,
+          "ci": [
+            -0.17000937500000002,
+            -0.12786562500000004
+          ],
+          "ci_excludes_zero": true,
+          "gru_beats_markov": false,
+          "markov_beats_gru": true,
+          "n_boot": 400,
+          "unit": "sequence"
+        },
+        "gru_train": {
+          "best_epoch": 4,
+          "best_val_ce_loss": 3.8941452812194823,
+          "max_epochs": 10,
+          "early_stopping_patience": 2,
+          "n_items": 7439,
+          "dropout_in_config_but_unused_by_GRUProbe": 0.1
+        }
+      },
+      "cluster": {
+        "val_query_counts": {
+          "all": 2000,
+          "nonrepeat": 679,
+          "n_sequences": 400,
+          "min_slice_queries": 500,
+          "nonrepeat_na_below_min": false
+        },
+        "all": {
+          "n_sequences": 400,
+          "mean_gru": 0.9109999999999999,
+          "mean_markov": 0.8555000000000001,
+          "mean_delta_gru_minus_markov": 0.0555,
+          "ci": [
+            0.0434875,
+            0.06902499999999999
+          ],
+          "ci_excludes_zero": true,
+          "gru_beats_markov": true,
+          "markov_beats_gru": false,
+          "n_boot": 400,
+          "unit": "sequence"
+        },
+        "nonrepeat": {
+          "n_sequences": 330,
+          "mean_gru": 0.765,
+          "mean_markov": 0.6177272727272727,
+          "mean_delta_gru_minus_markov": 0.14727272727272728,
+          "ci": [
+            0.114385101010101,
+            0.18088888888888885
+          ],
+          "ci_excludes_zero": true,
+          "gru_beats_markov": true,
+          "markov_beats_gru": false,
+          "n_boot": 400,
+          "unit": "sequence"
+        },
+        "gru_train": {
+          "best_epoch": 7,
+          "best_val_ce_loss": 1.2197829835891723,
+          "max_epochs": 10,
+          "n_clusters_used": 120
+        },
+        "n_clusters_used": 120
+      }
+    }
+  },
+  "xes_native_longer_epoch_diagnostic": {
+    "config": {
+      "lr": 0.0005,
+      "emb": 256,
+      "dropout": 0.1,
+      "max_epochs": 30,
+      "early_stopping_patience": 5
+    },
+    "best_epoch": 4,
+    "best_val_ce_loss": 3.8841464096069336,
+    "stopped_early": true,
+    "curve": [
+      {
+        "epoch": 1,
+        "val_ce_loss": 5.620578555297851
+      },
+      {
+        "epoch": 2,
+        "val_ce_loss": 4.32055144996643,
+        "r5_note": "R@5 computed only at early-stopped checkpoint, not mid-training"
+      },
+      {
+        "epoch": 3,
+        "val_ce_loss": 3.9661361484527586
+      },
+      {
+        "epoch": 4,
+        "val_ce_loss": 3.8841464096069336
+      },
+      {
+        "epoch": 5,
+        "val_ce_loss": 3.928715784454346,
+        "r5_note": "R@5 computed only at early-stopped checkpoint, not mid-training"
+      },
+      {
+        "epoch": 6,
+        "val_ce_loss": 3.9745531463623047
+      },
+      {
+        "epoch": 7,
+        "val_ce_loss": 4.03436096572876
+      },
+      {
+        "epoch": 8,
+        "val_ce_loss": 4.117913093566894
+      },
+      {
+        "epoch": 9,
+        "val_ce_loss": 4.169204022598267
+      }
+    ],
+    "paired_vs_markov": {
+      "val_query_counts": {
+        "all": 2000,
+        "nonrepeat": 1994,
+        "n_sequences": 400,
+        "min_slice_queries": 500,
+        "nonrepeat_na_below_min": false
+      },
+      "all": {
+        "n_sequences": 400,
+        "mean_gru": 0.575,
+        "mean_markov": 0.7175,
+        "mean_delta_gru_minus_markov": -0.14250000000000002,
+        "ci": [
+          -0.1620125,
+          -0.1215
+        ],
+        "ci_excludes_zero": true,
+        "gru_beats_markov": false,
+        "markov_beats_gru": true,
+        "n_boot": 400,
+        "unit": "sequence"
+      },
+      "nonrepeat": {
+        "n_sequences": 400,
+        "mean_gru": 0.574875,
+        "mean_markov": 0.7178749999999999,
+        "mean_delta_gru_minus_markov": -0.14300000000000002,
+        "ci": [
+          -0.1625,
+          -0.122865625
+        ],
+        "ci_excludes_zero": true,
+        "gru_beats_markov": false,
+        "markov_beats_gru": true,
+        "n_boot": 400,
+        "unit": "sequence"
+      }
+    },
+    "interpretation_if_still_loses": "If GRU still loses to Markov after 30 epochs / patience 5, undertraining at max_epochs=10 is not a sufficient explanation; the 7,439-way catalog is curriculum-order-structured and a 1-step table is the right null."
+  },
+  "h_rev_implication": {
+    "what_losing_to_markov_means": "H-rev asks whether a probe's ranking vs baselines reverses when the action unit changes (native vs matched clusters). Markov order-1 is the parameter-light 1-step successor table. If GRU loses to Markov at a unit, that unit's GRU 'win' vs popularity/recency is not a learned-structure win: a count table already captures the regularity (sticky or curriculum-order). A confirmatory H-rev claim at that unit cannot treat GRU as beating the required baseline set. Native XES (7,439 questions, mode successor \u22480.35, GRU 0.614 vs Markov 0.739 at freeze) is therefore descriptive. The informative contrast is the cluster unit, where GRU can still beat Markov.",
+    "xes_native_undertraining_checks": {
+      "n_classes": 7439,
+      "freeze_max_epochs": 10,
+      "freeze_patience": 2,
+      "freeze_best_epoch": 4,
+      "GRUProbe_ignores_dropout_hyperparam": true,
+      "val_r5_subsample": 400
+    }
+  },
+  "elapsed_sec": 7339.174705982208
+}

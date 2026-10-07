@@ -1,0 +1,46 @@
+{
+  "current_load_sequences": {
+    "train_n_sequences": 27434,
+    "test_n_sequences": 6290,
+    "train_n_interactions": 2342784,
+    "test_n_interactions": 500099,
+    "train_plus_test_n_interactions": 2842883,
+    "train_n_transitions": 2315350,
+    "test_n_transitions": 493809,
+    "train_plus_test_n_transitions": 2809159
+  },
+  "split_provenance": {
+    "train_interactions_split": "train.json after len\u2208[12,200]",
+    "test_interactions_split": "test.json after len\u2208[12,200]",
+    "topic_level_n_split": "train.json + test.json consecutive transitions"
+  },
+  "phase1_prepare_prior_fields": {
+    "interactions_field_before_update": 2342784,
+    "train_sequences": 27434,
+    "test_sequences": 6290,
+    "note": "If interactions previously equalled train+test attempt rows (2,842,883), that is total interactions \u2014 not a contradiction with topic n."
+  },
+  "topic_level_share": {
+    "split": "train.json + test.json (length-filtered sequences)",
+    "n_transitions": 2809159,
+    "share": 0.9299559049523363,
+    "identity_check": {
+      "train_plus_test_transitions": 2809159,
+      "interactions_minus_sequences": 2809159,
+      "equal": true,
+      "formula": "2,842,883 \u2212 27,434 \u2212 6,290 = 2,809,159 when interactions=train+test"
+    },
+    "claude_mismatch_resolved": {
+      "total_interactions": 2842883,
+      "total_interactions_minus_train_seq": 2815449,
+      "equals_topic_n_plus_test_seq": true,
+      "explanation": "2,842,883 \u2212 27,434 = 2,815,449 leaves the test sequence count (6,290) still unsubtracted; subtracting it yields topic n = 2,809,159. Train-only interactions are 2,342,784, not 2,815,449."
+    }
+  },
+  "phase1_update": {
+    "old_interactions": 2342784,
+    "new_interactions_train_only": 2342784,
+    "new_interactions_train_plus_test": 2842883,
+    "new_interactions_test": 500099
+  }
+}

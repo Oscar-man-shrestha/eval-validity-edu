@@ -1,0 +1,304 @@
+{
+  "status": "EXPLORATORY_pre_prereg",
+  "prereg_v1_tagged": false,
+  "thresholds": {
+    "recall_at_5": 0.01,
+    "auc": 0.005
+  },
+  "verdict_rule": "supported_A if CI entirely > +t; supported_B if CI entirely < \u2212t; negligible if CI entirely inside (\u2212t,+t); else inconclusive. R@5 t=0.01; AUC t=0.005. No 'tie' label.",
+  "junyi_ranking_full_test": {
+    "from_paper_ranking_full_paired_deltas": {
+      "ragr_minus_recent5_r5": {
+        "mean": 0.008648648648648647,
+        "ci": [
+          0.00753577106518283,
+          0.00982591414944356
+        ],
+        "n_sequences": 6290,
+        "ci_excludes_zero": true,
+        "statistic": "mean_of_per_sequence_paired_deltas",
+        "n_boot": 1000,
+        "verdict": "negligible",
+        "verdict_rule": "supported_A if CI entirely > +0.01; supported_B if entirely < \u22120.01; negligible if entirely inside (\u22120.01,+0.01); else inconclusive",
+        "A": "RAGR",
+        "B": "Recent-5"
+      },
+      "ragr_minus_markov_r5": {
+        "mean": 0.03303656597774245,
+        "ci": [
+          0.029665341812400634,
+          0.03659777424483306
+        ],
+        "n_sequences": 6290,
+        "ci_excludes_zero": true,
+        "statistic": "mean_of_per_sequence_paired_deltas",
+        "n_boot": 1000,
+        "verdict": "supported_A",
+        "verdict_rule": "supported_A if CI entirely > +0.01; supported_B if entirely < \u22120.01; negligible if entirely inside (\u22120.01,+0.01); else inconclusive",
+        "A": "RAGR",
+        "B": "Markov"
+      },
+      "ragr_minus_ragr_no_dag_r5": {
+        "mean": 0.00019077901430842608,
+        "ci": [
+          -0.0005095389507154212,
+          0.0009220985691573925
+        ],
+        "n_sequences": 6290,
+        "ci_excludes_zero": false,
+        "statistic": "mean_of_per_sequence_paired_deltas",
+        "n_boot": 1000,
+        "verdict": "negligible",
+        "verdict_rule": "supported_A if CI entirely > +0.01; supported_B if entirely < \u22120.01; negligible if entirely inside (\u22120.01,+0.01); else inconclusive",
+        "A": "RAGR",
+        "B": "RAGR-no-DAG"
+      }
+    },
+    "advance_and_all_recomputed": {
+      "eval": {
+        "n_sequences": 6290,
+        "cuts": 5,
+        "n_boot": 1000,
+        "seed": 0,
+        "full_test": true,
+        "status": "EXPLORATORY_pre_prereg"
+      },
+      "paired": {
+        "ragr_minus_recent5_r5_all": {
+          "mean": 0.008648648648648647,
+          "ci": [
+            0.007503179650238472,
+            0.009729729729729727
+          ],
+          "n_sequences": 6290,
+          "ci_excludes_zero": true,
+          "statistic": "mean_of_per_sequence_paired_deltas",
+          "n_boot": 1000,
+          "verdict": "negligible",
+          "verdict_rule": "supported_A if CI entirely > +0.01; supported_B if entirely < \u22120.01; negligible if entirely inside (\u22120.01,+0.01); else inconclusive",
+          "A": "RAGR",
+          "B": "Recent-5"
+        },
+        "ragr_minus_ragr_no_dag_r5_all": {
+          "mean": 0.00019077901430842608,
+          "ci": [
+            -0.0005405405405405402,
+            0.0009538950715421304
+          ],
+          "n_sequences": 6290,
+          "ci_excludes_zero": false,
+          "statistic": "mean_of_per_sequence_paired_deltas",
+          "n_boot": 1000,
+          "verdict": "negligible",
+          "verdict_rule": "supported_A if CI entirely > +0.01; supported_B if entirely < \u22120.01; negligible if entirely inside (\u22120.01,+0.01); else inconclusive",
+          "A": "RAGR",
+          "B": "RAGR-no-DAG"
+        },
+        "ragr_minus_markov_r5_all": {
+          "mean": 0.03303656597774245,
+          "ci": [
+            0.02963434022257552,
+            0.03675834658187599
+          ],
+          "n_sequences": 6290,
+          "ci_excludes_zero": true,
+          "statistic": "mean_of_per_sequence_paired_deltas",
+          "n_boot": 1000,
+          "verdict": "supported_A",
+          "verdict_rule": "supported_A if CI entirely > +0.01; supported_B if entirely < \u22120.01; negligible if entirely inside (\u22120.01,+0.01); else inconclusive",
+          "A": "RAGR",
+          "B": "Markov"
+        },
+        "ragr_minus_ragr_no_dag_r5_advance": {
+          "mean": 0.001435656486557035,
+          "ci": [
+            -0.005775254502740799,
+            0.009364395719133386
+          ],
+          "n_sequences": 2554,
+          "ci_excludes_zero": false,
+          "statistic": "mean_of_per_sequence_paired_deltas",
+          "n_boot": 1000,
+          "verdict": "negligible",
+          "verdict_rule": "supported_A if CI entirely > +0.01; supported_B if entirely < \u22120.01; negligible if entirely inside (\u22120.01,+0.01); else inconclusive",
+          "A": "RAGR",
+          "B": "RAGR-no-DAG"
+        },
+        "ragr_minus_markov_r5_advance": {
+          "mean": -0.1602845210127904,
+          "ci": [
+            -0.17506542025580787,
+            -0.145679163403811
+          ],
+          "n_sequences": 2554,
+          "ci_excludes_zero": true,
+          "statistic": "mean_of_per_sequence_paired_deltas",
+          "n_boot": 1000,
+          "verdict": "supported_B",
+          "verdict_rule": "supported_A if CI entirely > +0.01; supported_B if entirely < \u22120.01; negligible if entirely inside (\u22120.01,+0.01); else inconclusive",
+          "A": "RAGR",
+          "B": "Markov"
+        }
+      },
+      "note": "ragr_minus_recent5_r5_advance dropped (mechanical near-zero on advance)"
+    }
+  },
+  "phase3_logistic_minus_success": {
+    "mean": 0.005310037873545182,
+    "ci": [
+      0.004625538135187604,
+      0.005879936208839394
+    ],
+    "n_test_rows": 449453,
+    "bootstrap": "sequence",
+    "verdict": "inconclusive",
+    "verdict_rule": "supported_A if CI entirely > +0.005; supported_B if entirely < \u22120.005; negligible if entirely inside (\u22120.005,+0.005); else inconclusive",
+    "A": "logistic_step_dt",
+    "B": "success_rate"
+  },
+  "gru_minus_markov": {
+    "source": "gru_markov_paired_ci.json",
+    "rows": [
+      {
+        "mean": 0.006807511737089203,
+        "ci": [
+          -0.022724178403755867,
+          0.03896009389671357
+        ],
+        "n_sequences": 355,
+        "mean_gru": 0.4145070422535211,
+        "mean_markov": 0.407699530516432,
+        "verdict": "inconclusive",
+        "verdict_rule": "supported_A if CI entirely > +0.01; supported_B if entirely < \u22120.01; negligible if entirely inside (\u22120.01,+0.01); else inconclusive",
+        "A": "GRU",
+        "B": "Markov",
+        "dataset": "junyi_timed",
+        "unit": "native",
+        "slice": "nonrepeat"
+      },
+      {
+        "mean": 0.03403614457831325,
+        "ci": [
+          0.002089608433734941,
+          0.06567269076305218
+        ],
+        "n_sequences": 332,
+        "mean_gru": 0.5142570281124498,
+        "mean_markov": 0.48022088353413656,
+        "verdict": "inconclusive",
+        "verdict_rule": "supported_A if CI entirely > +0.01; supported_B if entirely < \u22120.01; negligible if entirely inside (\u22120.01,+0.01); else inconclusive",
+        "A": "GRU",
+        "B": "Markov",
+        "dataset": "junyi_timed",
+        "unit": "cluster",
+        "slice": "nonrepeat"
+      },
+      {
+        "mean": 0.15674097664543524,
+        "ci": [
+          0.11708731422505309,
+          0.19599389596602967
+        ],
+        "n_sequences": 314,
+        "mean_gru": 0.7251592356687898,
+        "mean_markov": 0.5684182590233545,
+        "verdict": "supported_A",
+        "verdict_rule": "supported_A if CI entirely > +0.01; supported_B if entirely < \u22120.01; negligible if entirely inside (\u22120.01,+0.01); else inconclusive",
+        "A": "GRU",
+        "B": "Markov",
+        "dataset": "assistments",
+        "unit": "native",
+        "slice": "nonrepeat"
+      },
+      {
+        "mean": 0.16986970684039088,
+        "ci": [
+          0.1264657980456026,
+          0.2173330618892508
+        ],
+        "n_sequences": 307,
+        "mean_gru": 0.7643322475570032,
+        "mean_markov": 0.5944625407166124,
+        "verdict": "supported_A",
+        "verdict_rule": "supported_A if CI entirely > +0.01; supported_B if entirely < \u22120.01; negligible if entirely inside (\u22120.01,+0.01); else inconclusive",
+        "A": "GRU",
+        "B": "Markov",
+        "dataset": "assistments",
+        "unit": "cluster",
+        "slice": "nonrepeat"
+      },
+      {
+        "mean": -0.14800000000000002,
+        "ci": [
+          -0.17000937500000002,
+          -0.12786562500000004
+        ],
+        "n_sequences": 400,
+        "mean_gru": 0.569875,
+        "mean_markov": 0.7178749999999999,
+        "verdict": "supported_B",
+        "verdict_rule": "supported_A if CI entirely > +0.01; supported_B if entirely < \u22120.01; negligible if entirely inside (\u22120.01,+0.01); else inconclusive",
+        "A": "GRU",
+        "B": "Markov",
+        "dataset": "xes3g5m",
+        "unit": "native",
+        "slice": "nonrepeat"
+      },
+      {
+        "mean": 0.14727272727272728,
+        "ci": [
+          0.114385101010101,
+          0.18088888888888885
+        ],
+        "n_sequences": 330,
+        "mean_gru": 0.765,
+        "mean_markov": 0.6177272727272727,
+        "verdict": "supported_A",
+        "verdict_rule": "supported_A if CI entirely > +0.01; supported_B if entirely < \u22120.01; negligible if entirely inside (\u22120.01,+0.01); else inconclusive",
+        "A": "GRU",
+        "B": "Markov",
+        "dataset": "xes3g5m",
+        "unit": "cluster",
+        "slice": "nonrepeat"
+      }
+    ],
+    "h_rev_primary_native_vs_cluster": {
+      "junyi_timed": {
+        "native_verdict": "inconclusive",
+        "cluster_verdict": "inconclusive",
+        "native_mean": 0.006807511737089203,
+        "cluster_mean": 0.03403614457831325,
+        "sign_flip": false,
+        "both_supported": false,
+        "primary_h_rev_claim_supported": false
+      },
+      "assistments": {
+        "native_verdict": "supported_A",
+        "cluster_verdict": "supported_A",
+        "native_mean": 0.15674097664543524,
+        "cluster_mean": 0.16986970684039088,
+        "sign_flip": false,
+        "both_supported": true,
+        "primary_h_rev_claim_supported": false
+      },
+      "xes3g5m": {
+        "native_verdict": "supported_B",
+        "cluster_verdict": "supported_A",
+        "native_mean": -0.14800000000000002,
+        "cluster_mean": 0.14727272727272728,
+        "sign_flip": true,
+        "both_supported": true,
+        "primary_h_rev_claim_supported": true
+      }
+    },
+    "note": "Validation paired CIs (freeze-era). Primary H-rev = sign(GRU\u2212Markov) differs native vs cluster with both verdicts supported_*. Confirmatory: freeze test partition after prereg-v1 (see docs/PREREGISTRATION_REPLICATION.md)."
+  },
+  "exploratory_summary_for_pdf": {
+    "slice_reversals_flagged_under_h_rev_required_models": false,
+    "xes_native_vs_cluster_sign_flip": true,
+    "xes_primary_h_rev_supported": true,
+    "markov_beats_ragr_on_advance": true,
+    "dag_features_negligible": true,
+    "phase3_logistic_vs_success": "inconclusive"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "gap_bins_returns_to_seen_exercise": {
+    "same_day": {
+      "n": 5569314
+    },
+    "1_3_days": {
+      "n": 149796
+    },
+    "4_14_days": {
+      "n": 245395
+    },
+    "15p_days": {
+      "n": 240309
+    },
+    "n_users_scanned": 204077,
+    "unit": "integer_calendar_day"
+  },
+  "restricted_gap_ge_1_day": {
+    "n_rows": 635500,
+    "n_train_learners": 35997,
+    "n_test_learners": 8999,
+    "auc_day": 0.6554863770107512,
+    "auc_success": 0.6606079519204642,
+    "paired_day_minus_success": {
+      "mean_delta_auc": -0.005121574909712989,
+      "ci": [
+        -0.006724996134072761,
+        -0.0035124728678664566
+      ],
+      "n_boot": 1000,
+      "n_boot_kept": 1000,
+      "statistic": "pooled_auc_day_minus_success_bootstrap_over_learners",
+      "ci_excludes_zero": true
+    }
+  },
+  "claim": "unresolved",
+  "claim_rule": "Use 'limited_power' wording only if n_rows(gap>=1) < 20000 OR CI includes 0. If n>=20000 and CI excludes 0: 'day_delta_t_beats_success' when mean>0, else 'no_evidence_day_beats_success_powered_negative_or_null'.",
+  "practical_threshold_note": "Same-day returns dominate (n=5569314); gap>=1 n=635500.",
+  "claim_superseded_by": "followup3_forgetting.json",
+  "note": "Follow-up 3: previous day-vs-success result must not be cited as a null until gap>=1-only redo completes."
+}

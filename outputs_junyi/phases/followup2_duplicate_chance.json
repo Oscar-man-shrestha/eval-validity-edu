@@ -1,0 +1,24 @@
+{
+  "real_train_test_prefix12": {
+    "n_test_sequences": 6290,
+    "n_test_unique_prefixes": 5899,
+    "n_overlap_prefixes": 471,
+    "frac_test_prefixes_in_train": 0.07984404136294287
+  },
+  "chance_baseline_pseudo_test": {
+    "n_pseudo_test": 6290,
+    "n_remaining_train": 21144,
+    "n_pseudo_unique_prefixes": 5770,
+    "n_overlap_prefixes": 573,
+    "frac_pseudo_prefixes_in_remaining_train": 0.09930675909878683,
+    "seed": 0,
+    "rule": "sample 6290 train seqs as pseudo-test; collide prefixes against remaining train"
+  },
+  "comparison": {
+    "real_overlap": 471,
+    "chance_overlap": 573,
+    "real_minus_chance": -102,
+    "real_frac": 0.07984404136294287,
+    "chance_frac": 0.09930675909878683
+  }
+}

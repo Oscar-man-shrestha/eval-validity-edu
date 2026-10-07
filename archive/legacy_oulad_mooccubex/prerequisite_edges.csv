@@ -1,0 +1,726 @@
+source_concept_name,target_concept_name
+operation command,restart
+auxiliary memory,file management
+binary digit,parallel compilation
+interrupt signal,soft interrupt
+storage space,file allocation
+program state,restart
+interrupt service routine,first come first served
+storage allocation,cache
+collision detection,carrier sense
+interconnection network,broadcast network
+connection request,link-state packet
+cache memory,write access
+segment table,interrupt mechanism
+program instruction,instruction stream
+process switch,general-purpose operating system
+Internet Protocol,Internet television
+instruction function,general-purpose operating system
+execution state,restart
+digital information,disk image
+execution overhead,parallel compilation
+operational semantics,distributed operating system
+control line,process switch
+interrupt control,disable interrupts
+command interface,second-generation computer
+segment table,instruction cache
+leaf node,B-tree
+square-wave signal,multimedia communication
+interrupt control,subroutine call instruction
+binary signal,main memory
+segment table,privileged instruction
+time-sharing system,virtual machine monitor
+interrupt service routine,buddy system
+internal interrupt,disable interrupts
+control bus,enable interrupts
+interrupt controller,multiple processes
+instruction decoder,interrupt priority
+machine cycle,execution system
+control bus,interrupt control
+processing flow,processor scheduling
+interrupt enable,process scheduling
+storage space,virtual memory
+binary digit,carrier sense
+file subsystem,system boot
+connection-oriented protocol,interconnection network
+radix conversion,virtual memory
+label,index register
+active partition,subroutine call instruction
+interrupt enable,cache
+network delay,broadcast network
+cache,file management
+start symbol,send signal
+protection bit,interrupt enable
+program instruction,segment table
+interconnection network,remote system
+multi-user system,Windows operating system
+storage space,data-flow analysis
+square-wave signal,demodulator
+virtual machine monitor,management subsystem
+machine cycle,interrupt controller
+interrupt control,interrupt controller
+program status word,dynamic memory allocation
+divide and conquer,quicksort
+macro instruction,compilation system
+instruction decoder,send signal
+blocking receive,connection establishment
+system configuration,file management
+system kernel,dynamic management
+operation command,control-flow analysis
+logical address space,cache memory
+internal interrupt,interrupt control
+logical address space,random-access memory
+user process,scheduling policy
+instruction pointer register,interrupt service routine
+master boot record,device driver
+output channel,instruction cache
+interrupt control,system interrupt
+binary signal,sequential memory
+file allocation,preallocation
+process state,interrupt enable
+Internet Protocol,network printer
+system interrupt,program state
+wired network,broadcast network
+interrupt control,page fault
+system call table,interrupt service routine
+system boot,full recovery
+interrupt signal,first come first served
+virtualization,file allocation
+restart,loop execution
+internal interrupt,deadlock prevention
+page-fault interrupt,multicore processor
+file maintenance,control block
+mass storage,virtual memory management
+dynamic memory allocation,dynamic management
+error code,general-purpose operating system
+page-fault interrupt,interrupt service routine
+external interrupt,error correction
+calling program,test driver
+management subsystem,real-time system
+function block,soft interrupt
+virtual address space,network printer
+broadcast network,communication subnet
+link-state packet,Fast Ethernet
+instruction stream,soft interrupt
+operation command,privileged instruction
+process creation,interoperability
+blocking receive,network delay
+system interrupt,scheduler
+Internet Protocol,point-to-point connection
+interrupt mechanism,user process
+internal interrupt,priority scheduling
+kernel service,file organization
+control line,control bus
+storage space,auxiliary memory
+send signal,control line
+internal program,device driver
+segmented memory management,virtual machine monitor
+embedded controller,real-time system
+topological relation,successor set
+internal interrupt,error correction
+program instruction,macro instruction
+external memory,storage allocation
+command interface,management subsystem
+wired network,interior gateway protocol
+segment table,next header
+multicore processor,scheduling policy
+broadcast network,Fast Ethernet
+wired network,multimedia communication
+instruction decoder,calling program
+page fault,interrupt system
+program status word register,process creation
+circuit logic,instruction cache
+high-speed bus,network printer
+interrupt mechanism,execution system
+virtual address space,interoperability
+thread control block,instruction stream
+Internet Protocol,interconnection network
+startup program,interrupt mechanism
+occupied space,kernel space
+write access,privileged instruction
+priority control,multiprocessor scheduling
+write access,dynamic memory allocation
+index register,process switch
+system configuration,interrupt system
+instruction function,processor scheduling
+object-oriented programming,test driver
+code optimization,algorithm correctness
+storage allocation,instruction cache
+instruction pointer register,process replication
+logical partition,command interface
+interrupt controller,interrupt system
+high-speed bus,interface analysis
+control bus,system boot
+interrupt controller,interrupt service routine
+system kernel,device driver
+access conflict,service system
+interior gateway protocol,interconnection network
+operation command,synchronization control
+priority control,access policy
+control bus,program status word register
+internal interrupt,interrupt controller
+logical address space,network file system
+compilation technology,multiple processes
+storage space,file subsystem
+system call table,program state
+internal interrupt,kernel service
+storage space,FAT file system
+subroutine call instruction,interrupt service routine
+control bus,multiple processes
+data file,Windows operating system
+kernel stack,service system
+managing files,multi-user system
+priority scheduling,scheduler
+interrupt control,first come first served
+send signal,blocking receive
+system interrupt,interrupt controller
+digital information,telephone system
+thread management,execution system
+random-access memory,memory chip
+management subsystem,service system
+system kernel,Windows operating system
+virtual memory management,processor scheduling
+nonterminal symbol,control bus
+high-speed bus,media access control
+interoperability,distributed operating system
+binary encoding,point-to-point connection
+partition table,real-time system
+in-degree,undirected graph
+processor scheduling,plug and play
+Internet Protocol,local area network
+dynamic memory allocation,instruction stream
+interrupt control,process switch
+predictability,compilation technology
+interrupt mechanism,connection request
+file management,data file
+high-speed bus,loader
+circuit logic,auxiliary memory
+memory management unit,kernel module
+dynamic management,Routing Information Protocol
+system kernel,interoperability
+local area network,Internet television
+internal interrupt,page fault
+index register,system interrupt
+communications engineering,carrier sense
+soft interrupt,program state
+storage space,external memory
+virtual address space,kernel module
+dynamic memory allocation,file subsystem
+macro instruction,instruction stream
+index register,cache memory
+interrupt system,virtual page
+segment table,process creation
+object-oriented programming,program check
+cache memory,memory chip
+embedded operating system,distributed operating system
+media access control,telephone system
+file lock,synchronization control
+data file,network file system
+instruction cache,re-execution
+digital information,artificial intelligence language
+interrupt mechanism,page-fault interrupt
+collision detection,synchronization control
+scheduler,network printer
+partition table,managing files
+compilation system,execution system
+control line,external interrupt
+single step,interrupt signal
+compilation technology,re-execution
+access conflict,parallel compilation
+partition table,virtualization
+scheduling policy,thread management
+operation command,scanner
+instruction function,instruction stream
+ready state,internal interrupt
+error code,interrupt signal
+soft interrupt,media access control
+remote access,network file system
+sequential memory,external memory
+digital information,external input
+system configuration,configuration file
+control line,communication subnet
+interrupt controller,process scheduling
+external memory,embedded operating system
+disable interrupts,interrupt system
+operational semantics,disable interrupts
+demodulator,asymmetric digital subscriber line
+storage allocation,active partition
+command-line interface,parallel compilation
+instruction function,restart
+subroutine call instruction,service system
+priority scheduling,interrupt controller
+system configuration,storage allocation
+segmented memory management,thread management
+program instruction,write access
+restart,system boot
+interrupt mechanism,interrupt system
+segment length,operation command
+priority scheduling,multiprocessor scheduling
+output channel,instruction decoder
+control line,boot record
+operation command,execution state
+segment table,device driver
+processor scheduling,command-line interface
+sequential search,average search length
+computational complexity,program instruction
+interrupt control,interrupt system
+binary signal,file control block
+kernel space,access cycle
+program check,batch system
+user process,interrupt service routine
+random-access memory,segment table
+interrupt priority,page-fault interrupt
+scheduler,kernel service
+kernel space,embedded operating system
+virtual memory,segmented memory management
+partition table,restart
+local area network,remote system
+segment table,process replication
+remote access,interior gateway protocol
+thread control block,embedded operating system
+interrupt controller,synchronization control
+execution overhead,execution system
+object-oriented programming,thread management
+blocking receive,media access control
+predictability,counting sort
+collision detection,batch system
+system kernel,scheduler
+Routing Information Protocol,protocol data unit
+kernel service,file subsystem
+dynamic memory allocation,process scheduling
+storage space,virtual memory management
+file subsystem,multi-user system
+binary encoding,binary signal
+program instruction,coordination mechanism
+wired network,blocking receive
+record structure,memory management unit
+instruction cache,embedded operating system
+logical partition,thread management
+output channel,program check
+storage allocation,virtual memory management
+program instruction,soft interrupt
+sequential memory,instruction pointer register
+control bus,control-flow analysis
+coordination mechanism,interrupt system
+access conflict,collision detection
+interrupt signal,interrupt controller
+thread management,parallel compilation
+Internet Protocol,wired network
+partition table,memory management unit
+connection request,wired network
+subroutine call instruction,scanner
+system kernel,interrupt service routine
+program status word register,process scheduling
+virtual address space,virtual memory management
+control block,remote access
+coordination mechanism,distributed operating system
+relative address,multi-user system
+paging,interrupt mechanism
+partition table,storage allocation
+kernel space,process scheduling
+memory management unit,page-fault interrupt
+internal program,command-line interface
+point-to-point connection,Fast Ethernet
+asymmetric digital subscriber line,connection request
+logical address space,distributed operating system
+program status word register,internal interrupt
+local area network,network file system
+routing protocol,interconnection network
+calling program,cross-compilation
+auxiliary memory,cache
+time constraint,system interrupt
+access policy,remote access
+subroutine call instruction,loader
+instruction cache,compilation system
+binary encoding,swapping
+virtualization,thread management
+multilevel feedback queue,service system
+interrupt signal,interrupt enable
+admission control,local terminal
+system call table,dynamic management
+storage allocation,file management
+logical address space,compilation system
+cache memory,kernel service
+connection request,interconnection network
+operation command,command interface
+dynamic dispatch,parallel compilation
+interconnection network,multimedia communication
+privileged instruction,embedded operating system
+parallel compilation,multiprocessor scheduling
+protocol data unit,routing protocol
+binary encoding,password
+interrupt signal,connection establishment
+internal interrupt,multiprocessor scheduling
+virtual memory,virtualization
+execution state,interrupt service routine
+logical partition,virtual memory
+instruction stream,re-execution
+segment length,compilation system
+interrupt enable,interrupt service routine
+interrupt mechanism,internal interrupt
+admission control,virtualization
+memory chip,embedded operating system
+segment table,process scheduling
+interrupt mechanism,page fault
+binary digit,interrupt enable
+external resource,middleware
+page-fault interrupt,file management
+memory chip,FAT file system
+processing flow,batch system
+external interrupt,page fault
+processor scheduling,service system
+active partition,distributed operating system
+storage allocation,segmented memory management
+system interrupt,interrupt system
+virtual address space,cache memory
+output channel,data-flow analysis
+interrupt system,general-purpose operating system
+program instruction,service system
+admission control,interoperability
+execution state,deadlock detection
+predictability,probability
+sequential memory,storage allocation
+interrupt system,interrupt service routine
+binary signal,pseudocode
+program status word,general-purpose operating system
+external interrupt,scheduling policy
+hardware fault,safe mode
+send signal,dynamic update
+illegal instruction,embedded controller
+mass storage,storage allocation
+carrier sense,asymmetric digital subscriber line
+error code,soft interrupt
+hardware fault,startup program
+logical address space,kernel service
+local area network,interior gateway protocol
+digital information,Routing Information Protocol
+disable interrupts,interrupt enable
+interrupt system,management subsystem
+connection-oriented protocol,telephone system
+subroutine call instruction,system call table
+system kernel,write access
+enable interrupts,disable interrupts
+operation command,error code
+logical address space,segmented memory management
+Routing Information Protocol,remote access
+control bus,x86 architecture
+interrupt enable,virtual memory management
+connection request,domain name system
+column address,index register
+interrupt service routine,processor scheduling
+system interrupt,embedded operating system
+page frame,system interrupt
+interrupt mechanism,deadlock prevention
+directory structure,interrupt system
+Internet Protocol,connection request
+digital information,shared file
+interrupt control,data-flow analysis
+operation command,logical address space
+priority control,embedded controller
+interrupt enable,coordination mechanism
+external memory,virtual disk
+storage space,random-access memory
+program instruction,interoperability
+active partition,test driver
+binary signal,program status word register
+binary signal,illegal instruction
+external interrupt,interrupt mechanism
+external memory,interrupt signal
+cyclic redundancy check,broadcast network
+main memory,virtualization
+program instruction,system boot
+partition table,virtual memory management
+file allocation,deadlock prevention
+interrupt signal,service system
+Internet Protocol,remote access
+instruction stream,instruction cache
+user process,process switch
+process scheduling,device driver
+process creation,program transformation
+soft interrupt,user process
+configuration file,remote access
+program status word register,ready state
+storage allocation,embedded operating system
+control line,end marker
+instruction pointer register,program status word register
+system interrupt,interrupt priority
+time-sharing system,telephone system
+simulated environment,cross-compilation
+memory management unit,multiple processes
+system interrupt,priority control
+operation command,thread management
+program instruction,boot sector
+kernel module,multiprocessor scheduling
+control line,concurrent process
+multiprocessor scheduling,general-purpose operating system
+internal interrupt,interface analysis
+application environment,reinstallation
+instruction pointer register,managing files
+protocol data unit,interconnection network
+boot sector,kernel space
+virtual address space,embedded operating system
+control line,interrupt system
+enable interrupts,interrupt service routine
+protection bit,Fast Ethernet
+compilation technology,Windows operating system
+soft interrupt,managing files
+binary encoding,external interrupt
+interrupt enable,access conflict
+interrupt mechanism,calling program
+external memory,auxiliary memory
+reset circuit,interrupt controller
+multiprocessor scheduling,distributed operating system
+logical address space,file allocation
+predictability,geometric distribution
+selection,counting sort
+interrupt enable,kernel service
+scheduling policy,distributed operating system
+interrupt signal,system interrupt
+instruction pointer register,dynamic memory allocation
+predictability,graph search
+segmented memory management,process creation
+index register,virtual memory
+control block,dynamic memory allocation
+file control block,file allocation
+system kernel,access right
+managing files,FAT file system
+running time,black box
+network delay,interconnection network
+send signal,blocked state
+system configuration,device driver
+processing flow,soft interrupt
+collision detection,general-purpose operating system
+segment length,segment table
+process creation,parallel compilation
+kernel space,static allocation
+interrupt system,priority control
+predictability,synchronization control
+control block,system configuration
+compilation technology,parallel compilation
+time efficiency,interrupt enable
+system configuration,file subsystem
+segment table,compilation technology
+storage space,file control block
+control bus,instruction function
+subroutine call instruction,synchronization control
+Routing Information Protocol,route aggregation
+segment table,enable interrupts
+mass storage,cache memory
+interrupt mechanism,thread control block
+program state,re-execution
+scheduler,process creation
+index register,program status word register
+cache,calling program
+time-sharing system,scheduling policy
+calling program,internal program
+virtual memory,embedded operating system
+operation command,execution system
+kernel module,disable interrupts
+code optimization,managing files
+access matrix,time-sharing system
+square-wave signal,codec
+time-sharing system,interrupt service routine
+subroutine call instruction,test driver
+page fault,soft interrupt
+collision detection,broadcast network
+disable interrupts,program state
+instruction pointer register,access conflict
+partition table,file organization
+demodulator,time-sharing system
+external resource,remote system
+protocol data unit,broadcast network
+partition table,batch system
+batch system,real-time system
+interrupt mechanism,interrupt service routine
+broadcast network,domain name system
+internal interrupt,boot record
+operation command,cross-compilation
+system interrupt,multi-user system
+control bus,operation command
+file subsystem,batch system
+sequential memory,auxiliary memory
+storage allocation,auxiliary memory
+two-way merge,quicksort
+square-wave signal,device driver
+file allocation,general-purpose operating system
+compilation system,general-purpose operating system
+codec,access right
+instruction decoder,privileged instruction
+system interrupt,deadlock avoidance
+illegal instruction,disable interrupts
+segment table,segmented memory management
+interrupt controller,recovery mechanism
+program status word register,enable interrupts
+record structure,internal program
+unshielded twisted pair,local area network
+digital information,partition table
+interrupt control,x86 architecture
+interrupt control,interrupt service routine
+program instruction,system interrupt
+device driver,execution system
+synchronization control,code optimization
+thread control block,compilation system
+operation command,interface analysis
+object-oriented programming,code optimization
+instruction stream,interrupt system
+pseudocode,internal interrupt
+cache memory,startup program
+index register,function block
+file organization,Windows operating system
+instruction decoder,instruction function
+Routing Information Protocol,local area network
+index register,segment table
+kernel space,compilation technology
+command interface,BASIC language
+blocking receive,Fast Ethernet
+predictability,collision detection
+send signal,node pair
+interrupt control,process replication
+Windows operating system,application environment
+interrupt control,plug and play
+high-speed bus,interrupt mechanism
+occupied space,execution system
+execution state,processor scheduling
+loader,embedded controller
+subroutine call instruction,privileged instruction
+unordered list,interrupt controller
+loop execution,object-oriented programming
+stack overflow,interrupt service routine
+instruction function,interrupt service routine
+digital information,password
+index register,process scheduling
+binary signal,communication subnet
+instruction stream,rejection
+interrupt service routine,service system
+macro instruction,cross-compilation
+index value,operation command
+kernel space,kernel module
+control block,memory management unit
+application environment,remote system
+radix conversion,parallel compilation
+boot record,execution system
+interrupt controller,time-sharing system
+interrupt controller,kernel service
+parallel compilation,process replication
+disable interrupts,interrupt controller
+segment table,interrupt controller
+dynamic management,virtual machine monitor
+interrupt service routine,x86 architecture
+general-purpose operating system,network file system
+connection request,network file system
+operation command,process replication
+management subsystem,compilation system
+storage allocation,dynamic management
+predictability,deadlock prevention
+memory management unit,x86 architecture
+dynamic routing,Internet Protocol
+system configuration,process switch
+interconnection network,Fast Ethernet
+admission control,Internet Protocol
+file allocation,static allocation
+interrupt signal,interrupt control
+segment table,test driver
+predictability,kernel service
+storage space,storage allocation
+storage space,logical address space
+master boot record,interrupt system
+partition table,file allocation
+configuration file,batch system
+kernel service,process replication
+send signal,Routing Information Protocol
+subtask,interrupt controller
+routing protocol,Internet television
+binary signal,compilation technology
+interface standard,embedded operating system
+graph traversal,depth-first search
+priority control,concurrent process
+machine cycle,interrupt mechanism
+access conflict,multiple processes
+object-oriented programming,editor
+send signal,rejection
+storage allocation,cache memory
+high-speed bus,external interrupt
+execution overhead,code optimization
+instruction function,instruction cache
+binary signal,instruction decoder
+cache memory,dynamic memory allocation
+logical address space,main memory
+command interface,command-line interface
+binary signal,point-to-point connection
+multicore processor,parallel compilation
+thread management,web crawler
+interrupt system,distributed operating system
+control bus,interrupt signal
+subroutine call instruction,concurrent process
+digital information,communication subnet
+operation command,dynamic memory allocation
+instruction stream,command-line interface
+memory management unit,thread control block
+program instruction,execution state
+logical address space,thread control block
+digital information,multimedia communication
+kernel service,multiple processes
+control bus,execution system
+operation command,remote system
+kernel service,internal program
+connection request,connection-oriented protocol
+operation command,segment table
+instruction pointer register,interrupt mechanism
+radix conversion,binary encoding
+management subsystem,general-purpose operating system
+digital information,interface standard
+program instruction,operation command
+mass storage,Windows operating system
+processing unit,program status word register
+routing protocol,point-to-point connection
+system call table,embedded operating system
+instruction pointer register,instruction stream
+control block,interrupt control
+carrier sense,Internet Protocol
+process scheduling,kernel service
+boot record,device driver
+illegal instruction,virtual machine monitor
+logical address space,multicore processor
+sequential memory,file maintenance
+virtual address space,storage allocation
+privileged instruction,distributed operating system
+interrupt mechanism,priority control
+virtual address space,random-access memory
+logical address space,process scheduling
+program status word,privileged instruction
+connection-oriented protocol,routing protocol
+startup program,program transformation
+interrupt signal,kernel module
+access cycle,calling program
+system interrupt,concurrency
+routing algorithm,broadcast network
+hardware fault,interrupt signal
+storage space,kernel service
+binary encoding,instruction pointer register
+device driver,virtual disk
+internal interrupt,process creation
+sequential memory,memory management unit
+concurrent process,deadlock detection
+virtual address space,segment table
+local area network,broadcast network
+compilation system,batch system
+interrupt priority,priority scheduling
+macro instruction,process scheduling
+instruction stream,execution system
+concurrent process,multi-user system
+partition table,active partition
+embedded controller,virtual machine monitor
+virtual address space,user process
+program instruction,privileged instruction
+access cycle,thread control block
+soft interrupt,process scheduling
+square-wave signal,instruction decoder
+square-wave signal,digital information
+operational efficiency,media access control
+connection-oriented protocol,Fast Ethernet
+unshielded twisted pair,Internet television
+storage space,cache memory
+control block,time-sharing system
+external memory,virtualization
+synchronization control,priority control
+Internet Protocol,broadcast network

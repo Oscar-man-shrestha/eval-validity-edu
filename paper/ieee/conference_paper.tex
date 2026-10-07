@@ -1,0 +1,137 @@
+% IEEE conference A4 (IEEEtran). Compile with: pdflatex conference_paper.tex
+% Content matches NeuroTrace-DAG_IEEE_A4_Conference.docx
+% Confirmatory H-rev: pending until OSF + --touch-test; fill from JSON only.
+\documentclass[conference,a4paper]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{When Next-Item Metrics Mislead: Evaluation Validity Across Educational Interaction Logs}
+
+\author{\IEEEauthorblockN{Oscar Man Shrestha}
+\IEEEauthorblockA{\textit{Dept.\ name of organization (Affiliation)}\\
+City, Country\\
+email address or ORCID}
+}
+
+\maketitle
+
+\begin{abstract}
+Recall@K is the usual report card for next-item models on student logs.
+We are less sure it measures what people think it measures.
+On Junyi Academy, a gated ranker gets Recall@5 $0.891$ $[0.880, 0.902]$, yet Recent-5 is already $0.885$---within a $0.01$ practical gap---so we do not claim a recommender win.
+The more interesting question is whether the \emph{action unit} (question, skill, or topic cluster) changes which simple model looks better.
+We lock a small confirmatory comparison of a GRU probe against first-order Markov on Junyi timed, ASSISTments~2009, and XES3G5M, at native units and at matched clusters ($\sim$120), under a freeze holdout and Bonferroni family $m_{\mathrm{planned}}=6$.
+Holdout cells stay blank until external registration and one touch-test; Junyi ranking numbers below are exploratory.
+\end{abstract}
+
+\begin{IEEEkeywords}
+educational data mining, evaluation validity, next-item recommendation,
+knowledge tracing logs, preregistration, action granularity
+\end{IEEEkeywords}
+
+\section{Introduction}
+On educational logs, next-item Recall@K often rewards repeats and the curriculum's natural order.
+That is not the same as measuring whether a model captured learning structure.
+Worse, changing how we define an ``item''---question id versus skill or topic cluster---can flip which baseline wins.
+
+Our goal here is modest: check whether that unit choice systematically reverses a GRU-versus-Markov contrast under a locked protocol.
+We are not proposing a new recommender champion.
+
+\noindent\textbf{Registered question (prereg-v1).}
+Does the sign of the paired GRU$-$Markov non-repeat Recall@5 contrast flip between native and cluster units on at least one dataset?
+Until registration and a single freeze holdout run, those cells remain pending.
+
+\section{Related Work}
+KT and educational recommender papers usually score platform-native ids~\cite{hidasi2016,kang2018}.
+Duplicates, unit mismatch, and curriculum order show up often as caveats; we treat them as the object of study.
+Library-faithful SASRec/GRU4Rec are outside this confirmatory packet for now; the probes below are diagnostic.
+
+\section{Datasets and Units}
+Junyi: 835 concepts, 978 edges, 27{,}434/6{,}290 train/test sequences; embedding pair-AUC vs random 0.904.
+We also use ASSISTments skills and XES questions, plus registered maps that collapse items into roughly 120 clusters (two-method intersection on Junyi/ASSISTments; co-occurrence only on XES).
+
+\begin{table}[t]
+\centering
+\caption{Registered action units.}
+\label{tab:units}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Dataset & Native & Cluster \\
+\midrule
+Junyi timed & topic/exercise & text $k$-means (+cooc) \\
+ASSISTments & skill token & text (+cooc) \\
+XES3G5M & question & cooc only \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Methods}
+\subsection{Confirmatory comparison}
+Freeze seed 20261004; GRU seeds 20261101/02/03; frozen config and fixed \texttt{best\_epoch}; $\ge$10{,}000 sequence bootstrap; $m_{\mathrm{planned}}=6$ Bonferroni; $\ge$500 non-repeat queries per cell.
+A dataset supports the primary claim only if native and cluster both show \texttt{supported\_*} verdicts with opposite signs; the project needs $\ge$1 such dataset.
+Models in the confirmatory tables: popularity, recency, \texttt{markov\_order1}, \texttt{gru\_probe}.
+
+\subsection{Exploratory Junyi work}
+Embeddings, memory classifiers, the DAG, the review/advance gate, and the gated ranker are useful diagnostics.
+They are not part of the confirmatory family.
+
+\section{Results}
+\subsection{Primary confirmatory cells (pending)}
+Tag \texttt{prereg-v1} freezes the protocol and artifacts.
+Table~\ref{tab:hrev} is empty on purpose until OSF/Zenodo and one \texttt{--touch-test}.
+Numbers will come only from \texttt{primary\_claims} JSON.
+
+\begin{table}[t]
+\centering
+\caption{Confirmatory unit cells (pending touch-test).}
+\label{tab:hrev}
+\begin{tabular}{@{}llcc@{}}
+\toprule
+Dataset & Unit & Verdict & CI \\
+\midrule
+junyi\_timed & native/cluster & pending & --- \\
+assistments & native/cluster & pending & --- \\
+xes3g5m & native/cluster & pending & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Exploratory Junyi ranking}
+Capped RAGR R@5 $=0.891$ $[0.880, 0.902]$ vs Recent-5 $0.885$ $[0.872, 0.897]$ ($n{=}800$).
+Full-test RAGR R@5 $=0.889$ $[0.885, 0.893]$ ($n{=}6290$).
+Revisit logistic AUC $=0.864$; gate Brier $=0.0928$, ECE $=0.0335$.
+The sub-$0.01$ gap is why we do not sell this as a ranking breakthrough.
+
+\subsection{Cross-dataset diagnostics}
+Markov looks strong on curriculum-heavy XES advance slices; GRU probes move around by dataset.
+That pattern is why we preregistered the sign-flip test; it is not itself the confirmatory answer.
+
+\section{Discussion and Limitations}
+A null or mixed result is still a result: it would mean the preregistered flip did not show up under the locked rules.
+Missing library SASRec, unverified redistribution licences, and disagreeing cluster maps (low ARI) are real limits.
+
+\section{Conclusion}
+We locked a small confirmatory test about action units and left the Junyi product numbers clearly exploratory.
+After registration, one touch-test fills the holdout table; until then those cells stay blank.
+
+\section*{Acknowledgment}
+Code and prereg packet: \url{https://github.com/Oscar-man-shrestha/eval-validity-edu} (tag \texttt{prereg-v1}).
+
+\begin{thebibliography}{00}
+\bibitem{hidasi2016} B. Hidasi et al., ``Session-based recommendations with recurrent neural networks,'' in \emph{Proc. ICLR}, 2016.
+\bibitem{kang2018} W.-C. Kang and J. McAuley, ``Self-attentive sequential recommendation,'' in \emph{Proc. IEEE ICDM}, 2018, pp. 197--206.
+\bibitem{edudata} F. Wang et al., ``EduData,'' GitHub, accessed 2026.
+\bibitem{osf} Center for Open Science, ``OSF Preregistration,'' \url{https://osf.io/registries}, 2026.
+\bibitem{preregv1} NeuroTrace-DAG, ``prereg-v1 release,'' 2026. [Online]. Available: \url{https://github.com/Oscar-man-shrestha/eval-validity-edu/releases/tag/prereg-v1}
+\end{thebibliography}
+
+\end{document}

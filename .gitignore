@@ -1,0 +1,32 @@
+# Raw data folders - too large for GitHub, and raw data shouldn't live in git anyway.
+# Anyone can regenerate these by running the preprocessing scripts after downloading
+# the source data (OULAD + MOOCCubeX links are documented in the completion report).
+oulad_data/
+mooccubex_data/
+
+# The unfiltered 637K-row concept dump - too large (142MB) and not actually needed;
+# concepts_clean.csv (the filtered, usable version) is what's kept and used.
+concepts.csv
+
+# Python cache files, if any get created later
+__pycache__/
+*.pyc
+
+# Official Junyi archive is 1.2 GB; keep only the processed KTBD tables in git.
+data/junyi_raw/
+*.rar
+*.npz
+__pycache__/
+.DS_Store
+~$*.docx
+
+# Do not commit bulk dataset files (download scripts + SHA-256 in docs/data_cards/).
+data/assistments2009/**/*.csv
+data/assistments2009/**/*.zip
+data/xes3g5m/**/*.zip
+data/xes3g5m/**/*.csv
+data/xes3g5m/**/*.parquet
+data/xes3g5m/XES3G5M/
+data/junyi_ktbd/train.json
+data/junyi_ktbd/test.json
+docs/osf_prereg_v1_upload/

@@ -1,0 +1,19 @@
+{
+  "pair_auc_vs_random": 0.9043941142768723,
+  "pair_auc_vs_same_topic": 0.4642241793903505,
+  "review_ranking_ragr_r5": {
+    "mean": 0.89125,
+    "ci": [
+      0.87999375,
+      0.90200625
+    ],
+    "n_sequences": 800,
+    "n_queries": 4000,
+    "statistic": "mean_of_per_sequence_means",
+    "n_boot": 1000
+  },
+  "phase6_superseded_ci": [
+    0.8794875,
+    0.90475
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "ktbd": {
+    "share_next_equals_last": {
+      "share": 0.8123021872382447,
+      "n": 2809159,
+      "hits": 2281886
+    },
+    "filter": "EduData ktbd len 12\u2013200"
+  },
+  "timed_raw": {
+    "share_next_equals_last": {
+      "share": 0.6544756791466514,
+      "n": 7795923,
+      "hits": 5102242
+    },
+    "note": "all user streams in timed_interactions.npz (exercise set already ktbd-mapped)"
+  },
+  "timed_ktbd_filters": {
+    "share_next_equals_last": {
+      "share": 0.6351783694682582,
+      "n": 4938205,
+      "hits": 3136641
+    },
+    "n_sequences": 72457,
+    "filters": "length>=12, truncate to 200, exercise ids \u2286 ktbd vertex map"
+  },
+  "remaining_gap": {
+    "ktbd_minus_timed_filtered": 0.17712381776998642,
+    "explanation": "Length/exercise filters do not close the gap. EduData ktbd sequences are not raw per-user streams: they apply session/problem-log construction that raises consecutive repeats (sticky within-session practice). Timed npz is chronological user streams (capped extract). Do not treat the two shares as the same estimand; cite ktbd for ranking eval and timed only for \u0394t/forgetting.",
+    "can_use_both_as_same_share": false
+  }
+}

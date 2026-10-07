@@ -1,0 +1,34 @@
+{
+  "dataset": "Junyi Academy Math Practicing Log (Chang, Lin, Chen, EDM 2015); EduData ktbd-junyi split",
+  "source": "http://base.ustc.edu.cn/data/ktbd/junyi/",
+  "datashop": "https://pslcdatashop.web.cmu.edu/DatasetInfo?datasetId=1198",
+  "why_not_oulad": "OULAD BBB has one placeholder concept and cannot join to MOOCCubeX names.",
+  "nodes": 835,
+  "prerequisite_edges": 978,
+  "nx.is_directed_acyclic_graph": true,
+  "longest_path_edges": 65,
+  "embedding": {
+    "model": "all-MiniLM-L6-v2",
+    "n_linked": 978,
+    "linked_mean": 0.5456,
+    "random_mean": 0.1668,
+    "pair_auc": 0.9044
+  },
+  "memory": {
+    "mean": {"auc": 0.5, "auc_ci": [0.5, 0.5], "pr_auc": 0.473, "rmse": 0.499, "mae": 0.499},
+    "success_rate": {"auc": 0.857, "auc_ci": [0.853, 0.861], "pr_auc": 0.831, "rmse": 0.399, "mae": 0.265},
+    "logistic_regression": {"auc": 0.861, "auc_ci": [0.857, 0.865], "pr_auc": 0.844, "rmse": 0.389, "mae": 0.303},
+    "hlr": {"auc": 0.787, "auc_ci": [0.783, 0.792], "pr_auc": 0.772, "rmse": 0.440, "mae": 0.409}
+  },
+  "ranking": {
+    "n_queries": 1500,
+    "full": {"recall@5": 0.883, "recall@10": 0.897, "ndcg@10": 0.844, "memory_changes_top1_frac": 0.813},
+    "no_memory": {"recall@5": 0.641, "recall@10": 0.772, "ndcg@10": 0.452},
+    "no_graph": {"recall@5": 0.881, "recall@10": 0.893, "ndcg@10": 0.841},
+    "no_semantics": {"recall@5": 0.880, "recall@10": 0.892, "ndcg@10": 0.846},
+    "popularity": {"recall@5": 0.028, "recall@10": 0.060, "ndcg@10": 0.026},
+    "semantic": {"recall@5": 0.808, "recall@10": 0.832, "ndcg@10": 0.779},
+    "graph": {"recall@5": 0.015, "recall@10": 0.017, "ndcg@10": 0.012},
+    "prereq_violation_rate": 0.861
+  }
+}

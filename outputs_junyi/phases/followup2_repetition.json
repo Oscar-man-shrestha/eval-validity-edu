@@ -1,0 +1,49 @@
+{
+  "junyi_ktbd_exercise": {
+    "share": 0.8123021872382447,
+    "n": 2809159,
+    "hits": 2281886,
+    "n_sequences": 33724
+  },
+  "junyi_ktbd_topic": {
+    "share": 0.9299559049523363,
+    "n": 2809159,
+    "hits": 2612394,
+    "n_sequences": 33724
+  },
+  "junyi_timed_raw_exercise": {
+    "share": 0.6544756791466514,
+    "n": 7795923,
+    "hits": 5102242,
+    "n_sequences": 204077
+  },
+  "junyi_timed_raw_topic": {
+    "share": 0.8596929446327266,
+    "n": 7795923,
+    "hits": 6702100,
+    "n_sequences": 204077
+  },
+  "assistments_skill": {
+    "share": 0.6732400778653,
+    "n": 342643,
+    "hits": 230681,
+    "n_sequences": 4217
+  },
+  "topic_map_coverage": {
+    "n_exercises_with_topic": 835,
+    "n_ktbd_nodes": 835,
+    "frac_ktbd_interactions_mapped": 1.0
+  },
+  "finding_name": "repetition_is_high_on_mastery_based_logs",
+  "finding_label": "repetition is high on mastery-based logs (Junyi, ASSISTments)",
+  "boolean_rule_deprecated": {
+    "old_flag": "repetition_junyi_specific",
+    "old_rule": "|assist_skill_share - junyi_ktbd_exercise_share| > 0.10",
+    "status": "replaced_by_side_by_side_numbers"
+  },
+  "high_repetition_boolean": {
+    "value": true,
+    "rule": "True iff min(Junyi ktbd exercise share, ASSISTments skill share) >= 0.60",
+    "label": "repetition is high on mastery-based logs (Junyi, ASSISTments)"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "available": true,
+  "dataset": "XES3G5M (NeurIPS 2023; question_level CSVs; longest window per uid)",
+  "split": {
+    "unit": "uid",
+    "n_learners": 18066,
+    "n_train": 14453,
+    "n_test": 3613,
+    "seed": 0,
+    "test_frac": 0.2,
+    "overlap": 0
+  },
+  "share_next_equals_last": {
+    "question_all": {
+      "share": 0.008450086332151382,
+      "n": 3975344,
+      "hits": 33592,
+      "n_sequences": 18066
+    },
+    "question_test": {
+      "share": 0.008507600991760374,
+      "n": 798580,
+      "hits": 6794,
+      "n_sequences": 3613
+    },
+    "kc_all": {
+      "share": 0.21542412403504102,
+      "n": 4520529,
+      "hits": 973831,
+      "n_sequences": 18066
+    },
+    "kc_test": {
+      "share": 0.21497280274835384,
+      "n": 908180,
+      "hits": 195234,
+      "n_sequences": 3613
+    }
+  },
+  "three_way_mix": {
+    "question_test": {
+      "continue": {
+        "count": 6794,
+        "frac": 0.008507600991760374
+      },
+      "revisit": {
+        "count": 28457,
+        "frac": 0.03563450123970047
+      },
+      "advance": {
+        "count": 763329,
+        "frac": 0.9558578977685391
+      },
+      "n": 798580
+    },
+    "kc_test": {
+      "continue": {
+        "count": 195234,
+        "frac": 0.21497280274835384
+      },
+      "revisit": {
+        "count": 334801,
+        "frac": 0.36865048778876436
+      },
+      "advance": {
+        "count": 378145,
+        "frac": 0.4163767094628818
+      },
+      "n": 908180
+    }
+  },
+  "note": "Re-split by uid before any model training. KC sequences expand multi-KC question tags (underscore-separated) into consecutive KC ids."
+}

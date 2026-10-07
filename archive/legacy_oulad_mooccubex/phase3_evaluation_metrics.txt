@@ -1,0 +1,14 @@
+PHASE 3 - HLR EVALUATION METRICS
+Held-out test set: 8538 rows, 1181 students
+(same student-level split as Step 2, seed=0, test_frac=0.2)
+
+AUC-ROC : 0.7014   (predicted p(t) ranked against binary recall_label)
+RMSE    : 0.2626  (predicted p(t) vs continuous target = score/100)
+MAE     : 0.1988
+
+Predicted half-life on test set (days): median=13.0  p10=6.9  p90=15.0
+
+NOTE: target is continuous (score/100), chosen to avoid the 96.7%/3.3%
+imbalance in recall_label (see Step 1). AUC still uses recall_label
+since it needs a binary reference. concept is a single module-level
+placeholder ('BBB') for every row - see Phase 1 known limitation.

@@ -1,0 +1,42 @@
+{
+  "source": "review_ranking.json",
+  "eval": {
+    "n_sequences": 800,
+    "cuts_per_sequence": 5,
+    "n_queries": 4000,
+    "seed": 0,
+    "n_test_pool": 6290
+  },
+  "metrics_ragr_r5": {
+    "mean": 0.89125,
+    "ci": [
+      0.87999375,
+      0.90200625
+    ],
+    "n_sequences": 800,
+    "n_queries": 4000,
+    "statistic": "mean_of_per_sequence_means",
+    "n_boot": 1000
+  },
+  "supersedes_phase6_eval_ci": {
+    "old": {
+      "file": "phase6_eval.json",
+      "ci": [
+        0.8794875,
+        0.90475
+      ],
+      "mean": 0.89125
+    },
+    "canonical": {
+      "mean": 0.89125,
+      "ci": [
+        0.87999375,
+        0.90200625
+      ],
+      "n_sequences": 800,
+      "n_queries": 4000,
+      "statistic": "mean_of_per_sequence_means",
+      "n_boot": 1000
+    }
+  }
+}

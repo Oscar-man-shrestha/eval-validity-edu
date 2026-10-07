@@ -1,0 +1,220 @@
+{
+  "split": {
+    "unit": "sequence",
+    "n_sequences_total": 27434,
+    "n_train_sequences": 21948,
+    "n_test_sequences": 5486,
+    "test_frac": 0.2,
+    "row_cutoff": null,
+    "item_accuracy_source": "train_sequences_only",
+    "item_acc_from_train_only": true,
+    "sequence_overlap": 0
+  },
+  "controls": [
+    "log_attempts",
+    "success_rate",
+    "log_step_dt",
+    "item_global_acc_train",
+    "user_so_far_acc",
+    "sequence_position",
+    "parents_seen",
+    "n_parents"
+  ],
+  "variants": {
+    "min_all_with_parents": {
+      "n_train": 428061,
+      "n_test": 105154,
+      "models": {
+        "logistic": {
+          "auc_base": 0.8513283071567134,
+          "auc_with_ready": 0.8517422514592757,
+          "delta_auc": {
+            "mean": 0.0004139443025623635,
+            "ci": [
+              0.00019551762071653712,
+              0.000623109307437239
+            ],
+            "n_sequences": 2888,
+            "n_rows": 105154,
+            "n_boot": 1000,
+            "n_boot_kept": 1000,
+            "ci_above_zero": true,
+            "statistic": "pooled_auc_delta_bootstrapped_over_sequences"
+          },
+          "pr_auc_base": 0.8684582079833097,
+          "pr_auc_with_ready": 0.8687402851548751
+        },
+        "gbt": {
+          "auc_base": 0.8703881685315091,
+          "auc_with_ready": 0.8707610475585716,
+          "delta_auc": {
+            "mean": 0.0003728790270625115,
+            "ci": [
+              0.00016303807436988116,
+              0.0005837605057229106
+            ],
+            "n_sequences": 2888,
+            "n_rows": 105154,
+            "n_boot": 1000,
+            "n_boot_kept": 1000,
+            "ci_above_zero": true,
+            "statistic": "pooled_auc_delta_bootstrapped_over_sequences"
+          },
+          "pr_auc_base": 0.8862915022083762,
+          "pr_auc_with_ready": 0.886471542178016
+        }
+      }
+    },
+    "min_all_parents_observed": {
+      "n_train": 288854,
+      "n_test": 70870,
+      "models": {
+        "logistic": {
+          "auc_base": 0.8487651083470249,
+          "auc_with_ready": 0.8492624963714683,
+          "delta_auc": {
+            "mean": 0.0004973880244434348,
+            "ci": [
+              0.00018658746797592108,
+              0.000824311656060378
+            ],
+            "n_sequences": 2420,
+            "n_rows": 70870,
+            "n_boot": 1000,
+            "n_boot_kept": 1000,
+            "ci_above_zero": true,
+            "statistic": "pooled_auc_delta_bootstrapped_over_sequences"
+          },
+          "pr_auc_base": 0.8703850604995058,
+          "pr_auc_with_ready": 0.870811537413304
+        },
+        "gbt": {
+          "auc_base": 0.8676827001170694,
+          "auc_with_ready": 0.8689510050566862,
+          "delta_auc": {
+            "mean": 0.0012683049396168267,
+            "ci": [
+              0.0009533194218307617,
+              0.0015580267436045153
+            ],
+            "n_sequences": 2420,
+            "n_rows": 70870,
+            "n_boot": 1000,
+            "n_boot_kept": 1000,
+            "ci_above_zero": true,
+            "statistic": "pooled_auc_delta_bootstrapped_over_sequences"
+          },
+          "pr_auc_base": 0.8879198669911892,
+          "pr_auc_with_ready": 0.8888352660021334
+        }
+      }
+    },
+    "mean_all_with_parents": {
+      "n_train": 428061,
+      "n_test": 105154,
+      "models": {
+        "logistic": {
+          "auc_base": 0.8513283071567134,
+          "auc_with_ready": 0.8517408696770744,
+          "delta_auc": {
+            "mean": 0.00041256252036103724,
+            "ci": [
+              0.00021163642977241882,
+              0.0006068562191975657
+            ],
+            "n_sequences": 2888,
+            "n_rows": 105154,
+            "n_boot": 1000,
+            "n_boot_kept": 1000,
+            "ci_above_zero": true,
+            "statistic": "pooled_auc_delta_bootstrapped_over_sequences"
+          },
+          "pr_auc_base": 0.8684582079833097,
+          "pr_auc_with_ready": 0.8687630175953909
+        },
+        "gbt": {
+          "auc_base": 0.8703881685315091,
+          "auc_with_ready": 0.8710894374915973,
+          "delta_auc": {
+            "mean": 0.0007012689600881528,
+            "ci": [
+              0.0004985003190553811,
+              0.000901387893859229
+            ],
+            "n_sequences": 2888,
+            "n_rows": 105154,
+            "n_boot": 1000,
+            "n_boot_kept": 1000,
+            "ci_above_zero": true,
+            "statistic": "pooled_auc_delta_bootstrapped_over_sequences"
+          },
+          "pr_auc_base": 0.8862915022083762,
+          "pr_auc_with_ready": 0.8867506327582046
+        }
+      }
+    },
+    "mean_all_parents_observed": {
+      "n_train": 288854,
+      "n_test": 70870,
+      "models": {
+        "logistic": {
+          "auc_base": 0.8487651083470249,
+          "auc_with_ready": 0.8492605627753409,
+          "delta_auc": {
+            "mean": 0.0004954544283160001,
+            "ci": [
+              0.00016167237011054935,
+              0.0007914069327690259
+            ],
+            "n_sequences": 2420,
+            "n_rows": 70870,
+            "n_boot": 1000,
+            "n_boot_kept": 1000,
+            "ci_above_zero": true,
+            "statistic": "pooled_auc_delta_bootstrapped_over_sequences"
+          },
+          "pr_auc_base": 0.8703850604995058,
+          "pr_auc_with_ready": 0.8708083464956013
+        },
+        "gbt": {
+          "auc_base": 0.8676827001170694,
+          "auc_with_ready": 0.868638335026243,
+          "delta_auc": {
+            "mean": 0.0009556349091736083,
+            "ci": [
+              0.0006840189444382583,
+              0.0012391059277977235
+            ],
+            "n_sequences": 2420,
+            "n_rows": 70870,
+            "n_boot": 1000,
+            "n_boot_kept": 1000,
+            "ci_above_zero": true,
+            "statistic": "pooled_auc_delta_bootstrapped_over_sequences"
+          },
+          "pr_auc_base": 0.8879198669911892,
+          "pr_auc_with_ready": 0.8886477573932793
+        }
+      }
+    }
+  },
+  "dag_helps_correctness": {
+    "status": "detectable_but_negligible",
+    "practical_threshold_delta_auc": 0.005,
+    "rule": "supported if mean \u0394AUC >= 0.005 and CI entirely above 0; detectable_but_negligible if CI above 0 but mean < threshold; else unresolved",
+    "primary_variant": "min_all_parents_observed / logistic",
+    "primary_delta_auc": {
+      "mean": 0.0004973880244434348,
+      "ci": [
+        0.00018658746797592108,
+        0.000824311656060378
+      ],
+      "n_sequences": 2420,
+      "n_rows": 70870,
+      "n_boot": 1000,
+      "n_boot_kept": 1000,
+      "ci_above_zero": true,
+      "statistic": "pooled_auc_delta_bootstrapped_over_sequences"
+    }
+  }
+}

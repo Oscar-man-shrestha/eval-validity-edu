@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NeuroTrace-DAG — Exploratory next-action viewer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0a1628;
+      --muted: #526274;
+      --line: #c9d4df;
+      --paper: #ffffff;
+      --wash: #eef3f7;
+      --sea: #0d9488;
+      --sea-deep: #0f766e;
+      --sea-soft: #d0f0eb;
+      --adv: #1e4d7b;
+      --adv-soft: #dbeafe;
+      --wrong: #b33a2b;
+      --ok: #0f766e;
+      --shadow: 0 14px 40px rgba(10, 22, 40, 0.08);
+      --radius: 20px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font: 400 15px/1.5 Manrope, system-ui, sans-serif;
+      background:
+        radial-gradient(900px 420px at 8% -8%, #c8ebe6 0%, transparent 55%),
+        radial-gradient(700px 380px at 100% 0%, #c9daf0 0%, transparent 50%),
+        var(--wash);
+      min-height: 100vh;
+    }
+    .shell { max-width: 1180px; margin: 0 auto; padding: 24px 18px 56px; }
+
+    header { margin-bottom: 18px; animation: rise .6s ease both; }
+    .eyebrow {
+      display: inline-flex; gap: 8px; align-items: center; flex-wrap: wrap;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--sea-deep); margin-bottom: 8px;
+    }
+    .eyebrow span {
+      background: var(--sea-soft); border: 1px solid #9fd9d0; padding: 4px 10px; border-radius: 999px;
+    }
+    h1 {
+      font-family: Syne, sans-serif; font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+      margin: 0 0 8px; letter-spacing: -0.03em; line-height: 1.05;
+    }
+    h1 em { font-style: normal; color: var(--sea-deep); }
+    .lede { margin: 0; max-width: 62ch; color: var(--muted); font-size: 1.05rem; }
+
+    .howto {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+      margin: 18px 0 16px; animation: rise .65s ease .05s both;
+    }
+    @media (max-width: 800px) { .howto { grid-template-columns: 1fr; } }
+    .howto article {
+      background: var(--paper); border: 1px solid var(--line); border-radius: 16px;
+      padding: 12px 14px; box-shadow: var(--shadow);
+    }
+    .howto .num {
+      width: 26px; height: 26px; border-radius: 50%; background: var(--sea);
+      color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 0.8rem;
+      margin-bottom: 8px;
+    }
+    .howto strong { display: block; margin-bottom: 2px; }
+    .howto p { margin: 0; color: var(--muted); font-size: 0.88rem; }
+
+    .layout {
+      display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 14px;
+      animation: rise .7s ease .1s both;
+    }
+    @media (max-width: 960px) { .layout { grid-template-columns: 1fr; } }
+
+    .panel {
+      background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 16px 16px 18px; box-shadow: var(--shadow);
+    }
+    .panel-head { margin-bottom: 12px; }
+    .panel-head h2 {
+      font-family: Syne, sans-serif; font-size: 1.15rem; margin: 0 0 4px;
+    }
+    .panel-head p { margin: 0; color: var(--muted); font-size: 0.88rem; }
+
+    .tip {
+      background: #f0f9f7; border: 1px solid #b7e4dc; color: var(--sea-deep);
+      border-radius: 12px; padding: 10px 12px; font-size: 0.86rem; margin-bottom: 12px;
+    }
+    .tip strong { display: block; margin-bottom: 2px; }
+
+    .big-cta {
+      width: 100%; text-align: left; cursor: pointer;
+      border: 2px solid var(--sea); background: linear-gradient(135deg, #0d9488, #0f766e);
+      color: #fff; border-radius: 14px; padding: 14px 16px; margin-bottom: 10px;
+      font: inherit; box-shadow: var(--shadow);
+    }
+    .big-cta .kicker { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; opacity: .85; }
+    .big-cta .title { font-family: Syne, sans-serif; font-size: 1.15rem; font-weight: 800; margin: 4px 0; }
+    .big-cta .sub { font-size: 0.86rem; opacity: .92; }
+
+    .scenario-list { display: grid; gap: 8px; margin-bottom: 14px; }
+    .scenario {
+      text-align: left; width: 100%; cursor: pointer; font: inherit; color: inherit;
+      border: 1px solid var(--line); background: #f8fafc; border-radius: 12px; padding: 10px 12px;
+    }
+    .scenario:hover { border-color: var(--sea); }
+    .scenario strong { display: block; font-size: 0.9rem; }
+    .scenario span { display: block; color: var(--muted); font-size: 0.8rem; margin-top: 2px; }
+
+    label.field { display: block; font-size: 0.78rem; font-weight: 700; color: var(--muted); margin: 0 0 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+    input[type="search"] {
+      width: 100%; padding: 11px 12px; border-radius: 12px; border: 1px solid var(--line);
+      font: inherit; background: #fff;
+    }
+    input[type="search"]:focus { outline: 2px solid rgba(13,148,136,.35); border-color: var(--sea); }
+
+    .hits { margin-top: 8px; max-height: 170px; overflow: auto; }
+    .hit {
+      display: flex; justify-content: space-between; align-items: center; gap: 8px;
+      padding: 8px 0; border-bottom: 1px solid #e2e8f0; font-size: 0.88rem;
+    }
+    .hit .name { flex: 1; min-width: 0; }
+    .btns { display: flex; gap: 6px; flex-shrink: 0; }
+
+    button {
+      font: 700 0.74rem/1 Manrope, sans-serif; letter-spacing: 0.03em;
+      border: none; border-radius: 999px; padding: 8px 12px; cursor: pointer;
+    }
+    button.ok { background: var(--sea); color: #fff; }
+    button.bad { background: #fff; color: var(--wrong); border: 1px solid var(--wrong); }
+    button.ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+    button.textish {
+      background: none; border: none; color: var(--sea-deep); font-weight: 700;
+      text-transform: none; letter-spacing: 0; padding: 0; font-size: 0.86rem;
+    }
+
+    .hist-title {
+      margin: 14px 0 6px; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .hist { list-style: none; padding: 0; margin: 0; max-height: 210px; overflow: auto; }
+    .hist li {
+      display: grid; grid-template-columns: 28px 1fr auto; gap: 8px; align-items: center;
+      padding: 7px 0; border-bottom: 1px solid #eef2f6; font-size: 0.88rem;
+    }
+    .hist .n {
+      width: 26px; height: 26px; border-radius: 50%; background: #e8eef4;
+      display: grid; place-items: center; font-size: 0.72rem; font-weight: 800;
+    }
+    .hist .ok { color: var(--ok); font-weight: 800; }
+    .hist .bad { color: var(--wrong); font-weight: 800; }
+    .hist-empty { color: var(--muted); font-size: 0.88rem; padding: 8px 0; }
+
+    .answer {
+      border-radius: 18px; padding: 18px 18px 16px; color: #fff; margin-bottom: 14px;
+      background: linear-gradient(135deg, #0f766e 0%, #14532d 48%, #1e3a5f 100%);
+      position: relative; overflow: hidden;
+    }
+    .answer::after {
+      content: ""; position: absolute; right: -36px; top: -36px; width: 140px; height: 140px;
+      border-radius: 50%; background: rgba(255,255,255,.08);
+    }
+    .answer .label { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: .82; position: relative; }
+    .answer .verdict {
+      font-family: Syne, sans-serif; font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 800;
+      margin: 6px 0 8px; position: relative;
+    }
+    .answer .plain { margin: 0 0 12px; font-size: 0.98rem; opacity: .95; max-width: 48ch; position: relative; }
+    .meter { height: 12px; border-radius: 999px; background: rgba(255,255,255,.18); overflow: hidden; display: flex; position: relative; }
+    .meter i { display: block; height: 100%; background: #5eead4; transition: width .55s cubic-bezier(.2,.8,.2,1); }
+    .meter b { display: block; height: 100%; background: #93c5fd; transition: width .55s cubic-bezier(.2,.8,.2,1); }
+    .meter-labels {
+      display: flex; justify-content: space-between; gap: 10px; margin-top: 8px;
+      font-size: 0.84rem; position: relative;
+    }
+    .why { margin: 12px 0 0; padding: 0; list-style: none; position: relative; }
+    .why li { font-size: 0.9rem; padding: 3px 0 3px 14px; position: relative; opacity: .95; }
+    .why li::before {
+      content: ""; position: absolute; left: 0; top: .55em; width: 6px; height: 6px;
+      border-radius: 50%; background: #5eead4;
+    }
+
+    .section-label {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+      margin: 4px 0 10px;
+    }
+    .section-label h3 { font-family: Syne, sans-serif; font-size: 1.05rem; margin: 0; }
+    .section-label span { color: var(--muted); font-size: 0.82rem; }
+
+    .key {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;
+    }
+    .key span {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.78rem; font-weight: 700; color: var(--muted);
+      background: #f8fafc; border: 1px solid var(--line); border-radius: 999px; padding: 5px 10px;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+    .dot.review { background: var(--sea); }
+    .dot.advance { background: var(--adv); }
+
+    .recs { display: grid; gap: 10px; }
+    .rec {
+      border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; background: #fff;
+      animation: rise .4s ease both;
+    }
+    .rec.review { border-left: 5px solid var(--sea); background: linear-gradient(90deg, var(--sea-soft), #fff 45%); }
+    .rec.advance { border-left: 5px solid var(--adv); background: linear-gradient(90deg, var(--adv-soft), #fff 45%); }
+    .rec .top { display: flex; justify-content: space-between; gap: 10px; align-items: start; }
+    .rec .top strong { font-size: 1rem; }
+    .tag {
+      font-size: 0.7rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+      padding: 5px 9px; border-radius: 999px; white-space: nowrap;
+    }
+    .tag.review { background: var(--sea-soft); color: var(--sea-deep); }
+    .tag.advance { background: var(--adv-soft); color: var(--adv); }
+    .plain-meta { color: var(--muted); font-size: 0.86rem; margin-top: 4px; }
+    .reasons { margin: 8px 0 0; padding-left: 18px; color: var(--muted); font-size: 0.84rem; }
+    .reasons li { margin: 2px 0; }
+
+    details.advanced {
+      margin-top: 10px; border: 1px dashed var(--line); border-radius: 12px; padding: 8px 12px;
+      background: #f8fafc;
+    }
+    details.advanced summary {
+      cursor: pointer; font-weight: 700; font-size: 0.86rem; color: var(--sea-deep);
+    }
+    .math {
+      margin-top: 8px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.78rem; color: var(--muted); word-break: break-word;
+    }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
+    .split div { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 6px 8px; font-size: 0.74rem; color: var(--muted); }
+    .split b { color: var(--ink); }
+
+    #graph {
+      height: 300px; border-radius: 14px; border: 1px solid var(--line);
+      background: linear-gradient(180deg, #f8fbfd, #eef4f8);
+    }
+    .legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; font-size: 0.76rem; color: var(--muted); }
+    .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 4px; vertical-align: -1px; }
+
+    .evidence {
+      margin-top: 14px; background: var(--paper); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow);
+    }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    @media (max-width: 900px) { .cards { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .cards { grid-template-columns: 1fr; } }
+    .card {
+      border: 1px solid var(--line); border-radius: 14px; padding: 12px; background: #f8fafc;
+    }
+    .card .k { font-size: 0.74rem; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    .card .v { font-family: Syne, sans-serif; font-size: 1.4rem; font-weight: 800; margin: 4px 0; }
+    .card .h { font-size: 0.8rem; color: var(--muted); }
+
+    .err { color: var(--wrong); font-size: 0.88rem; min-height: 1.1em; }
+    .empty {
+      border: 1px dashed var(--line); border-radius: 14px; padding: 18px;
+      color: var(--muted); background: #f8fafc; text-align: center;
+    }
+    .empty strong { display: block; color: var(--ink); margin-bottom: 4px; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: none; }
+    }
+  </style>
+  <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="eyebrow"><span>Interactive research viewer</span><span>Junyi math log</span></div>
+      <h1>How does the prototype score the <em>next</em> action?</h1>
+      <p class="lede">
+        Add a few exercises that a student got right or wrong. The prototype scores two observed action types:
+        <strong>continue/revisit</strong> and <strong>advance</strong>. This is an inspection tool, not a validated lesson prescription.
+      </p>
+    </header>
+
+    <div class="howto">
+      <article>
+        <div class="num">1</div>
+        <strong>Pick a sample student</strong>
+        <p>Or search any exercise and tap Correct / Wrong.</p>
+      </article>
+      <article>
+        <div class="num">2</div>
+          <strong>Inspect the model output</strong>
+          <p>See the prototype’s action score and the evidence it used.</p>
+      </article>
+      <article>
+        <div class="num">3</div>
+          <strong>Inspect the ranked list</strong>
+          <p>Green = a seen item. Blue = an unseen item. The map shows prerequisites.</p>
+      </article>
+    </div>
+
+    <div class="layout">
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Student’s practice so far</h2>
+          <p>Build a short history. You need at least two attempts.</p>
+        </div>
+
+        <div class="tip">
+          <strong>Fastest way to understand</strong>
+          Click the green button below. It loads a short history ending in a factoring error so you can inspect the prototype output.
+        </div>
+
+        <button class="big-cta" id="primary-cta" type="button">
+          <div class="kicker">Suggested first example</div>
+          <div class="title">Show me a stuck student</div>
+          <div class="sub">Failed “solving quadratics by factoring” → inspect the continue/revisit score</div>
+        </button>
+
+        <div class="scenario-list" id="scenarios"></div>
+
+        <label class="field" for="q">Or search an exercise yourself</label>
+        <input id="q" type="search" placeholder="Type a topic, e.g. quadratic or addition" autocomplete="off">
+        <div class="hits" id="hits"></div>
+
+        <div class="hist-title">Timeline</div>
+        <ul class="hist" id="hist"><li class="hist-empty" style="display:block;border:0;grid-column:1/-1">Nothing yet — use the green button or search above.</li></ul>
+        <p style="margin:12px 0 0"><button class="ghost" id="clear" type="button">Clear timeline</button></p>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Exploratory prototype output</h2>
+          <p>Scores are for model inspection only; see the Research Integrity Report for validated conclusions.</p>
+        </div>
+
+        <div class="answer" id="gate">
+          <div class="label">Highest-scoring action type</div>
+          <div class="verdict" id="mode">Waiting for practice…</div>
+          <p class="plain" id="plain">Add two practice attempts on the left, or click “Show me a stuck student”.</p>
+          <div class="meter"><i id="pbar" style="width:0%"></i><b id="abar" style="width:0%"></b></div>
+          <div class="meter-labels">
+            <span id="pval">Lean restudy —</span>
+            <span id="aval">Lean unlock —</span>
+          </div>
+          <ul class="why" id="why"></ul>
+        </div>
+
+        <p class="err" id="err"></p>
+
+        <div class="section-label">
+          <h3>Ranked candidate items</h3>
+          <span>Top of the list = highest prototype score</span>
+        </div>
+        <div class="key">
+          <span><i class="dot review"></i> Practice again (seen before)</span>
+          <span><i class="dot advance"></i> New topic (not seen yet)</span>
+        </div>
+        <div class="recs" id="recs">
+          <div class="empty">
+            <strong>No prototype output yet</strong>
+            Load a sample student on the left to see the ranked list.
+          </div>
+        </div>
+
+        <div class="section-label" style="margin-top:18px">
+          <h3>Prerequisite map</h3>
+          <span>Arrow means “learn this before that”</span>
+        </div>
+        <div id="graph"></div>
+        <div class="legend">
+          <span><i style="background:#0d9488"></i>Last exercise</span>
+          <span><i style="background:#99f6e4"></i>Already practiced</span>
+          <span><i style="background:#bfdbfe"></i>Suggested new topic</span>
+        </div>
+      </section>
+    </div>
+
+    <section class="evidence">
+      <div class="panel-head">
+        <h2>Why trust this demo?</h2>
+        <p>Short facts from our validated Junyi evaluation — not marketing fluff.</p>
+      </div>
+      <div class="cards" id="cards"><div class="empty">Loading results…</div></div>
+    </section>
+  </div>
+
+<script>
+const hist = [];
+const $ = (id) => document.getElementById(id);
+let graphNet = null;
+let scenarios = [];
+
+const FRIENDLY = {
+  sticky_review: {
+    title: "Stuck student (best first demo)",
+    blurb: "Got factoring wrong — inspect the continue/revisit score.",
+  },
+  ready_to_advance: {
+    title: "Student doing well",
+    blurb: "Several correct answers — more room for a new topic.",
+  },
+  quadratic_path: {
+    title: "Walk the quadratic map",
+    blurb: "See parents and children around parabolas.",
+  },
+};
+
+const METRIC_FRIENDLY = {
+  "Next click is review": {
+    label: "Students usually restudy",
+    hint: "About 9 in 10 next clicks are an exercise already seen — so “always unlock” is a bad default.",
+  },
+  "Next == last item": {
+    label: "Often the same exercise again",
+    hint: "About 8 in 10 times the next click is literally the last item. That’s why a “last item” baseline looks strong.",
+  },
+  "Memory AUC (test.json)": {
+    label: "Predicting “will they get it right?”",
+    hint: "Our memory model scores 0.877 AUC on the official test split (better than classic HLR).",
+  },
+  "Junyi topic continuation": { label: "Junyi action structure", hint: "Shown to explain why aggregate next-item metrics can be misleading." },
+  "Prototype vs Recent-5 (R@5)": { label: "Prototype comparison", hint: "A statistically detectable difference can still be too small to matter in practice." },
+  "DAG readiness ΔAUC": { label: "Readiness diagnostic", hint: "This observational result cannot establish a causal learning benefit." },
+  "Forgetting with day gaps": { label: "Forgetting diagnostic", hint: "The day-gap question remains unresolved in the audited analysis." },
+  "Non-last R@5": {
+    label: "When they don’t repeat the last item",
+    hint: "On the harder ~20% of clicks, the gated model beats “always restudy.”",
+  },
+};
+
+function kindLabel(kind) {
+  return kind === "review" ? "Practice again" : "New topic";
+}
+
+async function loadScenarios() {
+  scenarios = await (await fetch("/api/scenarios")).json();
+  const sticky = scenarios.find(s => s.id === "sticky_review");
+  $("primary-cta").onclick = async () => {
+    if (sticky) await applyScenario(sticky);
+  };
+
+  $("scenarios").innerHTML = scenarios
+    .filter(s => s.id !== "sticky_review")
+    .map(s => {
+      const f = FRIENDLY[s.id] || { title: s.title, blurb: s.blurb };
+      return `<button class="scenario" type="button" data-id="${s.id}">
+        <strong>${escapeHtml(f.title)}</strong>
+        <span>${escapeHtml(f.blurb)}</span>
+      </button>`;
+    }).join("");
+
+  $("scenarios").querySelectorAll(".scenario").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const sc = scenarios.find(r => r.id === btn.dataset.id);
+      if (sc) await applyScenario(sc);
+    });
+  });
+}
+
+async function applyScenario(sc) {
+  hist.length = 0;
+  sc.history.forEach(h => hist.push({ ...h }));
+  drawHist();
+  await recommend();
+  $("gate").scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+async function search() {
+  const q = $("q").value;
+  const rows = await (await fetch("/api/search?q=" + encodeURIComponent(q))).json();
+  $("hits").innerHTML = rows.map(r =>
+    `<div class="hit">
+      <span class="name">${escapeHtml(r.name)}</span>
+      <span class="btns">
+        <button class="ok" type="button" data-id="${r.id}" data-name="${escapeAttr(r.name)}" data-c="1">Got it right</button>
+        <button class="bad" type="button" data-id="${r.id}" data-name="${escapeAttr(r.name)}" data-c="0">Got it wrong</button>
+      </span>
+    </div>`
+  ).join("");
+  $("hits").querySelectorAll("button").forEach(b => {
+    b.addEventListener("click", async () => {
+      hist.push({ id: +b.dataset.id, name: b.dataset.name, correct: +b.dataset.c });
+      drawHist();
+      await recommend();
+    });
+  });
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[c]));
+}
+function escapeAttr(s) { return escapeHtml(s); }
+
+function drawHist() {
+  if (!hist.length) {
+    $("hist").innerHTML = `<li class="hist-empty" style="display:block;border:0;grid-column:1/-1">Nothing yet — use the green button or search above.</li>`;
+    return;
+  }
+  $("hist").innerHTML = hist.map((h, i) =>
+    `<li>
+      <span class="n">${i + 1}</span>
+      <span>${escapeHtml(h.name)}</span>
+      <span class="${h.correct ? "ok" : "bad"}">${h.correct ? "right" : "wrong"}</span>
+    </li>`
+  ).join("");
+}
+
+function plainDecision(data) {
+  if (data.mode === "review") {
+    return "The prototype assigns its higher action score to a previously seen item.";
+  }
+  return "The prototype assigns its higher action score to an unseen item on the knowledge map.";
+}
+
+async function recommend() {
+  $("err").textContent = "";
+  if (hist.length < 2) {
+    $("mode").textContent = "Waiting for practice…";
+    $("plain").textContent = "Add two practice attempts on the left, or click “Show me a stuck student”.";
+    $("pbar").style.width = "0%";
+    $("abar").style.width = "0%";
+    $("pval").textContent = "Lean restudy —";
+    $("aval").textContent = "Lean unlock —";
+    $("why").innerHTML = "";
+    $("recs").innerHTML = `<div class="empty"><strong>No prototype output yet</strong>Load a sample student on the left to see the ranked list.</div>`;
+    return;
+  }
+
+  const res = await fetch("/api/recommend", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ history: hist, k: 8 }),
+  });
+  const data = await res.json();
+  if (!res.ok) { $("err").textContent = data.detail || "Something went wrong."; return; }
+
+  const pr = data.p_review, pa = data.p_advance;
+  const restudy = data.mode === "review";
+  $("mode").textContent = restudy ? "Practice again" : "Try something new";
+  $("plain").textContent = plainDecision(data);
+  $("pbar").style.width = (pr * 100).toFixed(1) + "%";
+  $("abar").style.width = (pa * 100).toFixed(1) + "%";
+  $("pval").textContent = `Lean restudy ${Math.round(pr * 100)}%`;
+  $("aval").textContent = `Lean unlock ${Math.round(pa * 100)}%`;
+  $("why").innerHTML = (data.why_mode || []).map(t => `<li>${escapeHtml(t)}</li>`).join("");
+
+  $("recs").innerHTML = data.recommendations.map((r, i) => {
+    const conf = Math.max(0, Math.min(100, Math.round(50 + r.score * 8)));
+    const recallPct = Math.round(r.p_recall * 100);
+    const recallPlain = r.kind === "review"
+      ? (recallPct < 55 ? `Looks shaky (~${recallPct}% chance of getting it right) — good to restudy.`
+        : `Looks fairly solid (~${recallPct}% predicted success).`)
+      : `New item — predicted readiness ~${recallPct}%.`;
+    const prereq = r.parents.length
+      ? `Best after: ${escapeHtml(r.parents.slice(0, 2).join(", "))}`
+      : "Starting topic (no parents on the map)";
+
+    return `<article class="rec ${r.kind}" style="animation-delay:${i * 40}ms">
+      <div class="top">
+        <strong>${r.rank}. ${escapeHtml(r.name)}</strong>
+        <span class="tag ${r.kind}">${kindLabel(r.kind)}</span>
+      </div>
+      <div class="plain-meta">${recallPlain}<br>${prereq}</div>
+      <ul class="reasons">${(r.reasons || []).map(x => `<li>${escapeHtml(x)}</li>`).join("")}</ul>
+      <details class="advanced">
+        <summary>Show score details</summary>
+        <div class="math">${escapeHtml(data.formula)}</div>
+        <div class="split">
+          <div>Restudy score <b>${r.s_review.toFixed(2)}</b> × ${pr.toFixed(2)} = ${r.contrib_review.toFixed(2)}</div>
+          <div>Unlock score <b>${r.s_advance.toFixed(2)}</b> × ${pa.toFixed(2)} = ${r.contrib_advance.toFixed(2)}</div>
+        </div>
+        <div class="math" style="margin-top:6px">Combined score ${r.score.toFixed(2)} · confidence cue ~${conf}</div>
+      </details>
+    </article>`;
+  }).join("");
+
+  drawGraph(data.subgraph);
+}
+
+function wrapLabel(name, width = 18) {
+  const words = String(name).split(/\s+/);
+  const lines = [];
+  let cur = "";
+  for (const w of words) {
+    if ((cur + " " + w).trim().length > width) { lines.push(cur); cur = w; }
+    else cur = (cur + " " + w).trim();
+  }
+  if (cur) lines.push(cur);
+  return lines.slice(0, 3).join("\n");
+}
+
+function drawGraph(g) {
+  if (!g || !g.nodes || !g.nodes.length) return;
+  const nodes = new vis.DataSet(g.nodes.map(n => {
+    let bg = "#d0f0eb", border = "#0f766e", fg = "#0a1628";
+    if (n.current) { bg = "#0d9488"; border = "#115e59"; fg = "#ffffff"; }
+    else if (n.recommended && !n.seen) { bg = "#dbeafe"; border = "#1e4d7b"; }
+    else if (n.seen) { bg = "#99f6e4"; border = "#0f766e"; }
+    return {
+      id: n.id,
+      label: wrapLabel(n.name),
+      color: { background: bg, border, highlight: { background: bg, border: "#0a1628" } },
+      font: { color: fg, size: 13, face: "Manrope", multi: true, align: "center" },
+      borderWidth: n.current || n.recommended ? 3 : 1.5,
+      shape: "box",
+      margin: 12,
+      widthConstraint: { minimum: 110, maximum: 160 },
+    };
+  }));
+  const edges = new vis.DataSet(g.edges.map(e => ({
+    from: e.source, to: e.target,
+    arrows: { to: { enabled: true, scaleFactor: 0.85 } },
+    color: { color: "#64748b", highlight: "#0d9488" },
+    width: 1.6,
+    smooth: { type: "cubicBezier", forceDirection: "vertical", roundness: 0.45 },
+  })));
+  if (graphNet) graphNet.destroy();
+  graphNet = new vis.Network($("graph"), { nodes, edges }, {
+    physics: false,
+    interaction: { zoomView: true, dragView: true, hover: true },
+    layout: {
+      hierarchical: {
+        enabled: true, direction: "UD", sortMethod: "directed",
+        nodeSpacing: 150, levelSeparation: 85, treeSpacing: 160,
+      },
+    },
+  });
+  setTimeout(() => graphNet.fit({ animation: { duration: 350, easingFunction: "easeInOutQuad" } }), 40);
+}
+
+$("q").addEventListener("input", search);
+$("clear").addEventListener("click", () => {
+  hist.length = 0;
+  drawHist();
+  recommend();
+});
+
+fetch("/api/metrics").then(r => r.json()).then(m => {
+  const cards = m.cards || [];
+  $("cards").innerHTML = cards.map((c, i) => {
+    const f = METRIC_FRIENDLY[c.label] || { label: c.label, hint: c.hint || "" };
+    return `<div class="card" style="animation-delay:${i * 40}ms">
+      <div class="k">${escapeHtml(f.label)}</div>
+      <div class="v">${escapeHtml(c.value)}</div>
+      <div class="h">${escapeHtml(f.hint)}</div>
+    </div>`;
+  }).join("") || `<div class="empty">Results file not loaded.</div>`;
+});
+
+loadScenarios();
+search();
+</script>
+</body>
+</html>

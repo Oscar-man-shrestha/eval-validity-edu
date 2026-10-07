@@ -1,0 +1,103 @@
+% NeuroTrace-DAG — thin journal skeleton.
+% Confirmatory H-rev cells: regenerate from JSON only after --touch-test.
+%   PYTHONPATH=. python3 scripts/build_paper_assets.py
+% Never hand-edit claim cells in tab_hrev_*.tex.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\title{When Next-Item Metrics Mislead:\\
+Evaluation Validity Across Educational Logs}
+\author{NeuroTrace-DAG}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{quote}
+\textbf{Status.} Confirmatory H-rev results pending locked \texttt{--touch-test}
+(prereg-v1 + OSF). Ranking and calibration numbers below are exploratory or
+diagnostic until then.
+\end{quote}
+
+\begin{abstract}
+Educational next-item Recall@K can reward sticky or curriculum-ordered
+transitions rather than structure learning. We preregister a confirmatory
+test of whether the paired GRU$-$Markov non-repeat Recall@5 contrast flips
+sign between native and matched cluster units (\(m_{\mathrm{planned}}=6\),
+Bonferroni; GRU seeds 20261101/02/03; two-method intersection on
+Junyi/ASSISTments). Confirmatory cells remain \texttt{pending\_confirmatory}
+until a single post-registration touch-test. Exploratory ranking is reported
+separately.
+\end{abstract}
+
+\section{Introduction}
+Aggregate next-item metrics on educational logs mix educational progression
+with platform action structure. This paper contributes an evaluation-validity
+protocol whose primary claim is a native~$\leftrightarrow$~cluster
+GRU$-$Markov sign flip---not a recommender SOTA.
+
+\section{Methods}
+Protocol details match \texttt{docs/PREREGISTRATION.md}. Freeze seed
+\texttt{20261004}; confirmatory fit on freeze train+val with frozen config and
+fixed \texttt{best\_epoch}; bootstrap \(\ge 10{,}000\) sequence-level
+resamples. Required models: popularity, recency, \texttt{markov\_order1},
+\texttt{gru\_probe}.
+
+\section{Results}
+
+\subsection{Primary confirmatory H-rev}
+Until \texttt{touch\_test=true}, every cell is \texttt{pending\_confirmatory}.
+Source: \texttt{freeze\_partition\_replication.json}~$\to$~\texttt{primary\_claims}
+via \texttt{scripts/build\_paper\_assets.py} only.
+
+\begin{table}[t]
+\centering
+\caption{Confirmatory H-rev unit cells (Bonferroni). Pre-tag dual-map
+validation numbers are disclosure-only.}
+\input{../paper_assets/tables/tab_hrev_confirmatory.tex}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Dataset-level primary claims (sign flip).}
+\input{../paper_assets/tables/tab_hrev_dataset_claims.tex}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Scope: confirmatory vs exploratory.}
+\input{../paper_assets/tables/tab_scope_conf_vs_expl.tex}
+\end{table}
+
+\subsection{Exploratory ranking and calibration}
+Canonical capped Junyi ranking CI remains \texttt{review\_ranking.json}.
+
+\begin{table}[t]
+\centering
+\caption{Capped vs full-test ranking (exploratory).}
+\input{../paper_assets/tables/tab_ranking_capped_vs_full.tex}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Calibration (exploratory).}
+\input{../paper_assets/tables/tab_calibration.tex}
+\end{table}
+
+\section{Discussion and limitations}
+Null / inconclusive / N/A cells are first-class. No RecBole-faithful SASRec
+baseline in confirmatory scope. Licence texts for ASSISTments and XES remain
+unverified for redistribution. Full technical inventory:
+\texttt{docs/NeuroTrace-DAG\_Data\_Flow\_Report.pdf}.
+
+\section{Data and code}
+Prereg trio: \texttt{docs/PREREGISTRATION.md},
+\texttt{PREREGISTRATION\_REPLICATION.md}, \texttt{DEVIATIONS.md}.
+Replication: \texttt{scripts/run\_freeze\_partition\_replication.py}.
+Slim numbers: \texttt{paper\_assets/paper\_main\_numbers.json}.
+
+\end{document}

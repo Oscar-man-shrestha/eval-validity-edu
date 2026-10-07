@@ -1,0 +1,924 @@
+{
+  "consecutive_same_exercise_day_gaps": {
+    "n_consecutive_same_exercise": 5102242,
+    "share_gap_0": 0.9907276056290548,
+    "share_gap_1": 0.003582934717718211,
+    "share_gap_2plus": 0.005689459653226954,
+    "unit": "calendar_days_from_t_us_microseconds"
+  },
+  "share_next_equals_last_raw": {
+    "share": 0.6544756791466514,
+    "n": 7795923,
+    "hits": 5102242
+  },
+  "day_variable_ok": true,
+  "bug_found": null,
+  "gap_bin_bug_previous": "Gap bins used fractional days from sequence start with bin (0,0) for same_day, so almost no rows matched. Fixed: integer calendar-day gaps.",
+  "example_learners": [
+    {
+      "user_id": 210491,
+      "n_total": 12,
+      "first_rows": [
+        {
+          "user_id": 210491,
+          "concept": 663,
+          "t_us": 1398521185067780,
+          "correct": 1,
+          "calendar_day": 16186
+        },
+        {
+          "user_id": 210491,
+          "concept": 663,
+          "t_us": 1398608138992750,
+          "correct": 1,
+          "calendar_day": 16187
+        },
+        {
+          "user_id": 210491,
+          "concept": 663,
+          "t_us": 1398608147410930,
+          "correct": 1,
+          "calendar_day": 16187
+        },
+        {
+          "user_id": 210491,
+          "concept": 663,
+          "t_us": 1398608164125040,
+          "correct": 1,
+          "calendar_day": 16187
+        },
+        {
+          "user_id": 210491,
+          "concept": 663,
+          "t_us": 1398608186425660,
+          "correct": 1,
+          "calendar_day": 16187
+        },
+        {
+          "user_id": 210491,
+          "concept": 772,
+          "t_us": 1398608605724580,
+          "correct": 1,
+          "calendar_day": 16187
+        },
+        {
+          "user_id": 210491,
+          "concept": 327,
+          "t_us": 1398608619117690,
+          "correct": 1,
+          "calendar_day": 16187
+        },
+        {
+          "user_id": 210491,
+          "concept": 559,
+          "t_us": 1398608627314760,
+          "correct": 1,
+          "calendar_day": 16187
+        },
+        {
+          "user_id": 210491,
+          "concept": 419,
+          "t_us": 1398608906483900,
+          "correct": 0,
+          "calendar_day": 16187
+        },
+        {
+          "user_id": 210491,
+          "concept": 664,
+          "t_us": 1398609084409470,
+          "correct": 1,
+          "calendar_day": 16187
+        },
+        {
+          "user_id": 210491,
+          "concept": 225,
+          "t_us": 1398609146728660,
+          "correct": 1,
+          "calendar_day": 16187
+        },
+        {
+          "user_id": 210491,
+          "concept": 225,
+          "t_us": 1398609250759860,
+          "correct": 1,
+          "calendar_day": 16187
+        }
+      ]
+    },
+    {
+      "user_id": 201358,
+      "n_total": 276,
+      "first_rows": [
+        {
+          "user_id": 201358,
+          "concept": 663,
+          "t_us": 1383966767871070,
+          "correct": 1,
+          "calendar_day": 16018
+        },
+        {
+          "user_id": 201358,
+          "concept": 663,
+          "t_us": 1383966983270190,
+          "correct": 1,
+          "calendar_day": 16018
+        },
+        {
+          "user_id": 201358,
+          "concept": 663,
+          "t_us": 1383967160298100,
+          "correct": 1,
+          "calendar_day": 16018
+        },
+        {
+          "user_id": 201358,
+          "concept": 663,
+          "t_us": 1383967179934070,
+          "correct": 1,
+          "calendar_day": 16018
+        },
+        {
+          "user_id": 201358,
+          "concept": 663,
+          "t_us": 1383967191007210,
+          "correct": 1,
+          "calendar_day": 16018
+        },
+        {
+          "user_id": 201358,
+          "concept": 225,
+          "t_us": 1383967341175240,
+          "correct": 1,
+          "calendar_day": 16018
+        },
+        {
+          "user_id": 201358,
+          "concept": 225,
+          "t_us": 1383967348910750,
+          "correct": 1,
+          "calendar_day": 16018
+        },
+        {
+          "user_id": 201358,
+          "concept": 225,
+          "t_us": 1383967360398960,
+          "correct": 1,
+          "calendar_day": 16018
+        },
+        {
+          "user_id": 201358,
+          "concept": 225,
+          "t_us": 1383967382209160,
+          "correct": 1,
+          "calendar_day": 16018
+        },
+        {
+          "user_id": 201358,
+          "concept": 679,
+          "t_us": 1383967425382290,
+          "correct": 1,
+          "calendar_day": 16018
+        },
+        {
+          "user_id": 201358,
+          "concept": 679,
+          "t_us": 1383967458446600,
+          "correct": 1,
+          "calendar_day": 16018
+        },
+        {
+          "user_id": 201358,
+          "concept": 678,
+          "t_us": 1383967532561820,
+          "correct": 1,
+          "calendar_day": 16018
+        }
+      ]
+    },
+    {
+      "user_id": 157753,
+      "n_total": 380,
+      "first_rows": [
+        {
+          "user_id": 157753,
+          "concept": 435,
+          "t_us": 1397195100041030,
+          "correct": 1,
+          "calendar_day": 16171
+        },
+        {
+          "user_id": 157753,
+          "concept": 664,
+          "t_us": 1397195166581950,
+          "correct": 1,
+          "calendar_day": 16171
+        },
+        {
+          "user_id": 157753,
+          "concept": 421,
+          "t_us": 1397195804894750,
+          "correct": 1,
+          "calendar_day": 16171
+        },
+        {
+          "user_id": 157753,
+          "concept": 421,
+          "t_us": 1397195815579100,
+          "correct": 1,
+          "calendar_day": 16171
+        },
+        {
+          "user_id": 157753,
+          "concept": 435,
+          "t_us": 1397195943387760,
+          "correct": 1,
+          "calendar_day": 16171
+        },
+        {
+          "user_id": 157753,
+          "concept": 664,
+          "t_us": 1397195952562440,
+          "correct": 0,
+          "calendar_day": 16171
+        },
+        {
+          "user_id": 157753,
+          "concept": 664,
+          "t_us": 1397196058859090,
+          "correct": 0,
+          "calendar_day": 16171
+        },
+        {
+          "user_id": 157753,
+          "concept": 679,
+          "t_us": 1397196068190600,
+          "correct": 1,
+          "calendar_day": 16171
+        },
+        {
+          "user_id": 157753,
+          "concept": 664,
+          "t_us": 1397196073728380,
+          "correct": 0,
+          "calendar_day": 16171
+        },
+        {
+          "user_id": 157753,
+          "concept": 679,
+          "t_us": 1397196124025590,
+          "correct": 1,
+          "calendar_day": 16171
+        },
+        {
+          "user_id": 157753,
+          "concept": 679,
+          "t_us": 1397196139866210,
+          "correct": 1,
+          "calendar_day": 16171
+        },
+        {
+          "user_id": 157753,
+          "concept": 679,
+          "t_us": 1397196183294390,
+          "correct": 1,
+          "calendar_day": 16171
+        }
+      ]
+    },
+    {
+      "user_id": 126879,
+      "n_total": 21,
+      "first_rows": [
+        {
+          "user_id": 126879,
+          "concept": 686,
+          "t_us": 1400115500890480,
+          "correct": 1,
+          "calendar_day": 16205
+        },
+        {
+          "user_id": 126879,
+          "concept": 686,
+          "t_us": 1400115514902100,
+          "correct": 1,
+          "calendar_day": 16205
+        },
+        {
+          "user_id": 126879,
+          "concept": 686,
+          "t_us": 1400115529931880,
+          "correct": 0,
+          "calendar_day": 16205
+        },
+        {
+          "user_id": 126879,
+          "concept": 258,
+          "t_us": 1400115774936260,
+          "correct": 1,
+          "calendar_day": 16205
+        },
+        {
+          "user_id": 126879,
+          "concept": 258,
+          "t_us": 1400115786141800,
+          "correct": 0,
+          "calendar_day": 16205
+        },
+        {
+          "user_id": 126879,
+          "concept": 686,
+          "t_us": 1400115848496290,
+          "correct": 1,
+          "calendar_day": 16205
+        },
+        {
+          "user_id": 126879,
+          "concept": 686,
+          "t_us": 1400115879318130,
+          "correct": 0,
+          "calendar_day": 16205
+        },
+        {
+          "user_id": 126879,
+          "concept": 686,
+          "t_us": 1400115900322520,
+          "correct": 1,
+          "calendar_day": 16205
+        },
+        {
+          "user_id": 126879,
+          "concept": 686,
+          "t_us": 1400116015599040,
+          "correct": 1,
+          "calendar_day": 16205
+        },
+        {
+          "user_id": 126879,
+          "concept": 686,
+          "t_us": 1400116066350790,
+          "correct": 1,
+          "calendar_day": 16205
+        },
+        {
+          "user_id": 126879,
+          "concept": 686,
+          "t_us": 1400116261173150,
+          "correct": 0,
+          "calendar_day": 16205
+        },
+        {
+          "user_id": 126879,
+          "concept": 686,
+          "t_us": 1400116278175020,
+          "correct": 1,
+          "calendar_day": 16205
+        }
+      ]
+    },
+    {
+      "user_id": 67059,
+      "n_total": 74,
+      "first_rows": [
+        {
+          "user_id": 67059,
+          "concept": 633,
+          "t_us": 1412474951362120,
+          "correct": 1,
+          "calendar_day": 16348
+        },
+        {
+          "user_id": 67059,
+          "concept": 633,
+          "t_us": 1412474958987850,
+          "correct": 1,
+          "calendar_day": 16348
+        },
+        {
+          "user_id": 67059,
+          "concept": 315,
+          "t_us": 1412475380826990,
+          "correct": 1,
+          "calendar_day": 16348
+        },
+        {
+          "user_id": 67059,
+          "concept": 90,
+          "t_us": 1412475820696860,
+          "correct": 1,
+          "calendar_day": 16348
+        },
+        {
+          "user_id": 67059,
+          "concept": 90,
+          "t_us": 1412475855747840,
+          "correct": 1,
+          "calendar_day": 16348
+        },
+        {
+          "user_id": 67059,
+          "concept": 561,
+          "t_us": 1412475973420300,
+          "correct": 0,
+          "calendar_day": 16348
+        },
+        {
+          "user_id": 67059,
+          "concept": 561,
+          "t_us": 1412475989157250,
+          "correct": 1,
+          "calendar_day": 16348
+        },
+        {
+          "user_id": 67059,
+          "concept": 561,
+          "t_us": 1412476039300570,
+          "correct": 1,
+          "calendar_day": 16348
+        },
+        {
+          "user_id": 67059,
+          "concept": 561,
+          "t_us": 1412476061893950,
+          "correct": 0,
+          "calendar_day": 16348
+        },
+        {
+          "user_id": 67059,
+          "concept": 561,
+          "t_us": 1412476067776580,
+          "correct": 0,
+          "calendar_day": 16348
+        },
+        {
+          "user_id": 67059,
+          "concept": 561,
+          "t_us": 1412476078469770,
+          "correct": 1,
+          "calendar_day": 16348
+        },
+        {
+          "user_id": 67059,
+          "concept": 561,
+          "t_us": 1412476091675040,
+          "correct": 1,
+          "calendar_day": 16348
+        }
+      ]
+    },
+    {
+      "user_id": 10440,
+      "n_total": 135,
+      "first_rows": [
+        {
+          "user_id": 10440,
+          "concept": 456,
+          "t_us": 1418113245626320,
+          "correct": 0,
+          "calendar_day": 16413
+        },
+        {
+          "user_id": 10440,
+          "concept": 435,
+          "t_us": 1418113365854780,
+          "correct": 1,
+          "calendar_day": 16413
+        },
+        {
+          "user_id": 10440,
+          "concept": 183,
+          "t_us": 1418113556966420,
+          "correct": 0,
+          "calendar_day": 16413
+        },
+        {
+          "user_id": 10440,
+          "concept": 8,
+          "t_us": 1418113604304650,
+          "correct": 0,
+          "calendar_day": 16413
+        },
+        {
+          "user_id": 10440,
+          "concept": 533,
+          "t_us": 1418114039150640,
+          "correct": 0,
+          "calendar_day": 16413
+        },
+        {
+          "user_id": 10440,
+          "concept": 663,
+          "t_us": 1418114567096080,
+          "correct": 1,
+          "calendar_day": 16413
+        },
+        {
+          "user_id": 10440,
+          "concept": 533,
+          "t_us": 1419322498719130,
+          "correct": 0,
+          "calendar_day": 16427
+        },
+        {
+          "user_id": 10440,
+          "concept": 533,
+          "t_us": 1419322727024280,
+          "correct": 0,
+          "calendar_day": 16427
+        },
+        {
+          "user_id": 10440,
+          "concept": 533,
+          "t_us": 1419322777292600,
+          "correct": 0,
+          "calendar_day": 16427
+        },
+        {
+          "user_id": 10440,
+          "concept": 533,
+          "t_us": 1419323422877960,
+          "correct": 0,
+          "calendar_day": 16427
+        },
+        {
+          "user_id": 10440,
+          "concept": 533,
+          "t_us": 1419323491173960,
+          "correct": 0,
+          "calendar_day": 16427
+        },
+        {
+          "user_id": 10440,
+          "concept": 533,
+          "t_us": 1419323545454220,
+          "correct": 0,
+          "calendar_day": 16427
+        }
+      ]
+    },
+    {
+      "user_id": 4274,
+      "n_total": 90,
+      "first_rows": [
+        {
+          "user_id": 4274,
+          "concept": 71,
+          "t_us": 1413189016062850,
+          "correct": 0,
+          "calendar_day": 16356
+        },
+        {
+          "user_id": 4274,
+          "concept": 71,
+          "t_us": 1413189086703050,
+          "correct": 0,
+          "calendar_day": 16356
+        },
+        {
+          "user_id": 4274,
+          "concept": 71,
+          "t_us": 1413189106068870,
+          "correct": 0,
+          "calendar_day": 16356
+        },
+        {
+          "user_id": 4274,
+          "concept": 570,
+          "t_us": 1413189163945890,
+          "correct": 0,
+          "calendar_day": 16356
+        },
+        {
+          "user_id": 4274,
+          "concept": 570,
+          "t_us": 1413189228778400,
+          "correct": 0,
+          "calendar_day": 16356
+        },
+        {
+          "user_id": 4274,
+          "concept": 570,
+          "t_us": 1413189296244110,
+          "correct": 0,
+          "calendar_day": 16356
+        },
+        {
+          "user_id": 4274,
+          "concept": 570,
+          "t_us": 1413189494375030,
+          "correct": 0,
+          "calendar_day": 16356
+        },
+        {
+          "user_id": 4274,
+          "concept": 573,
+          "t_us": 1413189640549170,
+          "correct": 0,
+          "calendar_day": 16356
+        },
+        {
+          "user_id": 4274,
+          "concept": 448,
+          "t_us": 1413189739359160,
+          "correct": 0,
+          "calendar_day": 16356
+        },
+        {
+          "user_id": 4274,
+          "concept": 448,
+          "t_us": 1413189808160230,
+          "correct": 0,
+          "calendar_day": 16356
+        },
+        {
+          "user_id": 4274,
+          "concept": 448,
+          "t_us": 1413189814674680,
+          "correct": 0,
+          "calendar_day": 16356
+        },
+        {
+          "user_id": 4274,
+          "concept": 480,
+          "t_us": 1413189886964330,
+          "correct": 0,
+          "calendar_day": 16356
+        }
+      ]
+    },
+    {
+      "user_id": 76599,
+      "n_total": 98,
+      "first_rows": [
+        {
+          "user_id": 76599,
+          "concept": 592,
+          "t_us": 1409712988540890,
+          "correct": 1,
+          "calendar_day": 16316
+        },
+        {
+          "user_id": 76599,
+          "concept": 592,
+          "t_us": 1409713028850020,
+          "correct": 1,
+          "calendar_day": 16316
+        },
+        {
+          "user_id": 76599,
+          "concept": 340,
+          "t_us": 1409713039772780,
+          "correct": 1,
+          "calendar_day": 16316
+        },
+        {
+          "user_id": 76599,
+          "concept": 340,
+          "t_us": 1409713085722190,
+          "correct": 0,
+          "calendar_day": 16316
+        },
+        {
+          "user_id": 76599,
+          "concept": 340,
+          "t_us": 1409713122150710,
+          "correct": 0,
+          "calendar_day": 16316
+        },
+        {
+          "user_id": 76599,
+          "concept": 254,
+          "t_us": 1412148178014720,
+          "correct": 1,
+          "calendar_day": 16344
+        },
+        {
+          "user_id": 76599,
+          "concept": 179,
+          "t_us": 1412148336613740,
+          "correct": 0,
+          "calendar_day": 16344
+        },
+        {
+          "user_id": 76599,
+          "concept": 179,
+          "t_us": 1412148370916850,
+          "correct": 0,
+          "calendar_day": 16344
+        },
+        {
+          "user_id": 76599,
+          "concept": 179,
+          "t_us": 1412148413257080,
+          "correct": 0,
+          "calendar_day": 16344
+        },
+        {
+          "user_id": 76599,
+          "concept": 179,
+          "t_us": 1412148649105220,
+          "correct": 0,
+          "calendar_day": 16344
+        },
+        {
+          "user_id": 76599,
+          "concept": 179,
+          "t_us": 1412148702151050,
+          "correct": 0,
+          "calendar_day": 16344
+        },
+        {
+          "user_id": 76599,
+          "concept": 359,
+          "t_us": 1412148803307220,
+          "correct": 1,
+          "calendar_day": 16344
+        }
+      ]
+    },
+    {
+      "user_id": 43399,
+      "n_total": 83,
+      "first_rows": [
+        {
+          "user_id": 43399,
+          "concept": 592,
+          "t_us": 1390796943147000,
+          "correct": 1,
+          "calendar_day": 16097
+        },
+        {
+          "user_id": 43399,
+          "concept": 592,
+          "t_us": 1390796958276910,
+          "correct": 1,
+          "calendar_day": 16097
+        },
+        {
+          "user_id": 43399,
+          "concept": 592,
+          "t_us": 1390797009721090,
+          "correct": 1,
+          "calendar_day": 16097
+        },
+        {
+          "user_id": 43399,
+          "concept": 657,
+          "t_us": 1390980896619110,
+          "correct": 1,
+          "calendar_day": 16099
+        },
+        {
+          "user_id": 43399,
+          "concept": 657,
+          "t_us": 1390981050322860,
+          "correct": 1,
+          "calendar_day": 16099
+        },
+        {
+          "user_id": 43399,
+          "concept": 340,
+          "t_us": 1390981315623830,
+          "correct": 1,
+          "calendar_day": 16099
+        },
+        {
+          "user_id": 43399,
+          "concept": 340,
+          "t_us": 1390981328283840,
+          "correct": 1,
+          "calendar_day": 16099
+        },
+        {
+          "user_id": 43399,
+          "concept": 256,
+          "t_us": 1390981505650350,
+          "correct": 0,
+          "calendar_day": 16099
+        },
+        {
+          "user_id": 43399,
+          "concept": 256,
+          "t_us": 1390983132825230,
+          "correct": 1,
+          "calendar_day": 16099
+        },
+        {
+          "user_id": 43399,
+          "concept": 256,
+          "t_us": 1390983187626740,
+          "correct": 1,
+          "calendar_day": 16099
+        },
+        {
+          "user_id": 43399,
+          "concept": 256,
+          "t_us": 1390983211436740,
+          "correct": 1,
+          "calendar_day": 16099
+        },
+        {
+          "user_id": 43399,
+          "concept": 429,
+          "t_us": 1390983388432560,
+          "correct": 1,
+          "calendar_day": 16099
+        }
+      ]
+    },
+    {
+      "user_id": 18893,
+      "n_total": 118,
+      "first_rows": [
+        {
+          "user_id": 18893,
+          "concept": 756,
+          "t_us": 1410421482378150,
+          "correct": 1,
+          "calendar_day": 16324
+        },
+        {
+          "user_id": 18893,
+          "concept": 735,
+          "t_us": 1410421656361470,
+          "correct": 1,
+          "calendar_day": 16324
+        },
+        {
+          "user_id": 18893,
+          "concept": 8,
+          "t_us": 1410421668801680,
+          "correct": 1,
+          "calendar_day": 16324
+        },
+        {
+          "user_id": 18893,
+          "concept": 756,
+          "t_us": 1410421725302280,
+          "correct": 1,
+          "calendar_day": 16324
+        },
+        {
+          "user_id": 18893,
+          "concept": 756,
+          "t_us": 1410421808993630,
+          "correct": 1,
+          "calendar_day": 16324
+        },
+        {
+          "user_id": 18893,
+          "concept": 735,
+          "t_us": 1410422073113340,
+          "correct": 1,
+          "calendar_day": 16324
+        },
+        {
+          "user_id": 18893,
+          "concept": 756,
+          "t_us": 1410422110104050,
+          "correct": 1,
+          "calendar_day": 16324
+        },
+        {
+          "user_id": 18893,
+          "concept": 8,
+          "t_us": 1410422124674910,
+          "correct": 1,
+          "calendar_day": 16324
+        },
+        {
+          "user_id": 18893,
+          "concept": 17,
+          "t_us": 1410422176492780,
+          "correct": 1,
+          "calendar_day": 16324
+        },
+        {
+          "user_id": 18893,
+          "concept": 17,
+          "t_us": 1410433121793140,
+          "correct": 1,
+          "calendar_day": 16324
+        },
+        {
+          "user_id": 18893,
+          "concept": 8,
+          "t_us": 1410433146758500,
+          "correct": 1,
+          "calendar_day": 16324
+        },
+        {
+          "user_id": 18893,
+          "concept": 17,
+          "t_us": 1410433298734260,
+          "correct": 0,
+          "calendar_day": 16324
+        }
+      ]
+    }
+  ],
+  "t_us_range": [
+    1350037552915380,
+    1421000051769600
+  ],
+  "unique_users": 204077
+}

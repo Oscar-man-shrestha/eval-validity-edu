@@ -1,0 +1,115 @@
+{
+  "phase": 4,
+  "nx.is_directed_acyclic_graph": true,
+  "nodes": 835,
+  "edges": 978,
+  "longest_path": 65,
+  "next_item_mix_train_sample": {
+    "n": 5000,
+    "review_frac": 0.8978,
+    "advance_unlocked_frac": 0.02,
+    "advance_violation_frac": 0.0822
+  },
+  "hard_gate_skips_top20": [
+    {
+      "source": "count number to 100",
+      "target": "addition 2",
+      "count": 7
+    },
+    {
+      "source": "understand coins",
+      "target": "addition 2",
+      "count": 7
+    },
+    {
+      "source": "number line 4",
+      "target": "addition 2",
+      "count": 7
+    },
+    {
+      "source": "adding and subtracting within 20",
+      "target": "addition 2",
+      "count": 7
+    },
+    {
+      "source": "division 2",
+      "target": "division 2.9",
+      "count": 6
+    },
+    {
+      "source": "divisibility intuition",
+      "target": "divisibility tests",
+      "count": 6
+    },
+    {
+      "source": "adding and subtracting negative numbers",
+      "target": "absolute value",
+      "count": 6
+    },
+    {
+      "source": "similar triangles 1",
+      "target": "axis of symmetry",
+      "count": 6
+    },
+    {
+      "source": "addition 2",
+      "target": "addition 4",
+      "count": 5
+    },
+    {
+      "source": "perimeter 1",
+      "target": "perimeter of squares and rectangles",
+      "count": 5
+    },
+    {
+      "source": "multiplying and dividing negative numbers",
+      "target": "number properties terminology 1",
+      "count": 5
+    },
+    {
+      "source": "addition 2",
+      "target": "arithmetic word problems 1",
+      "count": 5
+    },
+    {
+      "source": "subtraction 2",
+      "target": "arithmetic word problems 1",
+      "count": 5
+    },
+    {
+      "source": "order of operations",
+      "target": "recognizing fractions 0.5",
+      "count": 5
+    },
+    {
+      "source": "multiplication with carrying",
+      "target": "multiplication 2",
+      "count": 5
+    },
+    {
+      "source": "division 1",
+      "target": "arithmetic word problems 2",
+      "count": 5
+    },
+    {
+      "source": "angle rotation",
+      "target": "angle types",
+      "count": 5
+    },
+    {
+      "source": "division 0.5",
+      "target": "division 0.9",
+      "count": 5
+    },
+    {
+      "source": "estimation three-digit add sub",
+      "target": "addition 4",
+      "count": 4
+    },
+    {
+      "source": "reading pictographs 1",
+      "target": "reading pictographs 2",
+      "count": 4
+    }
+  ]
+}

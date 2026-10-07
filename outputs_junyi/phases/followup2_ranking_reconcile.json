@@ -1,0 +1,140 @@
+{
+  "canonical_run": {
+    "source_json": "followup_ranking_with_dups.json",
+    "tag": "with_duplicates",
+    "config": {
+      "seed": 0,
+      "EVAL_SEQS": 800,
+      "EVAL_POS": 5,
+      "n_boot": 1000,
+      "duplicate_handling": "kept (pool=full test.json)",
+      "rng_protocol": "np.random.default_rng(SEED) used ONLY for eval sample (fresh)"
+    },
+    "sample_indices_first20": [
+      3388,
+      4365,
+      5530,
+      1204,
+      15,
+      46,
+      1098,
+      3712,
+      3765,
+      3553,
+      736,
+      2576,
+      1356,
+      4530,
+      4792,
+      417,
+      1693,
+      5710,
+      4111,
+      809
+    ],
+    "sample_indices_sum": 2551541,
+    "sample_indices_sha256": "e41cc919a061d56c8a33b4028d2940e5940f6bb8288e96123f8a4aa1da79597b",
+    "metrics": {
+      "ragr_r5": {
+        "mean": 0.89125,
+        "ci": [
+          0.87999375,
+          0.90200625
+        ],
+        "n_sequences": 800,
+        "n_queries": 4000,
+        "statistic": "mean_of_per_sequence_means",
+        "n_boot": 1000
+      },
+      "recent5_r5": {
+        "mean": 0.8845000000000001,
+        "ci": [
+          0.8724937500000001,
+          0.8965062500000001
+        ],
+        "n_sequences": 800,
+        "n_queries": 4000,
+        "statistic": "mean_of_per_sequence_means",
+        "n_boot": 1000
+      },
+      "force_review_r5": {
+        "mean": 0.8859999999999999,
+        "ci": [
+          0.8745,
+          0.8972500000000001
+        ],
+        "n_sequences": 800,
+        "n_queries": 4000,
+        "statistic": "mean_of_per_sequence_means",
+        "n_boot": 1000
+      }
+    },
+    "paired_ragr_minus_recent5_r5": {
+      "mean": 0.006749999999999999,
+      "ci": [
+        0.0044937499999999995,
+        0.009499999999999998
+      ],
+      "n_sequences": 800,
+      "ci_excludes_zero": true,
+      "statistic": "mean_of_per_sequence_paired_deltas",
+      "n_boot": 1000
+    },
+    "paired_ragr_minus_force_review_r5": {
+      "mean": 0.0052499999999999995,
+      "ci": [
+        0.002749999999999999,
+        0.007749999999999999
+      ],
+      "n_sequences": 800,
+      "ci_excludes_zero": true,
+      "statistic": "mean_of_per_sequence_paired_deltas",
+      "n_boot": 1000
+    }
+  },
+  "legacy_polluted_rng_run": {
+    "stated_settings_same": true,
+    "actual_difference": "run_claude_fixes.py reused one RNG for readiness sequence-shuffle then ranking sample; that advances the RNG, so the 800 test indices differ from a fresh SEED draw.",
+    "config": {
+      "seed": 0,
+      "EVAL_SEQS": 800,
+      "EVAL_POS": 5,
+      "duplicate_handling": "kept",
+      "rng_protocol": "default_rng(SEED) \u2192 readiness shuffle(train) \u2192 then choice(test)"
+    },
+    "sample_indices_first20": [
+      2769,
+      3789,
+      3752,
+      4733,
+      5927,
+      2650,
+      3045,
+      4789,
+      6051,
+      3825,
+      1438,
+      2932,
+      4787,
+      5456,
+      2420,
+      3613,
+      1453,
+      4259,
+      5428,
+      5363
+    ],
+    "sample_indices_sum": 2501675,
+    "sample_indices_sha256": "e58b6f9dc9c4b60a077b408890d14369436dc4ed3e60779cee6686a4438b8036",
+    "overlap_with_canonical_sample": 113,
+    "reported_ragr_r5_from_that_run": 0.875,
+    "evidence_line": null,
+    "note": "0.875 was computed under polluted RNG (113/800 index overlap with canonical). Canonical follow-up number is 0.891 from fresh RNG. Same seed string, different sample."
+  },
+  "practical_threshold_recall_at_5": 0.01,
+  "effect_labels": {
+    "ragr_minus_recent5": "negligible",
+    "ragr_minus_force_review": "negligible",
+    "rule": "|\u0394R@5| < 0.01 \u2192 negligible even if CI excludes 0"
+  }
+}

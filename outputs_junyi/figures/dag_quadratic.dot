@@ -1,0 +1,49 @@
+digraph G {
+  rankdir=TB;
+  bgcolor="white";
+  pad="0.4";
+  nodesep="0.5";
+  ranksep="0.7";
+  splines=true;
+  overlap=false;
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10,
+        color="#0f766e", fillcolor="#d0f0eb", fontcolor="#0a1628",
+        margin="0.14,0.10"];
+  edge [color="#475569", arrowsize=0.8, penwidth=1.35];
+  n66 [label="cross\nmultiplication\nadvanced"];
+  n3 [label="solving quadratics\nby factoring", fillcolor="#0d9488", fontcolor="white", color="#115e59", penwidth=2.4, fontsize=11];
+  n388 [label="completing the\nsquare 2", fillcolor="#fef3c7", color="#92400e"];
+  n134 [label="factoring\npolynomials 2", fillcolor="#fef3c7", color="#92400e"];
+  n742 [label="solving quadratics\nby taking the\nsquare root"];
+  n638 [label="multiplying\nexpressions 1", fillcolor="#e0f2fe", color="#1e4d7b"];
+  n28 [label="quadratics word\nproblems", fillcolor="#fef3c7", color="#92400e"];
+  n48 [label="multiplying\npolynomials", fillcolor="#e0f2fe", color="#1e4d7b"];
+  n821 [label="vertex of a\nparabola", fillcolor="#fef3c7", color="#92400e"];
+  n184 [label="completing the\nsquare 2 new", fillcolor="#e0f2fe", color="#1e4d7b"];
+  n762 [label="completing the\nsquare 1"];
+  n603 [label="factorization\nquadratic\npolynomial"];
+  n764 [label="solving quadratics\nby factoring 2"];
+  n30 [label="quadratic\npolynomial word\nproblem"];
+  n671 [label="factoring\npolynomials 1"];
+  n66 -> n28;
+  n66 -> n30;
+  n3 -> n66;
+  n3 -> n603;
+  n3 -> n762;
+  n3 -> n764;
+  n742 -> n762;
+  n638 -> n671;
+  n48 -> n671;
+  n184 -> n762;
+  n762 -> n388;
+  n762 -> n821;
+  n603 -> n66;
+  n764 -> n388;
+  n30 -> n28;
+  n671 -> n3;
+  n671 -> n134;
+  n671 -> n742;
+  labelloc="t";
+  label="Junyi expert DAG — quadratic neighbourhood\narrow = learn source before target  ·  teal = focus  ·  blue = roots  ·  amber = leaves";
+  fontsize=12; fontname="Helvetica-Bold"; fontcolor="#0a1628";
+}

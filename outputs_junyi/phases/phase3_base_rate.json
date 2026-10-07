@@ -1,0 +1,80 @@
+{
+  "sampling_rule": {
+    "memory_row_definition": "A memory row is emitted only when a concept is revisited within a sequence (first attempt on a concept produces no row). Features = [bias, log1p(attempts), success_rate, log1p(delta_steps), log1p(delta_days)].",
+    "train_fit_rows": "Iterate train.json in file order via memory_rows_by_sequence; keep first 200,000 rows; split by sequence id 80/20 (leakage_check=pass); fit logistic on the train-side sequences only.",
+    "test_auc_and_confusion_rows": "Iterate test.json in file order via memory_rows_by_sequence; keep first 80,000 rows. These exact rows produce the headline ~0.877 AUC and the confusion matrix.",
+    "why_not_attempt_level_0_51": "The ~0.51 figure is attempt-level correct rate on a 4k-sequence train sample (every attempt counts). The confusion matrix uses revisit-only memory rows from the first 80k test memory rows \u2014 a harder, non-iid slice with lower correct rate."
+  },
+  "attempt_level_correct_rate": {
+    "train_json_all": {
+      "n_attempts": 2342784,
+      "correct_rate": 0.5314915929082664,
+      "n_sequences": 27434
+    },
+    "train_json_first_4000_sequences": {
+      "n_attempts": 316395,
+      "correct_rate": 0.5080706079426034,
+      "n_sequences": 4000
+    },
+    "test_json_all": {
+      "n_attempts": 500099,
+      "correct_rate": 0.46778137928690117,
+      "n_sequences": 6290
+    }
+  },
+  "memory_row_correct_rate": {
+    "train_first_200k": {
+      "n_rows": 200000,
+      "correct_rate": 0.47947,
+      "fit_rows_n": 163818,
+      "fit_correct_rate": 0.47861040911255176,
+      "within_train_holdout_n": 36182,
+      "within_train_holdout_correct_rate": 0.48336189265380575
+    },
+    "test_first_80k_used_for_auc_and_confusion": {
+      "n_rows": 80000,
+      "correct_rate": 0.3275625,
+      "cap_hit": true
+    },
+    "test_all_memory_rows_uncapped": {
+      "n_rows": 449453,
+      "correct_rate": 0.4457284743899807
+    }
+  },
+  "gap_explanation": "Attempt-level train sample \u22480.51 includes first-time attempts. Memory rows are revisits only (train first-200k rate \u22480.479). The matrix/AUC slice is the first 80,000 test memory rows in file order (correct_rate=0.328), not a random sample of all test memory rows (uncapped test memory correct_rate=0.446). File-order capping over-represents harder early sequences \u2192 ~0.33 vs ~0.45.",
+  "logistic_step_dt_on_capped_test": {
+    "auc": 0.8768705176014742,
+    "n_rows": 80000,
+    "threshold": 0.5,
+    "confusion_matrix_counts": {
+      "TN": 49189,
+      "FP": 4606,
+      "FN": 10317,
+      "TP": 15888,
+      "note": "Printed as integers (not scientific notation)."
+    }
+  },
+  "headline_0_877_used_80k_file_order_slice": true,
+  "headline_replaced_by": "phase3_memory_fulltest.json",
+  "task": "correctness_on_revisit_attempts_only",
+  "logistic_step_dt_on_all_test_memory_rows": {
+    "n_rows": 449453,
+    "correct_rate": 0.4457284743899807,
+    "auc_point": 0.8636560531074262,
+    "auc_ci_sequence_bootstrap": [
+      0.8605351117458301,
+      0.8671033094430001
+    ],
+    "pr_auc_point": 0.8256696675749655,
+    "confusion_matrix_counts": {
+      "threshold": 0.5,
+      "TN": 209734,
+      "FP": 39385,
+      "FN": 56994,
+      "TP": 143340,
+      "n": 449453,
+      "predicted_positive_rate": 0.4065497393498319,
+      "accuracy": 0.7855637853123686
+    }
+  }
+}

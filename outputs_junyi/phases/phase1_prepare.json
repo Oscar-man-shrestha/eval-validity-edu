@@ -1,0 +1,22 @@
+{
+  "phase": 1,
+  "dataset": "Junyi Academy / EduData ktbd-junyi (Chang et al., EDM 2015)",
+  "concepts": 835,
+  "edges": 978,
+  "train_sequences": 27434,
+  "test_sequences": 6290,
+  "interactions": 2342784,
+  "join": "native: every log item id is a DAG node id",
+  "faults_closed": [
+    "no OULAD placeholder concept",
+    "no cross-dataset mapping",
+    "correctness is not 96.7% pass"
+  ],
+  "interactions_train": 2342784,
+  "interactions_test": 500099,
+  "transitions_train": 2315350,
+  "transitions_test": 493809,
+  "transitions_train_plus_test": 2809159,
+  "interactions_note": "interactions = train attempt rows after len\u2208[12,200]; interactions_train_plus_test = 2,842,883; topic-level n in Follow-up 3 = transitions_train_plus_test = 2,809,159",
+  "interactions_train_plus_test": 2842883
+}

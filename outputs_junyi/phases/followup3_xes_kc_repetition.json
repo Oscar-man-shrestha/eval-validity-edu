@@ -1,0 +1,60 @@
+{
+  "method_a_question_then_primary_kc": {
+    "method": "map each question to its first KC, then share(next==last) on KC ids",
+    "n_sequences": 18066,
+    "share_next_equals_last": {
+      "share": 0.26196852398182396,
+      "n": 3975344,
+      "hits": 1041415
+    },
+    "three_way_mix": {
+      "continue": {
+        "count": 1041415,
+        "frac": 0.26196852398182396
+      },
+      "revisit": {
+        "count": 1246210,
+        "frac": 0.31348482043314996
+      },
+      "advance": {
+        "count": 1687719,
+        "frac": 0.4245466555850261
+      },
+      "n": 3975344
+    }
+  },
+  "method_b_expand_all_kc_tags": {
+    "method": "expand every KC tag on each question into the stream (F2 expand-all). Independent of method A \u2014 not 'first KC only'.",
+    "n_sequences": 18066,
+    "share_next_equals_last": {
+      "share": 0.2162478526410483,
+      "n": 4428696,
+      "hits": 957696
+    },
+    "three_way_mix": {
+      "continue": {
+        "count": 957696,
+        "frac": 0.2162478526410483
+      },
+      "revisit": {
+        "count": 1614986,
+        "frac": 0.364664000419085
+      },
+      "advance": {
+        "count": 1856014,
+        "frac": 0.41908814693986673
+      },
+      "n": 4428696
+    }
+  },
+  "numerically_identical": false,
+  "supersedes": {
+    "followup3_xes_kc_repetition.method_b_drop_multi_kc_extras": "Old method B appended kcs[0] only \u2014 identical to A by construction. Dropped."
+  },
+  "primary_reported": "method_a for concept-level table; method_b expand-all as sensitivity",
+  "method_b_drop_multi_kc_extras": {
+    "deprecated": true,
+    "reason": "was identical to method A",
+    "replaced_by": "method_b_expand_all_kc_tags"
+  }
+}

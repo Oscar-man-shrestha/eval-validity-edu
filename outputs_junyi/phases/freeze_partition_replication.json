@@ -1,0 +1,47 @@
+{
+  "schema": "freeze_partition_replication_v3",
+  "freeze_seed": 20261004,
+  "gru_train_seeds": [
+    20261101,
+    20261102,
+    20261103
+  ],
+  "catalog_n_items": {
+    "junyi_timed": 835,
+    "assistments": 150,
+    "xes3g5m": 7439
+  },
+  "max_windows": 20000,
+  "gru_hidden_rule": "max(64, emb*2) \u2014 matches freeze",
+  "dropout_policy": "GRUProbe ignores dropout; freeze dropout grid is a no-op for GRU",
+  "recall_at_tie_rule": "among equal scores, lower item index wins (stable lexsort)",
+  "recency_rule": "0 on advance for all/nonrepeat; N/A only for advance-slice display/ordering",
+  "n_boot_confirmatory": 10000,
+  "m_planned": 6,
+  "touch_test": false,
+  "junyi_pipeline_SEED_not_used": 0,
+  "datasets": {
+    "junyi_timed": {
+      "split": {
+        "n_train": 4200,
+        "n_val": 900,
+        "n_test": 900,
+        "test_uid_hash": "b384eee7bcbac2a92bbff2b6e0f96ff97cbcce35c771bf567a8465e31f87790b",
+        "val_uid_hash": "bb4a5d68829a9fc5e6feb91f9a34e968933a80255ab2f424c32b868f69e31c84",
+        "train_uid_hash": "ca6f15934e9b61b817dcc937bdd120ed38e48ad8f836e779db9ea066502de19c",
+        "hash_match_freeze": true,
+        "val_test_overlap": 0
+      },
+      "n_items_catalog": 835,
+      "result": {
+        "scored": false,
+        "reason": "pass --touch-test only after prereg-v1 tag",
+        "gru_train_seeds": [
+          20261101,
+          20261102,
+          20261103
+        ]
+      }
+    }
+  }
+}

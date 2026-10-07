@@ -1,0 +1,102 @@
+{
+  "schema": "paper_main_numbers_v1",
+  "rule": "After --touch-test, regenerate this file and tab_hrev_*.tex from freeze_partition_replication.json \u2192 primary_claims only. Never hand-edit claim cells.",
+  "touch_test": false,
+  "scope_banner": "confirmatory_pending",
+  "primary_hrev": {
+    "scope": "pending_confirmatory",
+    "m_planned": 6,
+    "m": null,
+    "bonferroni_level": null,
+    "cells": [
+      {
+        "dataset": "junyi_timed",
+        "unit": "native",
+        "verdict": "pending_confirmatory",
+        "ci": null,
+        "n_queries_nonrepeat": null,
+        "eligible": null,
+        "scope": "pending_confirmatory"
+      },
+      {
+        "dataset": "junyi_timed",
+        "unit": "cluster",
+        "verdict": "pending_confirmatory",
+        "ci": null,
+        "n_queries_nonrepeat": null,
+        "eligible": null,
+        "scope": "pending_confirmatory"
+      },
+      {
+        "dataset": "assistments",
+        "unit": "native",
+        "verdict": "pending_confirmatory",
+        "ci": null,
+        "n_queries_nonrepeat": null,
+        "eligible": null,
+        "scope": "pending_confirmatory"
+      },
+      {
+        "dataset": "assistments",
+        "unit": "cluster",
+        "verdict": "pending_confirmatory",
+        "ci": null,
+        "n_queries_nonrepeat": null,
+        "eligible": null,
+        "scope": "pending_confirmatory"
+      },
+      {
+        "dataset": "xes3g5m",
+        "unit": "native",
+        "verdict": "pending_confirmatory",
+        "ci": null,
+        "n_queries_nonrepeat": null,
+        "eligible": null,
+        "scope": "pending_confirmatory"
+      },
+      {
+        "dataset": "xes3g5m",
+        "unit": "cluster",
+        "verdict": "pending_confirmatory",
+        "ci": null,
+        "n_queries_nonrepeat": null,
+        "eligible": null,
+        "scope": "pending_confirmatory"
+      }
+    ],
+    "dataset_claims": {
+      "junyi_timed": {
+        "native_verdict": "pending_confirmatory",
+        "cluster_verdict": "pending_confirmatory",
+        "satisfies_primary_claim": null
+      },
+      "assistments": {
+        "native_verdict": "pending_confirmatory",
+        "cluster_verdict": "pending_confirmatory",
+        "satisfies_primary_claim": null
+      },
+      "xes3g5m": {
+        "native_verdict": "pending_confirmatory",
+        "cluster_verdict": "pending_confirmatory",
+        "satisfies_primary_claim": null
+      }
+    },
+    "project_claim": {
+      "satisfies_project_claim": null,
+      "datasets_satisfying": [],
+      "note": "pending locked --touch-test after prereg-v1 + OSF"
+    },
+    "gru_seeds": [
+      20261101,
+      20261102,
+      20261103
+    ],
+    "freeze_seed": 20261004
+  },
+  "exploratory_pointers": {
+    "ranking_capped": "review_ranking.json / paper_ranking_capped.json",
+    "ranking_full": "paper_ranking_full.json",
+    "calibration": "paper_calibration.json",
+    "pre_tag_dual_map_val_disclosure_only": "dual_cluster_gru_markov.json"
+  }
+}

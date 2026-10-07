@@ -1,0 +1,26 @@
+Phase 2 sanity check
+model: paraphrase-multilingual-MiniLM-L12-v2
+concepts: 287  embeddings: (287, 384)
+context-rich: 214  name-only: 73
+vectors are L2-normalised; cosine similarity is a dot product
+
+Top-5 contains at least one prerequisite-graph neighbour:
+  context-rich queries: 4/5
+  name-only queries: 2/5
+
+Prerequisite-linked pairs (should score higher than random if embeddings carry meaning):
+  all: n=725  mean=0.2919  median=0.2750
+  both_have_context: n=392  mean=0.2906  median=0.2741
+  mixed: n=280  mean=0.2841  median=0.2671
+  both_name_only: n=53  mean=0.3429  median=0.3319
+
+Random pairs (same count, seed 42):
+  all: n=725  mean=0.1940  median=0.1895
+  both_have_context: n=435  mean=0.2066  median=0.2036
+  mixed: n=249  mean=0.1688  median=0.1559
+  both_name_only: n=41  mean=0.2146  median=0.2046
+
+Limitation: 73 concepts are embedded from the bare name only.
+Limitation: this model truncates each text to 128 tokens, so long context is only partly used.
+Limitation: a graph neighbour missing from the top-5 is not by itself a failure.
+Semantic neighbours and prerequisite neighbours are related but not the same relation.
