@@ -7,15 +7,15 @@ Local git tag is already created. This file is a **deposit helper** (not part of
 | Item | Value |
 | --- | --- |
 | Tag | `prereg-v1` |
-| Tag object | `cd7ebbc97a36bc0bb49261a5dbf3f67f2da97300` |
-| Commit | `29e98ef791139e4c095c33c931fe219f027345ab` |
-| Branch | `audit/verify-all-phases` |
+| Commit (this repo) | `ce4a75bd3f8442670f8e09594d29ef0c455337f6` |
+| Branch | `main` |
 | Remote | `https://github.com/Oscar-man-shrestha/eval-validity-edu.git` |
+| Release | https://github.com/Oscar-man-shrestha/eval-validity-edu/releases/tag/prereg-v1 |
 
-Push (if not already):
+File digests in `prereg_v1_locked_hashes.json` are the protocol lock (content SHA-256). This GitHub home is yours (`eval-validity-edu`); older Hisana remote kept as `hisana` for reference only.
 
 ```bash
-git push origin audit/verify-all-phases
+git push origin main
 git push origin prereg-v1
 ```
 
@@ -54,7 +54,8 @@ via scripts/run_freeze_partition_replication.py --touch-test. A second run
 needs an explicit TOUCH_TEST_OVERRIDE note in docs/DEVIATIONS.md.
 
 Junyi ranking / memory / graph work stays exploratory and is not part of this
-claim. Git commit locked by tag prereg-v1: 29e98ef791139e4c095c33c931fe219f027345ab
+claim. GitHub: https://github.com/Oscar-man-shrestha/eval-validity-edu (tag prereg-v1 @ ce4a75b).
+Protocol file digests: outputs_junyi/phases/prereg_v1_locked_hashes.json
 ```
 
 ### Optional short field blurbs (if OSF asks again)
