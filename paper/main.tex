@@ -1,5 +1,5 @@
 % NeuroTrace-DAG — thin journal skeleton.
-% Confirmatory H-rev cells: regenerate from JSON only after --touch-test.
+% Confirmatory cells: regenerate from JSON only after --touch-test.
 %   PYTHONPATH=. python3 scripts/build_paper_assets.py
 % Never hand-edit claim cells in tab_hrev_*.tex.
 \documentclass[11pt,a4paper]{article}
@@ -8,56 +8,65 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{amsmath}
+\usepackage{url}
 
 \title{When Next-Item Metrics Mislead:\\
 Evaluation Validity Across Educational Logs}
-\author{NeuroTrace-DAG}
+\author{Oscar Man Shrestha}
 \date{}
 
 \begin{document}
 \maketitle
 
 \begin{quote}
-\textbf{Status.} Confirmatory H-rev results pending locked \texttt{--touch-test}
-(prereg-v1 + OSF). Ranking and calibration numbers below are exploratory or
-diagnostic until then.
+\textbf{Status.} OSF preregistration submitted
+(\url{https://osf.io/24sxf}; pending approval).
+Holdout confirmatory cells stay blank until one \texttt{--touch-test}.
+Junyi ranking and calibration numbers below are real, but exploratory.
 \end{quote}
 
 \begin{abstract}
-Educational next-item Recall@K can reward sticky or curriculum-ordered
-transitions rather than structure learning. We preregister a confirmatory
-test of whether the paired GRU$-$Markov non-repeat Recall@5 contrast flips
-sign between native and matched cluster units (\(m_{\mathrm{planned}}=6\),
-Bonferroni; GRU seeds 20261101/02/03; two-method intersection on
-Junyi/ASSISTments). Confirmatory cells remain \texttt{pending\_confirmatory}
-until a single post-registration touch-test. Exploratory ranking is reported
-separately.
+Recall@K is the usual report card for next-item models on student logs.
+We are less sure it measures what people think it measures---especially once
+the ``item'' can mean a question, a skill, or a topic cluster.
+We lock a small confirmatory comparison of a GRU probe versus first-order
+Markov on Junyi timed, ASSISTments~2009, and XES3G5M, at native units and at
+matched clusters, under a freeze holdout and Bonferroni family
+\(m_{\mathrm{planned}}=6\).
+The registered claim is a native--cluster sign flip on that contrast.
+Holdout cells stay blank until registration and one touch-test; Junyi ranking
+stays exploratory.
 \end{abstract}
 
 \section{Introduction}
-Aggregate next-item metrics on educational logs mix educational progression
-with platform action structure. This paper contributes an evaluation-validity
-protocol whose primary claim is a native~$\leftrightarrow$~cluster
-GRU$-$Markov sign flip---not a recommender SOTA.
+On educational logs, next-item Recall@K often rewards repeats and the
+curriculum's natural order. That is not the same as measuring whether a model
+captured learning structure. Changing the action unit can flip which simple
+baseline wins.
+
+Our goal is modest: check whether that unit choice systematically reverses a
+GRU-versus-Markov contrast under a locked protocol---not ship a new
+recommender champion.
 
 \section{Methods}
-Protocol details match \texttt{docs/PREREGISTRATION.md}. Freeze seed
+Details match \texttt{docs/PREREGISTRATION.md}. Freeze seed
 \texttt{20261004}; confirmatory fit on freeze train+val with frozen config and
 fixed \texttt{best\_epoch}; bootstrap \(\ge 10{,}000\) sequence-level
-resamples. Required models: popularity, recency, \texttt{markov\_order1},
-\texttt{gru\_probe}.
+resamples. Models in the confirmatory tables: popularity, recency,
+\texttt{markov\_order1}, \texttt{gru\_probe}.
 
 \section{Results}
 
-\subsection{Primary confirmatory H-rev}
-Until \texttt{touch\_test=true}, every cell is \texttt{pending\_confirmatory}.
-Source: \texttt{freeze\_partition\_replication.json}~$\to$~\texttt{primary\_claims}
-via \texttt{scripts/build\_paper\_assets.py} only.
+\subsection{Primary confirmatory cells (pending)}
+Until \texttt{touch\_test=true}, every holdout cell stays blank on purpose.
+Numbers will come only from
+\texttt{freeze\_partition\_replication.json}~$\to$~\texttt{primary\_claims}
+via \texttt{scripts/build\_paper\_assets.py}.
 
 \begin{table}[t]
 \centering
-\caption{Confirmatory H-rev unit cells (Bonferroni). Pre-tag dual-map
-validation numbers are disclosure-only.}
+\caption{Confirmatory unit cells (Bonferroni). Validation dual-map numbers
+from before registration are disclosure only.}
 \input{../paper_assets/tables/tab_hrev_confirmatory.tex}
 \end{table}
 
@@ -89,15 +98,20 @@ Canonical capped Junyi ranking CI remains \texttt{review\_ranking.json}.
 \end{table}
 
 \section{Discussion and limitations}
-Null / inconclusive / N/A cells are first-class. No RecBole-faithful SASRec
-baseline in confirmatory scope. Licence texts for ASSISTments and XES remain
-unverified for redistribution. Full technical inventory:
+A null or mixed result still counts. We do not yet have a library-faithful
+SASRec/RecBole baseline in confirmatory scope. ASSISTments and XES
+redistribution licences are still unverified. Longer inventory:
 \texttt{docs/NeuroTrace-DAG\_Data\_Flow\_Report.pdf}.
 
 \section{Data and code}
-Prereg trio: \texttt{docs/PREREGISTRATION.md},
+Code: \url{https://github.com/Oscar-man-shrestha/eval-validity-edu}
+(tag \texttt{prereg-v1}).
+OSF: \url{https://osf.io/24sxf}.
+Doc map: \texttt{docs/DOCUMENTATION.md}.
+Protocol files: \texttt{docs/PREREGISTRATION.md},
 \texttt{PREREGISTRATION\_REPLICATION.md}, \texttt{DEVIATIONS.md}.
-Replication: \texttt{scripts/run\_freeze\_partition\_replication.py}.
+Replication entrypoint:
+\texttt{scripts/run\_freeze\_partition\_replication.py}.
 Slim numbers: \texttt{paper\_assets/paper\_main\_numbers.json}.
 
 \end{document}

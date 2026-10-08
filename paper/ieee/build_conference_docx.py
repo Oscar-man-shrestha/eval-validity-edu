@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Build IEEE A4 conference Word draft for advisor / pre-journal review.
 
-Confirmatory H-rev cells stay pending_confirmatory until OSF + --touch-test.
+Confirmatory holdout cells stay pending until OSF + --touch-test.
+# Code home: https://github.com/Oscar-man-shrestha/eval-validity-edu
 Exploratory numbers load from outputs_junyi/phases/*.json.
 """
 from __future__ import annotations
@@ -151,7 +152,7 @@ def build():
         "We lock a small confirmatory comparison of a GRU probe against first-order Markov on Junyi timed, "
         "ASSISTments 2009, and XES3G5M, at native units and at matched clusters (~120), under a freeze holdout "
         "and Bonferroni family m_planned=6. "
-        "Holdout cells stay blank until external registration and one touch-test; "
+        "OSF registration is submitted (https://osf.io/24sxf); holdout cells stay blank until one touch-test. "
         "Junyi ranking numbers below are exploratory."
     )
     r1 = abs_p.add_run(abs_body)
@@ -272,10 +273,10 @@ def build():
     )
     add_para(
         doc,
-        "Tag prereg-v1 freezes the protocol and artifacts. We leave the freeze-holdout scores blank "
-        "until OSF/Zenodo registration and one --touch-test—that is deliberate, not incomplete "
-        "drafting. Table II therefore says pending in every cell. Validation dual-map contrasts from "
-        "before registration are disclosure only; please do not read them as the confirmatory answer.",
+        "Tag prereg-v1 freezes the protocol and artifacts. OSF registration is submitted "
+        "(https://osf.io/24sxf; pending approval). We leave freeze-holdout scores blank until one "
+        "--touch-test—that is deliberate. Table II therefore says pending in every cell. Validation "
+        "dual-map contrasts from before registration are disclosure only.",
         first_indent=0.5,
     )
     add_para(doc, "TABLE II. CONFIRMATORY UNIT CELLS (PENDING TOUCH-TEST)", size=8, bold=True, center=True, space_before=8, space_after=2)
@@ -405,7 +406,8 @@ def build():
     add_para(
         doc,
         "Thanks to advisors and collaborators for comments on framing and scope. "
-        "Code and prereg packet: https://github.com/Oscar-man-shrestha/eval-validity-edu (tag prereg-v1).",
+        "Code: https://github.com/Oscar-man-shrestha/eval-validity-edu (tag prereg-v1). "
+        "OSF: https://osf.io/24sxf. Full documentation map: docs/DOCUMENTATION.md.",
         first_indent=0.5,
     )
 

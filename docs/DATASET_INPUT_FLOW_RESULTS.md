@@ -6,7 +6,11 @@
 
 **Word copy for advisors:** [`NeuroTrace-DAG_Dataset_Input_Flow_Results.docx`](NeuroTrace-DAG_Dataset_Input_Flow_Results.docx) (generated from this markdown).
 
-**Study framing:** we care whether next-item scores track continue / revisit / advance structure (and action units), not whether we shipped a SOTA recommender.
+**Study framing:** we care whether next-item scores track continue / revisit / advance structure (and action units)—not whether we shipped a ranking champion.
+
+**Code:** https://github.com/Oscar-man-shrestha/eval-validity-edu  
+**OSF:** https://osf.io/24sxf (submitted; pending approval)  
+**Full doc map:** [`DOCUMENTATION.md`](DOCUMENTATION.md)
 
 ### Checklist map (required sections → this document)
 
@@ -20,7 +24,7 @@
 | 6. ROC / AUC (what classified, inputs to the curve, AUC values) | **§6** |
 | 7. Complete Dataset → … → Final output flow | **§7** |
 
-**Confirmatory note:** freeze-holdout H-rev cells stay `pending_confirmatory` until OSF/Zenodo + one `--touch-test`. Exploratory / diagnostic numbers below are real measured outputs.
+**Confirmatory note:** OSF is submitted ([osf.io/24sxf](https://osf.io/24sxf)); freeze-holdout cells stay blank until one `--touch-test` after approval. Numbers below are real measured outputs, but exploratory / diagnostic unless labeled otherwise.
 
 ---
 
@@ -511,7 +515,7 @@ python3 scripts/build_dataflow_report.py --mode=full   # this PDF
 python3 scripts/build_dataflow_report.py --mode=slim   # paper-facing slim PDF
 ```
 
-Git tag `prereg-v1` exists on GitHub. External OSF/Zenodo deposit is the human gate before confirmatory scoring. Deviations: `docs/DEVIATIONS.md`. After OSF only:
+Git tag `prereg-v1` is on GitHub. OSF registration submitted at https://osf.io/24sxf (await approval / DOI). Deviations: `docs/DEVIATIONS.md`. After OSF is public, once:
 
 ```bash
 PYTHONPATH=. python3 scripts/run_freeze_partition_replication.py --touch-test
