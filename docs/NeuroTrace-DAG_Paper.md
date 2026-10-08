@@ -1,9 +1,12 @@
 # When Next-Item Metrics Mislead: Evaluation Validity Across Educational Logs
 
-> **Status**: Holdout confirmatory cells still blank until OSF registration + one `--touch-test`.  
+> **Status**: OSF submitted ([osf.io/24sxf](https://osf.io/24sxf), pending approval). Holdout cells still blank until one `--touch-test`.  
 > Junyi ranking / calibration numbers below are real, but exploratory.
 
-_Journal-facing write-up. Confirmatory claim numbers load only from `freeze_partition_replication.json → primary_claims` via `scripts/build_paper_assets.py`—do not hand-edit those cells. Long technical inventory: `docs/NeuroTrace-DAG_Data_Flow_Report.pdf`._
+_Journal-facing write-up. Confirmatory claim numbers load only from `freeze_partition_replication.json → primary_claims` via `scripts/build_paper_assets.py`—do not hand-edit those cells. Full doc map: [`DOCUMENTATION.md`](DOCUMENTATION.md). Longer inventory: `NeuroTrace-DAG_Data_Flow_Report.pdf`._
+
+**Code:** https://github.com/Oscar-man-shrestha/eval-validity-edu (tag `prereg-v1`)  
+**OSF:** https://osf.io/24sxf
 
 ## Abstract
 
@@ -19,7 +22,7 @@ Our goal is modest: check whether that unit choice systematically reverses a GRU
 
 ## 2. Related work (brief)
 
-Knowledge tracing and educational recommender evaluations routinely report Recall@K / NDCG on platform-native ids. Unit mismatch, duplicate next-items, and curriculum order are known confounders; we treat them as first-class design choices rather than post-hoc caveats. Faithful library baselines (e.g. RecBole GRU4Rec/SASRec) are out of confirmatory scope until installed and locked; local probes are labeled diagnostic.
+KT and educational recommender papers usually score platform-native ids. Duplicates, unit mismatch, and curriculum order show up often as caveats; here they are the object of study. Library-faithful SASRec / RecBole GRU4Rec are outside this confirmatory packet for now; local probes are diagnostic.
 
 ## 3. Methods
 
@@ -33,46 +36,46 @@ Knowledge tracing and educational recommender evaluations routinely report Recal
 
 Freeze learner partition seed: `20261004`. Maps and freeze winners are locked under `prereg_v1_locked_hashes.json`.
 
-### 3.2 Confirmatory H-rev protocol
+### 3.2 Confirmatory comparison
 
-Canonical wording (must match `docs/PREREGISTRATION.md`):
+Registered wording (must match `docs/PREREGISTRATION.md`):
 
 | Term | Registered wording |
 | --- | --- |
-| **Primary H-rev claim** | Native ↔ cluster **GRU−Markov sign flip**: dataset \(D\) satisfies it iff both unit verdicts are `supported_*` with **opposite signs**; project claim = ≥1 such dataset |
+| **Primary claim** | Native ↔ cluster **GRU−Markov sign flip**: dataset \(D\) satisfies it iff both unit verdicts are `supported_*` with **opposite signs**; project claim = ≥1 such dataset |
 | **Family / Bonferroni** | \(m_{\mathrm{planned}}=6\); CI level \(1-0.05/m\); N/A cells reduce \(m\) |
 | **GRU seeds** | `20261101`, `20261102`, `20261103` |
 | **Two-method intersection** | Junyi/ASSIST cluster cell = one family member (both methods same `supported_*`); XES cooc-only amendment |
-| **Touch-test lock** | Second `--touch-test` requires `TOUCH_TEST_OVERRIDE:` in `docs/DEVIATIONS.md` |
+| **Touch-test lock** | Second `--touch-test` needs `TOUCH_TEST_OVERRIDE:` in `docs/DEVIATIONS.md` |
 
-Pipeline written to replication JSON: eligibility → \(m\) → Bonferroni CIs → unit verdicts → dataset/project claims. Cell floor: ≥500 non-repeat queries (both methods for Junyi/ASSIST cluster). Bootstrap: ≥10,000 sequence-level resamples (`zlib.crc32` seeds). Required models for H-rev tables: popularity, recency, `markov_order1`, `gru_probe`. Attention / RAGR / H-rep / graph / forgetting are **not** in the confirmatory family.
+Pipeline: eligibility → \(m\) → Bonferroni CIs → unit verdicts → dataset/project claims. Cell floor: ≥500 non-repeat queries. Bootstrap: ≥10,000 sequence-level resamples. Models in the confirmatory tables: popularity, recency, `markov_order1`, `gru_probe`. Attention / RAGR / graph / forgetting stay out of this family.
 
-### 3.3 Exploratory and diagnostic analyses
+### 3.3 Exploratory Junyi work
 
-Reported for transparency, **not** as confirmatory claims: Phase 3 memory AUCs, Phase 6 / review_ranking RAGR, full-test ranking and calibration, seed-0 rank-reversal slices, dual-map **validation** GRU−Markov checks (disclosure-only), sensitivity grids. See Data Flow PDF §4 and `paper_assets/`.
+Reported for context, not as confirmatory claims: Phase 3 memory AUCs, Phase 6 / review_ranking RAGR, full-test ranking and calibration, seed-0 rank-reversal slices, dual-map **validation** GRU−Markov checks (disclosure only), sensitivity grids. See Data Flow PDF §4 and `paper_assets/`.
 
 ## 4. Results
 
-### 4.1 Primary confirmatory H-rev (pending)
+### 4.1 Primary confirmatory cells (pending)
 
-Until `touch_test=true` in `outputs_junyi/phases/freeze_partition_replication.json`, every confirmatory cell is `pending_confirmatory`. Machine-readable stub: `paper_assets/tables/tab_hrev_confirmatory.tex` and `paper_assets/paper_main_numbers.json`.
+Until `touch_test=true` in `outputs_junyi/phases/freeze_partition_replication.json`, every holdout cell stays blank on purpose. Machine stub: `paper_assets/tables/tab_hrev_confirmatory.tex` and `paper_assets/paper_main_numbers.json`.
 
 | Dataset | Unit | Verdict | Bonferroni CI | Eligible |
 | --- | --- | --- | --- | --- |
-| junyi_timed | native | pending_confirmatory | — | — |
-| junyi_timed | cluster | pending_confirmatory | — | — |
-| assistments | native | pending_confirmatory | — | — |
-| assistments | cluster | pending_confirmatory | — | — |
-| xes3g5m | native | pending_confirmatory | — | — |
-| xes3g5m | cluster | pending_confirmatory | — | — |
+| junyi_timed | native | pending | — | — |
+| junyi_timed | cluster | pending | — | — |
+| assistments | native | pending | — | — |
+| assistments | cluster | pending | — | — |
+| xes3g5m | native | pending | — | — |
+| xes3g5m | cluster | pending | — | — |
 
-Pre-tag dual-map **validation** numbers in `dual_cluster_gru_markov.json` are disclosure-only and must not be read as confirmatory.
+Validation dual-map numbers in `dual_cluster_gru_markov.json` are disclosure only—please do not read them as the confirmatory answer.
 
-**After** `prereg-v1` + OSF + single `--touch-test`: regenerate this table with `PYTHONPATH=. python3 scripts/build_paper_assets.py` from `primary_claims` only. Never edit claim cells by hand.
+**After** OSF + one `--touch-test`: regenerate this table with `PYTHONPATH=. python3 scripts/build_paper_assets.py` from `primary_claims` only. Never edit claim cells by hand.
 
-### 4.2 Exploratory ranking and calibration (diagnostic)
+### 4.2 Exploratory ranking and calibration
 
-Canonical capped Junyi RAGR R@5 remains `review_ranking.json` (see `paper_assets/tables/tab_ranking_capped_vs_full.tex`). Cross-dataset advance slices, reliability diagrams, and sensitivity tables are exploratory; interpret with the scope table `tab_scope_conf_vs_expl.tex`.
+Canonical capped Junyi RAGR R@5 remains `review_ranking.json` (see `paper_assets/tables/tab_ranking_capped_vs_full.tex`). Cross-dataset advance slices, reliability diagrams, and sensitivity tables are exploratory; see `tab_scope_conf_vs_expl.tex`.
 
 ## 5. Discussion
 
@@ -87,12 +90,14 @@ What we registered is whether changing the action unit reverses the GRU−Markov
 
 ## 7. Data and code availability
 
+**GitHub:** https://github.com/Oscar-man-shrestha/eval-validity-edu (tag `prereg-v1`)  
+**OSF preregistration:** https://osf.io/24sxf  
+**Doc map:** [`DOCUMENTATION.md`](DOCUMENTATION.md)  
 Protocol: `docs/PREREGISTRATION.md`, `docs/PREREGISTRATION_REPLICATION.md`, `docs/DEVIATIONS.md`.  
 Replication entrypoint: `scripts/run_freeze_partition_replication.py`.  
 Paper numbers: `paper_assets/paper_main_numbers.json` (slim) vs `paper_assets/numbers.json` (full audit).  
-Technical supplement: `docs/NeuroTrace-DAG_Data_Flow_Report.pdf` (`scripts/build_dataflow_report.py --mode=full`).  
-Slim paper-facing PDF: `scripts/build_dataflow_report.py --mode=slim`.
+Technical supplement: `docs/NeuroTrace-DAG_Data_Flow_Report.pdf`.
 
 ## References
 
-See repository `docs/` data cards and the Data Flow Report bibliography notes. Venue-ready BibTeX is deferred until confirmatory cells are filled.
+See `docs/` data cards and the Data Flow Report notes. Venue-ready BibTeX waits until confirmatory cells are filled.

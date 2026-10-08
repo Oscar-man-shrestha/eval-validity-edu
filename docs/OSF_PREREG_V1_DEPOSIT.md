@@ -1,6 +1,9 @@
 # OSF / Zenodo deposit pack for `prereg-v1`
 
-Local git tag is already created. This file is a **deposit helper** (not part of the locked hash set). Fill the DOI/URL after registration, then run `--touch-test` once.
+**Registration:** https://osf.io/24sxf (submitted 2026-10-07 UTC; pending approval — DOI after public).  
+Local git tag exists. This file is a **deposit helper** (not part of the locked hash set). After approval, paste DOI below, then run `--touch-test` **once**.
+
+Full documentation map: [`DOCUMENTATION.md`](DOCUMENTATION.md).
 
 ## Git lock (already done locally)
 
@@ -12,7 +15,7 @@ Local git tag is already created. This file is a **deposit helper** (not part of
 | Remote | `https://github.com/Oscar-man-shrestha/eval-validity-edu.git` |
 | Release | https://github.com/Oscar-man-shrestha/eval-validity-edu/releases/tag/prereg-v1 |
 
-File digests in `prereg_v1_locked_hashes.json` are the protocol lock (content SHA-256). This GitHub home is yours (`eval-validity-edu`); older Hisana remote kept as `hisana` for reference only.
+File digests in `prereg_v1_locked_hashes.json` are the protocol lock (content SHA-256). Public code home: this repo (`eval-validity-edu`).
 
 ```bash
 git push origin main
@@ -58,15 +61,46 @@ claim. GitHub: https://github.com/Oscar-man-shrestha/eval-validity-edu (tag prer
 Protocol file digests: outputs_junyi/phases/prereg_v1_locked_hashes.json
 ```
 
-### Optional short field blurbs (if OSF asks again)
+### Optional short field blurbs (paste into remaining OSF pages)
 
-**Study design (plain):** Secondary analysis of three public student logs under a
-learner-disjoint freeze split. We compare GRU vs Markov at native vs cluster
-units; test is untouched until after this registration.
+**Title:** NeuroTrace-DAG prereg-v1: does action-unit granularity flip GRU vs Markov on educational logs?
 
-**Foreknowledge (plain):** We have seen the public logs and used validation
-learners while choosing the primary claim (including an XES native-vs-cluster
-pattern on validation). We have not scored the confirmatory freeze test yet.
+**Subject search:** Educational Assessment → select
+`Education / Educational Assessment, Evaluation, and Research`
+
+**Research questions:**  
+Primary question (prereg-v1): when we score next-item non-repeat Recall@5 with a small GRU probe versus a first-order Markov baseline, does the sign of that paired contrast flip if we switch from the platform’s native action unit to a coarser concept cluster (~120 groups)?
+
+A dataset supports the claim only if both native and cluster unit verdicts are supported_* with opposite signs. The project claim is that this happens on at least one of Junyi timed, ASSISTments 2009, or XES3G5M.
+
+Code: https://github.com/Oscar-man-shrestha/eval-validity-edu (tag prereg-v1).
+
+**Foreknowledge radio:** Authors have observed the data, but have not performed the proposed analyses.
+
+**Foreknowledge explanation:**  
+Public educational logs exist. We used validation learners while choosing the primary claim (including an XES native-vs-cluster pattern on validation, disclosed in docs/PREREGISTRATION.md). We have not scored the confirmatory freeze holdout test yet. Code: https://github.com/Oscar-man-shrestha/eval-validity-edu (tag prereg-v1).
+
+**Study type / causal / blinding:** Non-randomized study; No causal relationship inferred; No blinding is involved.
+
+**Study design:**  
+Secondary analysis of three public student logs (Junyi timed, ASSISTments 2009, XES3G5M) under a learner-disjoint freeze split (seed 20261004). We compare a small GRU probe against a first-order Markov baseline at the platform’s native action unit and at matched concept clusters (~120). Confirmatory outcome is paired GRU−Markov non-repeat Recall@5 on held-out test learners, scored only once after this registration. Junyi ranking / memory / graph work stays exploratory.
+
+**Randomization / code home:**  
+No new recruitment; public datasets only. Code and locked digests: https://github.com/Oscar-man-shrestha/eval-validity-edu (tag prereg-v1; outputs_junyi/phases/prereg_v1_locked_hashes.json). Freeze learner split seed 20261004; confirmatory GRU seeds 20261101, 20261102, 20261103.
+
+**Data collection:**  
+Existing public logs: Junyi timed (capped learners), ASSISTments 2009 skill-builder corrected, XES3G5M question-level. Freeze learner split seed 20261004; train+val for fit; test held out until one --touch-test after registration.
+
+**Sample size:**  
+Inclusion: sequences length 12–200 (Junyi timed max_users=6000). ASSISTments truncate_each_learner_to_200. Cell eligibility: ≥500 non-repeat queries (both clustering methods for Junyi/ASSISTments cluster cells).
+
+**Sample size rationale / stopping:**  
+Sample sizes follow freeze splits in probe_freeze.json (locked). Confirmatory bootstrap ≥10000 sequence resamples. Confirmatory scoring runs once after this registration; a second run needs TOUCH_TEST_OVERRIDE in docs/DEVIATIONS.md.
+
+**Variables / Analysis Plan (all short answers):**  
+Use: “See docs/PREREGISTRATION.md on https://github.com/Oscar-man-shrestha/eval-validity-edu (tag prereg-v1). Primary claim = native↔cluster GRU−Markov sign flip; m_planned=6 Bonferroni; GRU seeds 20261101/02/03; two-method intersection on Junyi/ASSISTments; single --touch-test after registration.”
+
+**Do not Register until Oscar says proceed.**
 
 ## SHA-256 table (paste into registration)
 
@@ -85,10 +119,11 @@ pattern on validation). We have not scored the confirmatory freeze test yet.
 
 | Field | Value |
 | --- | --- |
-| Draft URL | https://osf.io/registries/drafts/6ac5e15b290d421e40e88a55/metadata |
-| Registration URL | _paste after submit_ |
-| DOI | _paste after submit_ |
-| Timestamp (UTC) | _paste after submit_ |
+| Draft URL | https://osf.io/registries/drafts/6ac5e15b290d421e40e88a55/metadata (locked — already registered) |
+| Registration URL | https://osf.io/24sxf |
+| Status | Pending registration approval (submitted; not public yet) |
+| DOI | _appears after approval — check https://osf.io/24sxf_ |
+| Timestamp (UTC) | 2026-10-07T07:03:34Z |
 
 Then **once**:
 
