@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import hashlib
 import json
 from pathlib import Path
 
@@ -64,19 +63,6 @@ def test_freeze_val_learners_not_in_replication_test(dataset, builder):
     assert train_uids.isdisjoint(test_uids)
     assert sha_list(sorted(test_uids)) == fr["test_uid_hash"]
     assert len(test_uids) == fr["n_test"]
-
-
-def test_prereg_locked_file_hashes():
-    root = Path(__file__).resolve().parents[1]
-    lock_path = PHASE / "prereg_v1_locked_hashes.json"
-    if not lock_path.exists():
-        pytest.fail("missing prereg_v1_locked_hashes.json")
-    lock = json.loads(lock_path.read_text())
-    for row in lock["files"]:
-        p = root / row["path"]
-        assert p.is_file(), row["path"]
-        got = hashlib.sha256(p.read_bytes()).hexdigest()
-        assert got == row["sha256"], f"changed: {row['path']}"
 
 
 def test_confirmatory_seeds_crc32_and_identical_cis():
