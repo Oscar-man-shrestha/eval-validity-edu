@@ -22,7 +22,7 @@ Our goal is modest: check whether that unit choice systematically reverses a GRU
 
 ## 2. Related work (brief)
 
-KT and educational recommender papers usually score platform-native ids. Duplicates, unit mismatch, and curriculum order show up often as caveats; here they are the object of study. Library-faithful SASRec / RecBole GRU4Rec are outside this confirmatory packet for now; local probes are diagnostic.
+KT and educational recommender papers usually score platform-native ids. Duplicates, unit mismatch, and curriculum order show up often as caveats; here they are the object of study. Library-faithful SASRec / RecBole GRU4Rec are outside this confirmatory packet for now; local probes are exploratory diagnostics.
 
 ## 3. Methods
 

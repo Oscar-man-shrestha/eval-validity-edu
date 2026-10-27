@@ -2,6 +2,8 @@
 
 **NeuroTrace-DAG · evaluation-validity track** · Oscar Man Shrestha
 
+[![Repository checks](https://github.com/Oscar-man-shrestha/eval-validity-edu/actions/workflows/repository-checks.yml/badge.svg)](https://github.com/Oscar-man-shrestha/eval-validity-edu/actions/workflows/repository-checks.yml)
+
 This research repository asks whether next-item scores in educational activity logs reflect learning-aware structure or mainly reward repetition and curriculum order. It compares simple recency and Markov baselines with local GRU sequence probes, and examines how conclusions change when an action is represented as a question, topic, skill, or knowledge-component cluster. The contribution is an evaluation protocol and its audit, **not** a state-of-the-art recommender.
 
 ## Research status
@@ -56,6 +58,7 @@ python3 paper/ieee/build_conference_docx.py
 Start with the [full documentation map](docs/DOCUMENTATION.md) and [research integrity report](docs/RESEARCH_INTEGRITY_REPORT.md) when quoting results. The processed Junyi JSON split alone does not establish learner-disjointness; the [Junyi data card](docs/DATA_CARD.md) explains this limitation. Dataset licences and citation conditions are separate from any licence for this repository's code. **No repository-wide software licence is currently included**, so obtain permission before reusing code beyond what applicable law permits.
 
 For proposed changes, see [CONTRIBUTING.md](CONTRIBUTING.md). Report protocol changes in [`docs/DEVIATIONS.md`](docs/DEVIATIONS.md); do not edit locked inputs or reported claim cells by hand.
+The [repository checks](.github/workflows/repository-checks.yml) verify frozen file hashes and the checked-in research audit without downloading datasets or touching the confirmatory holdout.
 
 ## Citation
 
