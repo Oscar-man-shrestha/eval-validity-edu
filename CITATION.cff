@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the version of the code you used and cite the original datasets separately."
+type: software
+title: "NeuroTrace-DAG: evaluation validity in educational logs"
+authors:
+  - family-names: "Shrestha"
+    given-names: "Oscar Man"
+repository-code: "https://github.com/Oscar-man-shrestha/eval-validity-edu"
+url: "https://github.com/Oscar-man-shrestha/eval-validity-edu"
