@@ -11,12 +11,19 @@ concepts.csv
 # Python cache files, if any get created later
 __pycache__/
 *.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
 
 # Official Junyi archive is 1.2 GB; keep only the processed KTBD tables in git.
 data/junyi_raw/
 *.rar
 *.npz
-__pycache__/
 .DS_Store
 ~$*.docx
 
