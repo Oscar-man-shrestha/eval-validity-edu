@@ -23,14 +23,20 @@ This research repository asks whether next-item scores in educational activity l
 | [`scripts/`](scripts/) and [`tests/`](tests/) | Analysis, report generation, and protocol checks |
 | [`outputs_junyi/phases/`](outputs_junyi/phases/) and [`paper_assets/`](paper_assets/) | Checked-in machine-readable results and generated paper assets |
 | [`paper/ieee/`](paper/ieee/) | Conference paper sources and Word build script |
+| [`CITATION.cff`](CITATION.cff) | Machine-readable citation for this repository's code |
 
 ## Data and setup
 
 The project studies Junyi, ASSISTments 2009, and XES3G5M. Required bulk source data are **not** all included in Git. Obtain each dataset under its own terms and follow the [data cards](docs/data_cards/) for provenance and expected locations. The checked-in [`scripts/fetch_datasets.py`](scripts/fetch_datasets.py) **verifies local SHA-256 hashes**; despite its name, it does not download data.
 
-Run commands below from the repository root with Python 3. There is currently no pinned environment or package manifest, so install the libraries used by the specific script before running it. Core analysis uses NumPy, pandas, PyTorch, scikit-learn, and joblib; report generation additionally uses Matplotlib, ReportLab, and `python-docx`. Some optional analysis paths use other packages. See each script's imports and the [replication protocol](docs/PREREGISTRATION_REPLICATION.md) before attempting a full reproduction.
+Run commands below from the repository root with Python 3. The [requirements file](requirements.txt) lists direct dependencies for active analysis, tests, reports, and the optional demo. It is **not pinned** and does not guarantee an exact historical environment. Some paths download external model weights on first use. Check the [replication protocol](docs/PREREGISTRATION_REPLICATION.md) and dataset availability before attempting a full reproduction.
 
 ```bash
+# Set up an isolated environment and install the listed dependencies.
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+
 # Verify the local source files and their expected hashes; missing data cause a nonzero exit.
 python3 scripts/fetch_datasets.py
 
@@ -50,3 +56,7 @@ python3 paper/ieee/build_conference_docx.py
 Start with the [full documentation map](docs/DOCUMENTATION.md) and [research integrity report](docs/RESEARCH_INTEGRITY_REPORT.md) when quoting results. The processed Junyi JSON split alone does not establish learner-disjointness; the [Junyi data card](docs/DATA_CARD.md) explains this limitation. Dataset licences and citation conditions are separate from any licence for this repository's code. **No repository-wide software licence is currently included**, so obtain permission before reusing code beyond what applicable law permits.
 
 For proposed changes, see [CONTRIBUTING.md](CONTRIBUTING.md). Report protocol changes in [`docs/DEVIATIONS.md`](docs/DEVIATIONS.md); do not edit locked inputs or reported claim cells by hand.
+
+## Citation
+
+Use [CITATION.cff](CITATION.cff) to cite the code and specify the Git tag or commit you used. Cite Junyi, ASSISTments, and XES3G5M under their own terms; see the [data cards](docs/data_cards/). The repository does not claim a paper DOI.

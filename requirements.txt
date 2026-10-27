@@ -1,0 +1,16 @@
+# Direct Python dependencies used by active scripts, tests, and the optional demo.
+# This is an unpinned convenience list, not a lockfile for exact replication.
+fastapi
+joblib
+matplotlib
+networkx
+numpy
+pandas
+pytest
+pydantic
+python-docx
+reportlab
+scikit-learn
+sentence-transformers
+torch
+uvicorn
